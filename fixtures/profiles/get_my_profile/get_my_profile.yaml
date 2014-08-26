@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-profiles.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/profiles/me
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALVU227bMAz9FcGvi29xnEuftqYP6y5YgW4YsKIIaJlOlFiSJ8kNvKL/Pspp1nRL
+        h3VAASOxSIrnHJrkbSDK4CTIcJJWY8xCHBajMKuGSQjTSRaWMB7m+YjnPJsGg6ASxrqFAol0552Q
+        siNjDQc2rdCSrRS2qaF7FMp654BdrM4oAiWImlwSnIvcSkur1au1kNqtutcSVYk1dhHX0iMItaHQ
+        lXPNSRxvt9voMCBujK5EjTZee5hw7WHymO4ZtAiGrxZCOaSDs5TlC900WyADK8Bu0LEtwo1QS7oA
+        HEqUgi+sA9f66AttHTvTfKeJi4a4kKLb4F7ZG+MsA1WyD4Iy0iWDFGrb4iGa0lwF87b2PvYWjXCw
+        xOD6bhA0K+20T6aNWAoF9YNIm0Ug4YdWsLW9yL3isL9kY4R4xOl3xNNpjuOszDiWU8h4nudFNpvw
+        cT4dz4pJOq7SDKKm10eyVAmmfDGccI8QrZse8HsLBl8Qrs/fg1E9b6i4lUCS50yLg6C1aBauazwB
+        pY2kAlMzaQ5OaOXrXtOba0vyZ1E69j61vDekSRpN0sH+O79voQb2oZVNawbsIx06K8CDcoPUTL6k
+        wyQdhQk9s89pQglORmmUJMk33+1lu0e9ug2Esh53d6aGFETcCifYIYrvOFwa9Oi7kaHaGrcoCa0H
+        S2ahf1KfXpUP9nQYJtOdfYsF5cXHs9MqsakjYhTJLiYF/8Hn9JIf4TM+zscbn8Hn2u+GptYdtYY7
+        Uq5DTmyu1Q2FkYfN6b8fvkZ77n3sfCWwYgcTf7qb+K+7iWefqkpwNH9q8R8y/Z2zJ7upOee/QHmP
+        2TcyRQq7oKWmFof0fSM+p8QH5C9oraG12jBdscu2kGBom5AEWRhd62V3hPbwiZbIQu/6x09APU07
+        3e4W19PFO6fAv3jPacVd3/0EzwdQ2WAGAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['710']
+      content-type: [application/vnd.mendeley-profiles.1+json]
+      date: ['Tue, 26 Aug 2014 14:28:59 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [zH5kQnlfBWo]
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-profiles.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/profiles/9930207c-c19f-3de0-b531-86bd4388fa94
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAJ2Oy07DMBBFfwV5XSfOoyXJFyDEkhWbaGpPWhe/sB2iUPXfcdKiwpbtnTnn3jOR
+        gnSkbStWskdOedEOtBLI6H5bFbTZ7UVdNc0AbU02ZJA+xN6AxsQ8ozFzChX8yuzRBGtSKmRwCuY/
+        zw/3s5LmPcXHGF2X59M0ZRqNQIVzxq3OnbeDVBjy08LR05Wr80QCB4Fa8j5EiGNIkhe59+Al3Gq5
+        dMmeSs/kVv40ajAySgzksiHuaKNdrklgBHhx3xGqDDR8WQNTWHf8jKIrFHKYIHnMIXPmkNrCxwge
+        /8H3V3LVpEmf6OUgMS0ZQAXckDGg7+PsFrexXoNKbdwjxOWJlKyoKWtouXsttl1Zd/U2Y4y9kcs3
+        AHhcZNABAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['293']
+      content-type: [application/vnd.mendeley-profiles.1+json]
+      date: ['Tue, 26 Aug 2014 15:27:12 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [0uTXusVHNCs]
+    status: {code: 200, message: OK}
+version: 1

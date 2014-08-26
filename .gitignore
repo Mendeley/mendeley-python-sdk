@@ -1,8 +1,9 @@
-.settings/
 .idea/
-*.iml
-venv/
-screen*
-.screenrc
-Gemfile.lock
+.tox/
+*.egg
+*.egg-info
 *.pyc
+dist/
+build/
+MANIFEST
+test_config.yml

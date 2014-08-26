@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Content-Length: ['29']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body: {string: !!python/unicode '{"access_token":"MSwxNDA5MDU0NzAwMTgyLCw4MDEsLCwzWGt1OEV6cEViOEhNck0wVU05ZFp6TmVpbUU","token_type":"bearer","expires_in":3600,"refresh_token":null}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['147']
+      content-type: [application/json]
+      date: ['Tue, 26 Aug 2014 11:04:59 GMT']
+      x-mendeley-trace-id: [X2CooKyI2P0]
+    status: {code: 200, message: OK}
+version: 1

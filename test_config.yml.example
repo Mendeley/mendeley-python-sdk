@@ -1,0 +1,4 @@
+clientId: {id}
+clientSecret: {secret}
+redirectUri: {uri}
+accessToken: {token}

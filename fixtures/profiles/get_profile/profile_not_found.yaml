@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-profiles.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/profiles/00000000-0000-0001-0000-000000000002
+  response:
+    body: {string: !!python/unicode '{"message":"profile not found"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['31']
+      content-type: [application/vnd.mendeley-profiles.1+json]
+      date: ['Tue, 26 Aug 2014 15:45:25 GMT']
+      x-mendeley-trace-id: [POWMj6Goxpw]
+    status: {code: 404, message: Not Found}
+version: 1

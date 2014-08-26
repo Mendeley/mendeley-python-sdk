@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: code=IXpvu_-TpqiWYz-i0nBfO45PxIE&grant_type=authorization_code&client_id=801&redirect_uri=https%3A%2F%2Fexample.com
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Content-Length: ['115']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body: {string: !!python/unicode '{"access_token":"MSwxNDA5MDYyODIwOTY5LDEyNDAxODUxLDgwMSxhbGwsLFYyYVlTNnBPWlBwZW5sVWNPUzlYdTZON09ONA","token_type":"bearer","expires_in":3600,"refresh_token":"MSwxMjQwMTg1MSw4MDEsYWxsLGVKWTJlckhHT2JJT1lISF8ybWJWcmhYdjhzbw"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['222']
+      content-type: [application/json]
+      date: ['Tue, 26 Aug 2014 13:20:20 GMT']
+      x-mendeley-trace-id: [3AD03b8m0yw]
+    status: {code: 200, message: OK}
+version: 1
