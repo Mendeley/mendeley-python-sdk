@@ -1,18 +1,15 @@
 import arrow
 import pytest
-import vcr
 
 from mendeley.exception import MendeleyException
-from mendeley.session import MendeleySession
-from test import configure_mendeley, get_access_token
+from test import get_user_session, cassette
 
 
-@vcr.use_cassette('fixtures/profiles/get_profile/get_profile.yaml', filter_headers=['authorization'])
 def test_should_get_a_profile():
-    mendeley = configure_mendeley()
-    session = MendeleySession(mendeley, get_access_token())
+    session = get_user_session()
 
-    profile = session.profiles.get('9930207c-c19f-3de0-b531-86bd4388fa94')
+    with cassette('fixtures/profiles/get_profile/get_profile.yaml'):
+        profile = session.profiles.get('9930207c-c19f-3de0-b531-86bd4388fa94')
 
     assert profile.id == '9930207c-c19f-3de0-b531-86bd4388fa94'
     assert profile.first_name == 'Jenny'
@@ -38,12 +35,11 @@ def test_should_get_a_profile():
     assert not profile.employment
 
 
-@vcr.use_cassette('fixtures/profiles/get_profile/profile_not_found.yaml', filter_headers=['authorization'])
 def test_should_raise_if_profile_not_found():
-    mendeley = configure_mendeley()
-    session = MendeleySession(mendeley, get_access_token())
+    session = get_user_session()
 
-    with pytest.raises(MendeleyException) as ex_info:
+    with cassette('fixtures/profiles/get_profile/profile_not_found.yaml'), \
+            pytest.raises(MendeleyException) as ex_info:
         session.profiles.get('00000000-0000-0001-0000-000000000002')
 
     ex = ex_info.value

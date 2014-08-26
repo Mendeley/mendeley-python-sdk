@@ -1,20 +1,15 @@
 import arrow
 import pytest
 
-import vcr
-
 from mendeley.exception import MendeleyException
-
-from mendeley.session import MendeleySession
-from test import configure_mendeley, get_access_token
+from test import get_user_session, cassette, get_client_credentials_session
 
 
-@vcr.use_cassette('fixtures/profiles/get_my_profile/get_my_profile.yaml', filter_headers=['authorization'])
 def test_should_get_my_profile():
-    mendeley = configure_mendeley()
-    session = MendeleySession(mendeley, get_access_token())
+    session = get_user_session()
 
-    profile = session.profiles.me
+    with cassette('fixtures/profiles/get_my_profile/get_my_profile.yaml'):
+        profile = session.profiles.me
 
     assert profile.id == '3e71f6e3-e2b4-3f20-a873-da62554c5c38'
     assert profile.first_name == 'Jimmy'
@@ -58,12 +53,11 @@ def test_should_get_my_profile():
     assert profile.employment[1].classes == ['Underwater Basket Weaving I', 'Underwater Basket Weaving II']
 
 
-@vcr.use_cassette('fixtures/profiles/get_my_profile/client_credentials.yaml', filter_headers=['authorization'])
 def test_raise_exception_if_client_credentials():
-    mendeley = configure_mendeley()
-    session = mendeley.start_client_credentials_flow().authenticate()
+    session = get_client_credentials_session()
 
-    with pytest.raises(MendeleyException) as ex_info:
+    with cassette('fixtures/profiles/get_my_profile/client_credentials.yaml'), \
+            pytest.raises(MendeleyException) as ex_info:
         _ = session.profiles.me
 
     ex = ex_info.value

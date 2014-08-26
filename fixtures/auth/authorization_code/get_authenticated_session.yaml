@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: code=IXpvu_-TpqiWYz-i0nBfO45PxIE&grant_type=authorization_code&client_id=801&redirect_uri=https%3A%2F%2Fexample.com
+    body: code=IXpvu_-TpqiWYz-i0nBfO45PxIE&grant_type=authorization_code&client_id=id&redirect_uri=https%3A%2F%2Fexample.com
     headers:
       Accept: [!!python/unicode application/json]
       Accept-Encoding: ['gzip, deflate']
