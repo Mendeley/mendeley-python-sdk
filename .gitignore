@@ -7,4 +7,4 @@ dist/
 build/
 MANIFEST
 test_config.yml
-reports/
+junit-*.xml
