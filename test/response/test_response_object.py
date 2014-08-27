@@ -1,15 +1,6 @@
 import pytest
-from mendeley.response import ResponseObject
 
-
-class DummyResponseObject(ResponseObject):
-    @property
-    def foo(self):
-        return 'foo-value'
-
-    @classmethod
-    def fields(cls):
-        return ['bar']
+from test.response import DummyResponseObject
 
 
 def test_should_get_property():

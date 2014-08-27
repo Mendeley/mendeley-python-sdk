@@ -8,7 +8,7 @@ from test import get_user_session, cassette
 def test_should_get_a_profile():
     session = get_user_session()
 
-    with cassette('fixtures/profiles/get_profile/get_profile.yaml'):
+    with cassette('fixtures/resources/profiles/get_profile/get_profile.yaml'):
         profile = session.profiles.get('9930207c-c19f-3de0-b531-86bd4388fa94')
 
     assert profile.id == '9930207c-c19f-3de0-b531-86bd4388fa94'
@@ -38,7 +38,7 @@ def test_should_get_a_profile():
 def test_should_raise_if_profile_not_found():
     session = get_user_session()
 
-    with cassette('fixtures/profiles/get_profile/profile_not_found.yaml'), \
+    with cassette('fixtures/resources/profiles/get_profile/profile_not_found.yaml'), \
             pytest.raises(MendeleyException) as ex_info:
         session.profiles.get('00000000-0000-0001-0000-000000000002')
 

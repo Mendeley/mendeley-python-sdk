@@ -1,7 +1,7 @@
 from requests_oauthlib import OAuth2Session
 
 from mendeley.exception import MendeleyException
-from mendeley.profiles import Profiles
+from mendeley.resources import Groups, Profiles
 
 
 class MendeleySession(OAuth2Session):
@@ -9,6 +9,9 @@ class MendeleySession(OAuth2Session):
         super(MendeleySession, self).__init__(client_id=mendeley.client_id,
                                               token=self.__token_dict(access_token, expires_in, refresh_token))
         self.mendeley = mendeley
+
+        self.profiles = Profiles(self)
+        self.groups = Groups(self)
 
     @staticmethod
     def __token_dict(access_token, expires_in, refresh_token):
@@ -18,10 +21,6 @@ class MendeleySession(OAuth2Session):
         if refresh_token:
             token['refresh_token'] = refresh_token
         return token
-
-    @property
-    def profiles(self):
-        return Profiles(self)
 
     def request(self, method, url, data=None, headers=None, **kwargs):
         full_url = self.mendeley.host + url

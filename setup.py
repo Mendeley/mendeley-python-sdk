@@ -17,6 +17,7 @@ setup(
     ],
 
     tests_require=[
+        'mock',
         'pytest',
         'vcrpy'
     ]
