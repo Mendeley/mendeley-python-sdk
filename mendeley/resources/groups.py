@@ -1,20 +1,18 @@
 import arrow
 
 from mendeley.models import Photo
+from mendeley.resources.base import ListResource
 from mendeley.resources.group_members import GroupMembers
 from mendeley.resources.profiles import LazyProfile
 from mendeley.response import ResponseObject
 
 
-class Groups(object):
+class Groups(ListResource):
     def __init__(self, session):
-        self.session = session
-
-    def list(self):
-        url = '/groups'
-        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-group.1+json'})
-
-        return [Group(self.session, g) for g in rsp.json()]
+        super(Groups, self).__init__(session,
+                                     '/groups',
+                                     'application/vnd.mendeley-group.1+json',
+                                     Group)
 
     def get(self, id):
         url = '/groups/%s' % id

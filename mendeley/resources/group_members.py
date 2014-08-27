@@ -1,32 +1,16 @@
 import arrow
-from mendeley.pagination import Page
+
+from mendeley.resources.base import ListResource
 
 from mendeley.resources.profiles import LazyProfile
 
 
-class GroupMembers(object):
+class GroupMembers(ListResource):
     def __init__(self, session, id):
-        self.session = session
-        self.id = id
-
-    def list(self, page_size=None):
-        url = '/groups/%s/members' % self.id
-
-        if page_size:
-            url += '?limit=%s' % page_size
-
-        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-membership.1+json'})
-
-        return Page(self.session, rsp, GroupMember)
-
-    def iter(self, page_size=None):
-        page = self.list(page_size)
-
-        while page:
-            for item in page.items:
-                yield item
-
-            page = page.next_page
+        super(GroupMembers, self).__init__(session,
+                                           '/groups/%s/members' % id,
+                                           'application/vnd.mendeley-membership.1+json',
+                                           GroupMember)
 
 
 class GroupMember(LazyProfile):
