@@ -13,6 +13,7 @@ setup(
     install_requires=[
         'arrow',
         'future',
+        'memoized-property',
         'requests-oauthlib',
     ],
 

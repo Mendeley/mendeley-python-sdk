@@ -1,3 +1,6 @@
+from memoized_property import memoized_property
+
+
 class ResponseObject(object):
     def __init__(self, session, json):
         self.session = session
@@ -21,14 +24,10 @@ class LazyLoader(object):
     def __init__(self, session, id):
         self.session = session
         self.id = id
-        self.loaded_json = None
 
-    @property
+    @memoized_property
     def _json(self):
-        if not self.loaded_json:
-            self.loaded_json = self._load()
-
-        return self.loaded_json
+        return self._load()
 
     def _load(self):
         raise NotImplementedError
