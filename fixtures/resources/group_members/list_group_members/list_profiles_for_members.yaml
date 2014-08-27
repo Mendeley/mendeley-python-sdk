@@ -23,9 +23,9 @@ interactions:
       content-encoding: [gzip]
       content-length: ['435']
       content-type: [application/vnd.mendeley-group.1+json]
-      date: ['Wed, 27 Aug 2014 13:12:02 GMT']
+      date: ['Wed, 27 Aug 2014 15:42:18 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [4xmY_jLa1j0]
+      x-mendeley-trace-id: [RVaVDingOmM]
     status: {code: 200, message: OK}
 - request:
     body: null
@@ -46,9 +46,9 @@ interactions:
       content-encoding: [gzip]
       content-length: ['154']
       content-type: [application/vnd.mendeley-membership.1+json]
-      date: ['Wed, 27 Aug 2014 13:12:02 GMT']
+      date: ['Wed, 27 Aug 2014 15:42:18 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [g55W5TLSK8E]
+      x-mendeley-trace-id: [ZooeZp7GQuI]
     status: {code: 200, message: OK}
 - request:
     body: null
@@ -74,9 +74,9 @@ interactions:
       content-encoding: [gzip]
       content-length: ['449']
       content-type: [application/vnd.mendeley-profiles.1+json]
-      date: ['Wed, 27 Aug 2014 13:12:02 GMT']
+      date: ['Wed, 27 Aug 2014 15:42:18 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [KGe7sewe7hk]
+      x-mendeley-trace-id: [KZ5qEwVfkwo]
     status: {code: 200, message: OK}
 - request:
     body: null
@@ -100,8 +100,7 @@ interactions:
       content-encoding: [gzip]
       content-length: ['313']
       content-type: [application/vnd.mendeley-profiles.1+json]
-      date: ['Wed, 27 Aug 2014 13:12:02 GMT']
+      date: ['Wed, 27 Aug 2014 15:42:18 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [gn3sfLnUg84]
+      x-mendeley-trace-id: [-KHaIxgfnV0]
     status: {code: 200, message: OK}
-version: 1

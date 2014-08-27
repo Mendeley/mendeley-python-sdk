@@ -1,3 +1,4 @@
+from future.moves.urllib.parse import urljoin
 from requests_oauthlib import OAuth2Session
 
 from mendeley.exception import MendeleyException
@@ -23,7 +24,7 @@ class MendeleySession(OAuth2Session):
         return token
 
     def request(self, method, url, data=None, headers=None, **kwargs):
-        full_url = self.mendeley.host + url
+        full_url = urljoin(self.mendeley.host, url)
         rsp = super(MendeleySession, self).request(method, full_url, data, headers, **kwargs)
 
         if rsp.ok:

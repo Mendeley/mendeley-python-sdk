@@ -23,9 +23,9 @@ interactions:
       content-encoding: [gzip]
       content-length: ['435']
       content-type: [application/vnd.mendeley-group.1+json]
-      date: ['Wed, 27 Aug 2014 13:23:01 GMT']
+      date: ['Wed, 27 Aug 2014 15:35:08 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [PNlJaitMDk0]
+      x-mendeley-trace-id: [rcREXrE6B4Q]
     status: {code: 200, message: OK}
 - request:
     body: null
@@ -46,8 +46,8 @@ interactions:
       content-encoding: [gzip]
       content-length: ['154']
       content-type: [application/vnd.mendeley-membership.1+json]
-      date: ['Wed, 27 Aug 2014 13:23:01 GMT']
+      date: ['Wed, 27 Aug 2014 15:35:08 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [yB5ofIYR4rg]
+      x-mendeley-trace-id: [7aQNlfpyidg]
     status: {code: 200, message: OK}
 version: 1
