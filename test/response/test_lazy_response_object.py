@@ -1,3 +1,4 @@
+import pytest
 from test.response import DummyLazyResponseObject
 
 
@@ -32,6 +33,15 @@ def test_should_not_call_loader_multiple_times():
     assert response.bar == 'bar-value'
 
     assert response.load_count == 1
+
+
+def test_should_not_call_loader_on_unknown_property():
+    response = DummyLazyResponseObject(None, 'id123')
+
+    with pytest.raises(AttributeError):
+        _ = response.baz
+
+    assert response.load_count == 0
 
 
 def test_should_return_valid_dir():
