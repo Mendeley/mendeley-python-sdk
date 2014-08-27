@@ -19,6 +19,15 @@ class GroupMembers(object):
 
         return Page(self.session, rsp, GroupMember)
 
+    def iter(self, page_size=None):
+        page = self.list(page_size)
+
+        while page:
+            for item in page.items:
+                yield item
+
+            page = page.next_page
+
 
 class GroupMember(LazyProfile):
     def __init__(self, session, member_json):
