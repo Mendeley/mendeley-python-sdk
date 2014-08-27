@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-group.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/groups/bcb12b97-db8a-3c1d-b696-d99ed4371175
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALWSwW7cIBRFf8ViPdhg7LHxtpXaqqpUKVm1qkYYnj00NlDAsdIo/15ME6X9gGxY
+        8N6954LuIzJiBTSgrw/xak1x8/5zcQshFh+83Rw6IQVBeu2itiZt5dF8jIrJ+iJeofgCRsECD8Wr
+        wyHTQWq3aAMBDd/RO7u6LYIvhFHFJ5O0qzgsixupwUhIio/bKoyOOgl+nFAUcxa6bJrGQd0d9+5q
+        o0XDI7Jez9qIJYW6xuiGqgqsFKv4bY3YQyntWq3PyXAWhUqQqibprMnEJ8WImAipuSQtl03bslao
+        mlHFFFGkbUXpzHxwY4osvHozDn4hlD9dBv7ahIc3xGX/DHs6oR1GJ+Z/cAruyxfCgUuJ9PH4UY60
+        HnmH1dgLzCRVeDzzM1acg2pYR2nXpl3pQUQ4BDWhDSY9rrtbwoeGDA0tCSHf0pLdjTbzxXk76QUu
+        2Z9zll7QSSwpnzBTQPDYMor785js+34SvEnS1Ki717D7vv8XtsrVDFXTdZxRWv1tD07dwTE1F+dx
+        lWyElBDCZYF7OBrktnHRMt17uxx/kQKCR09/AKfPEFwdAwAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['435']
+      content-type: [application/vnd.mendeley-group.1+json]
+      date: ['Wed, 27 Aug 2014 11:22:38 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [BsOV-L-V1Qg]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-profiles.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/profiles/9930207c-c19f-3de0-b531-86bd4388fa94
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAJ2OTVODMBRF/4qTrQ2Ej1Zg5dJxXLpyw7ySR0klCSZBBjv97z5onerW7X33nndO
+        TElWsbLMRCoeGt4kZcsziYLvt1nCi91e5llRtFDmbMNa5XyoDWikzTMaM1PYw6/MdsZbQ6lUfuhh
+        /lO+u51Rg+op1xBCFDqrKb4/LqVHjUZij3PUWL3glXmnYhfCUMXxNE3R70I8ONuqHn28jvnx8iGP
+        aQkNSNSqqX2AMHqCvKi9A6fgKtiogeikd2JXzadRg1FBoWfnDRs6G+xyJYCR4OTNw2cRaPiyBia/
+        evxI8XXkY5iAOOYQDeZA3/zHCA7/sa8vyxVDSp/oVKuQTFroPW7Y6NHVYR4WtrFOQ0/fGocQlhJL
+        RZJzUfB095psqzSv8m0khHhj52+3G5ym+gEAAA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['313']
+      content-type: [application/vnd.mendeley-profiles.1+json]
+      date: ['Wed, 27 Aug 2014 11:22:38 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [tnuJzcLgOIw]
+    status: {code: 200, message: OK}
+version: 1
