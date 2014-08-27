@@ -1,8 +1,9 @@
 import arrow
+
 from mendeley.models import Photo
 from mendeley.resources.group_members import GroupMembers
-from mendeley.resources.profiles import Profile
-from mendeley.response import ResponseObject, LazyResponseObject
+from mendeley.resources.profiles import LazyProfile
+from mendeley.response import ResponseObject
 
 
 class Groups(object):
@@ -25,24 +26,22 @@ class Groups(object):
 class Group(ResponseObject):
     @property
     def created(self):
-        if 'created' in self.json:
-            return arrow.get(self.json['created'])
+        if 'created' in self._json:
+            return arrow.get(self._json['created'])
         else:
             return None
 
     @property
     def photo(self):
-        if 'photo' in self.json:
-            return Photo(self.session, self.json['photo'])
+        if 'photo' in self._json:
+            return Photo(self.session, self._json['photo'])
         else:
             return None
 
     @property
     def owner(self):
-        if 'owning_profile_id' in self.json:
-            profile_id = self.json['owning_profile_id']
-            loader = lambda: self.session.profiles.get(profile_id)
-            return LazyResponseObject(profile_id, loader, Profile)
+        if 'owning_profile_id' in self._json:
+            return LazyProfile(self.session, self._json['owning_profile_id'])
         else:
             return None
 

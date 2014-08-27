@@ -1,8 +1,6 @@
 import arrow
 
-from mendeley.resources.profiles import Profile
-
-from mendeley.response import ResponseObject, LazyResponseObject
+from mendeley.resources.profiles import LazyProfile
 
 
 class GroupMembers(object):
@@ -17,30 +15,19 @@ class GroupMembers(object):
         return [GroupMember(self.session, m) for m in rsp.json()]
 
 
-class GroupMember(ResponseObject):
-    def __init__(self, session, json):
-        super(GroupMember, self).__init__(session, json)
+class GroupMember(LazyProfile):
+    def __init__(self, session, member_json):
+        super(GroupMember, self).__init__(session, member_json.get('profile_id'))
 
-        loader = lambda: session.profiles.get(self.id)
-        self.__profile = LazyResponseObject(self.id, loader, Profile)
-
-    @property
-    def id(self):
-        return self.json.get('profile_id')
+        self.member_json = member_json
 
     @property
     def joined(self):
-        if 'joined' in self.json:
-            return arrow.get(self.json['joined'])
+        if 'joined' in self.member_json:
+            return arrow.get(self.member_json['joined'])
         else:
             return None
 
-    def __getattr__(self, name):
-        if name in dir(self.__profile):
-            return getattr(self.__profile, name)
-        else:
-            return super(GroupMember, self).__getattr__(name)
-
-    @classmethod
-    def fields(cls):
-        return ['role']
+    @property
+    def role(self):
+        return self.member_json.get('role')

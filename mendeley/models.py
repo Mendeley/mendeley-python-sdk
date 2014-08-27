@@ -24,15 +24,15 @@ class Location(ResponseObject):
 class Education(ResponseObject):
     @property
     def start_date(self):
-        if 'start_date' in self.json:
-            return arrow.get(self.json['start_date'])
+        if 'start_date' in self._json:
+            return arrow.get(self._json['start_date'])
         else:
             return
 
     @property
     def end_date(self):
-        if 'end_date' in self.json:
-            return arrow.get(self.json['end_date'])
+        if 'end_date' in self._json:
+            return arrow.get(self._json['end_date'])
         else:
             return None
 
@@ -44,15 +44,15 @@ class Education(ResponseObject):
 class Employment(ResponseObject):
     @property
     def start_date(self):
-        if 'start_date' in self.json:
-            return arrow.get(self.json['start_date'])
+        if 'start_date' in self._json:
+            return arrow.get(self._json['start_date'])
         else:
             return
 
     @property
     def end_date(self):
-        if 'end_date' in self.json:
-            return arrow.get(self.json['end_date'])
+        if 'end_date' in self._json:
+            return arrow.get(self._json['end_date'])
         else:
             return None
 

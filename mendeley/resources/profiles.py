@@ -1,6 +1,6 @@
 import arrow
 from mendeley.models import Discipline, Photo, Location, Education, Employment
-from mendeley.response import ResponseObject
+from mendeley.response import ResponseObject, LazyLoader
 
 
 class Profiles(object):
@@ -21,43 +21,43 @@ class Profiles(object):
 class Profile(ResponseObject):
     @property
     def created(self):
-        if 'created' in self.json:
-            return arrow.get(self.json['created'])
+        if 'created' in self._json:
+            return arrow.get(self._json['created'])
         else:
             return None
 
     @property
     def discipline(self):
-        if 'discipline' in self.json:
-            return Discipline(self.session, self.json['discipline'])
+        if 'discipline' in self._json:
+            return Discipline(self.session, self._json['discipline'])
         else:
             return None
 
     @property
     def photo(self):
-        if 'photo' in self.json:
-            return Photo(self.session, self.json['photo'])
+        if 'photo' in self._json:
+            return Photo(self.session, self._json['photo'])
         else:
             return None
 
     @property
     def location(self):
-        if 'location' in self.json:
-            return Location(self.session, self.json['location'])
+        if 'location' in self._json:
+            return Location(self.session, self._json['location'])
         else:
             return None
 
     @property
     def education(self):
-        if 'education' in self.json:
-            return [Education(self.session, e) for e in self.json['education']]
+        if 'education' in self._json:
+            return [Education(self.session, e) for e in self._json['education']]
         else:
             return None
 
     @property
     def employment(self):
-        if 'employment' in self.json:
-            return [Employment(self.session, e) for e in self.json['employment']]
+        if 'employment' in self._json:
+            return [Employment(self.session, e) for e in self._json['employment']]
         else:
             return None
 
@@ -65,3 +65,14 @@ class Profile(ResponseObject):
     def fields(cls):
         return ['id', 'first_name', 'last_name', 'display_name', 'email', 'link', 'research_interests',
                 'academic_status', 'verified', 'user_type']
+
+
+class LazyProfile(LazyLoader, Profile):
+    def __init__(self, session, id):
+        super(LazyProfile, self).__init__(session, id)
+
+    def _load(self):
+        url = '/profiles/%s' % self.id
+        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-profiles.1+json'})
+
+        return rsp.json()

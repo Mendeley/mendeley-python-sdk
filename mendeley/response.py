@@ -1,11 +1,11 @@
 class ResponseObject(object):
     def __init__(self, session, json):
         self.session = session
-        self.json = json
+        self._json = json
 
     def __getattr__(self, name):
         if name in self.fields():
-            return self.json.get(name)
+            return self._json.get(name)
         else:
             raise AttributeError("'%s' object has no attribute '%s'" % (self.__class__.__name__, name))
 
@@ -17,19 +17,18 @@ class ResponseObject(object):
         return sorted(d)
 
 
-class LazyResponseObject(object):
-    def __init__(self, id, loader, response_type):
+class LazyLoader(object):
+    def __init__(self, session, id):
+        self.session = session
         self.id = id
-        self.loader = loader
-        self.response_type = response_type
+        self.loaded_json = None
 
-        self.delegate = None
+    @property
+    def _json(self):
+        if not self.loaded_json:
+            self.loaded_json = self._load()
 
-    def __getattr__(self, name):
-        if not self.delegate:
-            self.delegate = self.loader()
+        return self.loaded_json
 
-        return getattr(self.delegate, name)
-
-    def __dir__(self):
-        return sorted(set(self.response_type.__dir__() + ['id']))
+    def _load(self):
+        raise NotImplementedError
