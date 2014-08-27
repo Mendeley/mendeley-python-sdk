@@ -1,5 +1,7 @@
 import arrow
 
+from mendeley.response import ResponseObject
+
 
 class Profiles(object):
     def __init__(self, session):
@@ -17,21 +19,6 @@ class Profiles(object):
             return Profile(self.session, rsp.json())
         else:
             return None
-
-
-class ResponseObject(object):
-    def __init__(self, session, json):
-        self.session = session
-        self.json = json
-
-    def __getattr__(self, name):
-        if name in self.fields():
-            return self.json.get(name)
-        else:
-            raise AttributeError("'%s' object has no attribute '%s'" % (self.__class__.__name__, name))
-
-    def __dir__(self):
-        return sorted(set(dir(type(self)) + self.fields()))
 
 
 class Profile(ResponseObject):
