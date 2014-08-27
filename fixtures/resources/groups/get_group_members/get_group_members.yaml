@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-group.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/groups/bcb12b97-db8a-3c1d-b696-d99ed4371175
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALWSwW7cIBRFf8ViPdhg7LHxtpXaqqpUKVm1qkYYnj00NlDAsdIo/15ME6X9gGxY
+        8N6954LuIzJiBTSgrw/xak1x8/5zcQshFh+83Rw6IQVBeu2itiZt5dF8jIrJ+iJeofgCRsECD8Wr
+        wyHTQWq3aAMBDd/RO7u6LYIvhFHFJ5O0qzgsixupwUhIio/bKoyOOgl+nFAUcxa6bJrGQd0d9+5q
+        o0XDI7Jez9qIJYW6xuiGqgqsFKv4bY3YQyntWq3PyXAWhUqQqibprMnEJ8WImAipuSQtl03bslao
+        mlHFFFGkbUXpzHxwY4osvHozDn4hlD9dBv7ahIc3xGX/DHs6oR1GJ+Z/cAruyxfCgUuJ9PH4UY60
+        HnmH1dgLzCRVeDzzM1acg2pYR2nXpl3pQUQ4BDWhDSY9rrtbwoeGDA0tCSHf0pLdjTbzxXk76QUu
+        2Z9zll7QSSwpnzBTQPDYMor785js+34SvEnS1Ki717D7vv8XtsrVDFXTdZxRWv1tD07dwTE1F+dx
+        lWyElBDCZYF7OBrktnHRMt17uxx/kQKCR09/AKfPEFwdAwAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['435']
+      content-type: [application/vnd.mendeley-group.1+json]
+      date: ['Wed, 27 Aug 2014 13:23:01 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [PNlJaitMDk0]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-membership.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/groups/bcb12b97-db8a-3c1d-b696-d99ed4371175/members
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAH3NsQ6DIBAA0H9h9prjDgT8jk5tmkbgSGxUjEuHpv9eXB26v+TdP2rba5lmeU5Z
+        DYrF6dILg1A0wIUQRu8Y8tiTtSbZxF516lWnVQ5PqA2gB3JXDIPRA/EFEW/N7HWWJhZZouzq252m
+        EBgJXYKkQwHOghAta/B9zIa9L2MwfyZs2Wmq7/WIHj8iKgi+1AAAAA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['154']
+      content-type: [application/vnd.mendeley-membership.1+json]
+      date: ['Wed, 27 Aug 2014 13:23:01 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [yB5ofIYR4rg]
+    status: {code: 200, message: OK}
+version: 1
