@@ -38,9 +38,6 @@ def test_should_return_valid_dir():
     response = DummyLazyResponseObject(None, 'id123', DummyResponseObject)
 
     filtered_dir = [d for d in dir(response) if not d.startswith('_')]
-
-    print filtered_dir
-
     assert filtered_dir == ['bar', 'foo', 'load_count']
 
     assert response.load_count == 0
