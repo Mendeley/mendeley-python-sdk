@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/catalog/5cd8328e-febe-3299-8e26-cf6ab2c07f0f?view=client
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAJ1W7W7bNhR9FUJAsASwFNlOEyf/2qJbB6TrgBXbj2EoKIqy2FKkxo94bpCn2aPs
+        xXYuJdty6gLD8iOGL3m/zj3n0o+ZqrO77IWoV8vFSuaNrGS+XNze5iu5uM5Fc82rhShvmrLJZllQ
+        QUtcf91ys5aeKcOCk5I52TtbRxHUg4SFq+Bhg0GyJhqYreGa1Th1XoUt+XHWOL7upAmyZi+D5iYo
+        wRrrpA8M32oveC8p57anlJ9sdAgCA4+htc5nd78/Zo1yPnw0vKMr91Eobjh7bclP88PJD8r987fN
+        nmbPPF46xWt4/Mo1ClGGP/O7t730X7u9405IbZ9d/sAr7qTW6muHN53SyrJ3xTOXVy4i59Mfs2wr
+        ucvuFmV5M8s8WhV0/PO9/YW9/+kNvFRNBTZKUuOPWW0VzudlMV/ezC9HbIreGlmU+LstV+TjvaFb
+        t8vF9aJcJku1s+Sjqe8SAeY3q5vV7RVZvLB9RJZskftFUeZX88XV7bwsrxD0aYbGtPzIQ+CilfAM
+        Lko0pcxneLQh9HeXl5vNpsBka6nlthC2u8RQ0Z9oL8VAnJxYk09Zkw+syQfW5AfW5HvW5AfC5Hwk
+        TD4QJp8ShlcewURAPd+fIl/LPaukNKy3PkTNiYDBwsSEU4iJy4jKQitZxxXSGW5AZNswKazf+iC7
+        PauVWc9YFUO6veFgdmCCGwpWK+9iT8Er5IwdN2huyIajEF1FYUknlMWjGus0SeMBDak1XSzYW+kQ
+        F5oiVVCOdttbfHrl8ZUHNFOpgM8dNpyqYiPMySMlJV0Ka4JTKJZuoJukXN9LoXBzo0ILVQqkXVtH
+        Ftw4Jevzxsk/ozRiO8Qg4wUD/KPgh6QnVb/Lyb2XXaU5KizYB9wGGvUW8Hnkd0heMwtIaUmgUF2n
+        6F4ijARAk7Wxn3oKjUCvHP8CpcHt2UYp2G+SRQ+fPlZaeVAX8XHWDYBRBogLuWzlpXtIVk+0sFXg
+        tOaoqePOJ+iRuzLoVNWR6z2aL8r/AiixIc0l1YSCowPxPoGCQhNU/g7cwFoxQ6kDA/2MNdo64Fsp
+        q+16OwNCfyH54XyYySTheHJBWeblHsihfBiSalKd4xom8juFQs4Td6xmvbYYd8Fe+gMTv8h6hgp7
+        klJCjZo4in3kDUI0DUaJkUYolabEdSL+SNeetsWOyeNgvwblm3B2qJ20QfCf7fwnY5gK7GLgX4dF
+        QEX6Xolo477EpM+NTPEk2CY+D/Fo9CdGctR4nk9vYAVUytVpajvCGGvyRm+xQtBZ14E3eU72pOsD
+        gC2HAFir1q10xxSsgP83KbjLPuyftTQSZAHT2IMUAc9n2i0d71sgSFtvHwjw17ZLrtRQSjJuGSKV
+        xuMb1y0hotxhufAqmpofABvrnSJSsPfDiBMduEuU1U2uDJ6IHmEqPdlHFAQhpdsTYpTHIdw7TNpi
+        K8wmaPnWbmgz4L87vYXO337H8MQh5kXa86cGeZ4vy2J5drEXGf0IIfNiWVyTOe2L4YgEkI7KYnWW
+        tJXaccojIBbIEfkL9qMZ+6eFbhMe1MOmlbojKkgwT4QkwulKh8J4EG1KfFh7ncTmEOg60pEf71BF
+        Q4WDjAUlQH6+lUQlpEHbKAmZTy420hGGFWm8PmpCNa7Xwwv0zScHSuxsICKCze4zybtVTTjI+jlR
+        9kv0lIqp+rWTeOa3/+tdmTJl+lD4Inv6F1KmCgfzCgAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['1287']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Fri, 29 Aug 2014 11:57:54 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [ncBrh_VH0qs]
+    status: {code: 200, message: OK}
+version: 1

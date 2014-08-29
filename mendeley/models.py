@@ -59,3 +59,9 @@ class Employment(ResponseObject):
     @classmethod
     def fields(cls):
         return ['institution', 'position', 'website', 'classes']
+
+
+class Person(ResponseObject):
+    @classmethod
+    def fields(cls):
+        return ['first_name', 'last_name']

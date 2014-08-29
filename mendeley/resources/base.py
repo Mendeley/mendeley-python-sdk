@@ -11,7 +11,8 @@ class ListResource(object):
         self.obj_type = obj_type
 
     def list(self, page_size=None):
-        rsp = self.session.get(self._add_page_size(self.base_url, page_size), headers={'Accept': self.content_type})
+        rsp = self.session.get(add_query_param(self.base_url, 'limit', page_size),
+                               headers={'Accept': self.content_type})
         return Page(self.session, rsp, self.obj_type)
 
     def iter(self, page_size=None):
@@ -23,15 +24,15 @@ class ListResource(object):
 
             page = page.next_page
 
-    @staticmethod
-    def _add_page_size(url, page_size):
-        if not page_size:
-            return url
 
-        scheme, netloc, path, query_string, fragment = urlsplit(url)
-        query_params = parse_qs(query_string)
+def add_query_param(url, name, value):
+    if not value:
+        return url
 
-        query_params['limit'] = [page_size]
-        new_query_string = urlencode(query_params, doseq=True)
+    scheme, netloc, path, query_string, fragment = urlsplit(url)
+    query_params = parse_qs(query_string)
 
-        return urlunsplit((scheme, netloc, path, new_query_string, fragment))
+    query_params[name] = [value]
+    new_query_string = urlencode(query_params, doseq=True)
+
+    return urlunsplit((scheme, netloc, path, new_query_string, fragment))

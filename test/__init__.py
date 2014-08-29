@@ -2,7 +2,8 @@ import vcr
 
 import yaml
 
-from mendeley import Mendeley, MendeleySession
+from mendeley import Mendeley
+from mendeley.session import MendeleySession
 
 
 def load_config_from_file(filename):

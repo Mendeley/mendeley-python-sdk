@@ -1,4 +1,6 @@
-from mendeley.auth import *
+from mendeley.auth import MendeleyClientCredentialsAuthenticator, \
+    MendeleyAuthorizationCodeAuthenticator, \
+    MendeleyImplicitGrantAuthenticator
 
 
 class Mendeley(object):
