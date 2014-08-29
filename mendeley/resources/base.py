@@ -1,4 +1,5 @@
 from future.moves.urllib.parse import urlsplit, parse_qs, urlencode, urlunsplit
+from future.utils import iteritems
 
 from mendeley.pagination import Page
 
@@ -11,8 +12,8 @@ class ListResource(object):
         self.obj_type = obj_type
 
     def list(self, page_size=None):
-        rsp = self.session.get(add_query_param(self.base_url, 'limit', page_size),
-                               headers={'Accept': self.content_type})
+        url = add_query_params(self.base_url, {'limit': page_size})
+        rsp = self.session.get(url, headers={'Accept': self.content_type})
         return Page(self.session, rsp, self.obj_type)
 
     def iter(self, page_size=None):
@@ -25,14 +26,14 @@ class ListResource(object):
             page = page.next_page
 
 
-def add_query_param(url, name, value):
-    if not value:
-        return url
-
+def add_query_params(url, params):
     scheme, netloc, path, query_string, fragment = urlsplit(url)
     query_params = parse_qs(query_string)
 
-    query_params[name] = [value]
+    for name, value in iteritems(params):
+        if value:
+            query_params[name] = [value]
+
     new_query_string = urlencode(query_params, doseq=True)
 
     return urlunsplit((scheme, netloc, path, new_query_string, fragment))

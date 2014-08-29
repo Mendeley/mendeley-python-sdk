@@ -1,7 +1,7 @@
 import arrow
 import pytest
 
-from mendeley.exception import MendeleyException
+from mendeley.exception import MendeleyApiException
 from test import get_user_session, cassette, get_client_credentials_session
 
 
@@ -57,7 +57,7 @@ def test_raise_exception_if_client_credentials():
     session = get_client_credentials_session()
 
     with cassette('fixtures/resources/profiles/get_my_profile/client_credentials.yaml'), \
-            pytest.raises(MendeleyException) as ex_info:
+            pytest.raises(MendeleyApiException) as ex_info:
         _ = session.profiles.me
 
     ex = ex_info.value

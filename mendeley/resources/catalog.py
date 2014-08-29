@@ -1,5 +1,8 @@
+from future.utils import iteritems
+
+from mendeley.exception import MendeleyException
 from mendeley.models import Person
-from mendeley.resources.base import add_query_param
+from mendeley.resources.base import add_query_params
 from mendeley.response import ResponseObject
 
 
@@ -8,10 +11,23 @@ class Catalog(object):
         self.session = session
 
     def get(self, id, view=None):
-        url = add_query_param('/catalog/%s' % id, 'view', view)
+        url = add_query_params('/catalog/%s' % id, {'view': view})
         rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-document.1+json'})
 
         return self.__view_type(view)(self.session, rsp.json())
+
+    def by_identifier(self, arxiv=None, doi=None, isbn=None, issn=None, pmid=None, scopus=None, filehash=None,
+                      view=None):
+        (name, value) = self.__select_identifier(arxiv=arxiv, doi=doi, isbn=isbn, issn=issn, pmid=pmid, scopus=scopus,
+                                                 filehash=filehash)
+
+        url = add_query_params('/catalog', {name: value, 'view': view})
+        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-document.1+json'})
+
+        if len(rsp.json()) == 0:
+            raise MendeleyException('Catalog document not found')
+
+        return self.__view_type(view)(self.session, rsp.json()[0])
 
     @staticmethod
     def __view_type(view):
@@ -22,6 +38,14 @@ class Catalog(object):
             'all': CatalogAllDocument,
             'core': CatalogCoreDocument
         }.get(view, CatalogCoreDocument)
+
+    @staticmethod
+    def __select_identifier(**kwargs):
+        identifiers = [(k, v) for k, v in iteritems(kwargs) if v]
+        if (len(identifiers)) != 1:
+            raise MendeleyException('Must specify exactly one identifier')
+
+        return identifiers[0]
 
 
 class CatalogCoreDocument(ResponseObject):
@@ -86,6 +110,6 @@ class CatalogAllDocument(CatalogBibView, CatalogClientView, CatalogStatsView, Ca
     @classmethod
     def fields(cls):
         return CatalogCoreDocument.fields() + \
-            CatalogBibView.fields() + \
-            CatalogClientView.fields() + \
-            CatalogStatsView.fields()
+               CatalogBibView.fields() + \
+               CatalogClientView.fields() + \
+               CatalogStatsView.fields()

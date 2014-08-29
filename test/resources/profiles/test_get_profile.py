@@ -1,7 +1,7 @@
 import arrow
 import pytest
 
-from mendeley.exception import MendeleyException
+from mendeley.exception import MendeleyApiException
 from test import get_user_session, cassette
 
 
@@ -39,7 +39,7 @@ def test_should_raise_if_profile_not_found():
     session = get_user_session()
 
     with cassette('fixtures/resources/profiles/get_profile/profile_not_found.yaml'), \
-            pytest.raises(MendeleyException) as ex_info:
+            pytest.raises(MendeleyApiException) as ex_info:
         session.profiles.get('00000000-0000-0001-0000-000000000002')
 
     ex = ex_info.value

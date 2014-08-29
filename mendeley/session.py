@@ -1,7 +1,7 @@
 from future.moves.urllib.parse import urljoin
 from requests_oauthlib import OAuth2Session
 
-from mendeley.exception import MendeleyException
+from mendeley.exception import MendeleyApiException
 from mendeley.resources import Catalog, Groups, Profiles
 
 
@@ -31,4 +31,4 @@ class MendeleySession(OAuth2Session):
         if rsp.ok:
             return rsp
         else:
-            raise MendeleyException(rsp)
+            raise MendeleyApiException(rsp)

@@ -1,4 +1,8 @@
 class MendeleyException(Exception):
+    pass
+
+
+class MendeleyApiException(MendeleyException):
     def __init__(self, rsp):
         self.rsp = rsp
 
