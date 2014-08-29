@@ -2,7 +2,8 @@ import pytest
 
 from mendeley.exception import MendeleyApiException
 from test import get_client_credentials_session, cassette
-from test.resources.catalog import assert_core_view, assert_bib_view, assert_client_view, assert_stats_view
+from test.resources.catalog import assert_core_view, assert_bib_view, assert_client_view, assert_stats_view, \
+    assert_all_view
 
 
 def test_should_get_core_view():
@@ -50,10 +51,7 @@ def test_should_get_all_view_by_id():
     with cassette('fixtures/resources/catalog/get_catalog_by_id/get_all_view.yaml'):
         doc = session.catalog.get('5cd8328e-febe-3299-8e26-cf6ab2c07f0f', view='all')
 
-        assert_core_view(doc)
-        assert_bib_view(doc)
-        assert_client_view(doc)
-        assert_stats_view(doc)
+        assert_all_view(doc)
 
 
 def test_should_throw_on_bad_view():

@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document-lookup.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/metadata?title=Underwater+basket+weaving&authors=Piers+Bursill-Hall
+  response:
+    body: {string: !!python/unicode ''}
+    headers:
+      connection: [keep-alive]
+      content-length: ['0']
+      content-type: [application/json]
+      date: ['Fri, 29 Aug 2014 16:18:23 GMT']
+      x-mendeley-trace-id: [lGXOBP-XCnw]
+    status: {code: 404, message: Not Found}
+version: 1

@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document-lookup.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/metadata?doi=10.1371%2Fjournal.pone.0000908
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAAXBUQqAMAgA0Lv4nWCOlttlwjmNIBhUf9Hde+8F00fPsW9HhwqLdUksjuHNMXEp
+        KM4ZLbI2NlqDAia4bVwOdSb6fnUbbutBAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['84']
+      content-type: [application/vnd.mendeley-document-lookup.1+json]
+      date: ['Fri, 29 Aug 2014 16:14:33 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [_MdwtvwBYBI]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/catalog/5cd8328e-febe-3299-8e26-cf6ab2c07f0f
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAJ1W7W7bNhR9FUJAsASwFNlOEyf/2qJbB6TrgBXbj2EYKIqy2FKkxo+4bpCn2aPs
+        xXYuJduK6wLD8iOOyft57jmXecxUnd1lL0S9Wi5WMm9kJfPl4vY2X8nFdS6aa14tRHnTlE02y4IK
+        WsL8dcvNWnqmDAtOSuZk72wdRVAPEidcBY8zHEjWRINja7hmNW6dV2FLfpw1jq87aYKs2cuguQlK
+        sMY66QPDt9oL3kvKue0p5UcbHYLggMfQWuezu98fs0Y5H/40vCOT+ygUN5y9tuSn+eHmB+X++dtm
+        T7Mjj5dO8Roev3KNQpThR373tpf+a7d33Amp7ZHxB15xJ7VWXzu86ZRWlr0rjlxeuYicT3/Msq3k
+        LrtblOXNLPNoVdD1z/f2F/b+pzfwUjUV2ChJjT9mylcGBvPb5SK/XpRLWHhh+4jLbJH7RVHmV/PF
+        1e28LK/KFW77Ls15frO6Wd1ekb3yfhdijFBbRQdlMV/ezC9HwIveGlmU+LlFoCfUr8wnmLUh9HeX
+        l5vNpsAQa6nlthC2u8T80IpoL8XAkZwIkk8Jkg8EyQeC5AeC5HuC5Adu5HzkRj5wI59yg1cewURA
+        Pd+f4lnLPaukNKy3PkTNiWvB4ogJpxATxojKQitZxxXSGW7AWdswKazf+iC7PYGVWc9YFUOy3nCQ
+        ODDBDQWrlXexp+AVcsaOGzQ3ZMNViK6isCQJyuJRjXWaVPCAhtSaDAv2VjrEhXxIAJSj3fYWn155
+        fOUBzVQq4HOHDaeq2Ahz8khJSYLCmuAUiiULdJNE6nspFCw3KrQQoEDatXV0AotTCj5vnPwrSiO2
+        Qww6vGCAf9T2kPSkwHc5ufeyqzRHhQX7AGugUW8Bn0d+h+Q1s4CU9gEK1XWK7iXCSAA02RD7qafQ
+        CPTK8S8QFdyOlkfBfpMsevj0sdLKt/hLGdx1A2CUATpCLlt56R7SqSda2Cpw2mjU1PPOJ+iRuzLo
+        VNWR6z2aL8r/AiixIc0l1YSCowPxPoKCQhNU/g7cwAYxQ6kDA/2MNdo64Fspq+16OwNCn5H8cD/M
+        ZJJwvLmgLPNyD+RQPg6SalKd48Yl8juFQs4Td6xmvbYYd8Fe+gMTv8h6hgp7klJCjZp4FvuZNwjR
+        NBglRhqhVJoS14n4I1172hY7Jo+D/RqUb8LZoXbSBsF/tvOfjGEqsIuBfx0WARXpeyWijfsSkz43
+        MsWTYJv4NMSj0Z8YybPG83xqgRVQKVenqe0IY6zJG73FCkFnXQfe5DmdJ10fAGw5BMBatW6le07B
+        Cvh/k4K77MP+WUsjQRYwjT1IEfBSpt3S8b4FgrT19oEAf2275EoNpSTjliFSabyzcd0SIsodlguv
+        oqn5AbCx3ikiBXs/jDjRgbtEWd3kyuCJ6BGm0pN9REEQUro9IUZ5HMK9w6QttsJsgpZv7YY2A367
+        01vo/O13DM8iYl6kPX9qkOf5siyWZxd7kdH/G3S8WBbXdJz2xXBFAkhXZbE6S9pK7TjlERAL5Bn5
+        C/ajGfunhW4THtTDppW6IypIME+EJMLpSofCeBBtSnxYe53E5hDoOtKVH22ooqHCQcaCEiA/30qi
+        EtKgbZSEzCcXG+kIw4o0Xh81oRrX6+EF+uaTAyV2NhARwWb3ieTdqiYcZH1MlP0SPaViqn7tJJ75
+        7f96V6ZMmT4Uvsie/gWkqYLr3goAAA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['1276']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Fri, 29 Aug 2014 16:14:33 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [9Ze6WYzcD_0]
+    status: {code: 200, message: OK}
+version: 1

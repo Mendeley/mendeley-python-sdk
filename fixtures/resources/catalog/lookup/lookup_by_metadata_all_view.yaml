@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document-lookup.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/metadata?source=PLoS+ONE&year=2007&title=Changes+in+tree+reproductive+traits+reduce+functional+diversity+in+a+fragmented+Atlantic+forest+landscape
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKtWSk4sSczJT4/PTFGyUjJNTrEwNrJI1U1LTUrVNTaytNS1SDUy001OM0tMMko2
+        ME8zSFPSUSpOzi9KVbKyNKwFAEpnInBAAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['84']
+      content-type: [application/vnd.mendeley-document-lookup.1+json]
+      date: ['Fri, 29 Aug 2014 16:17:15 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [0VdOVQ4xBlA]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/catalog/5cd8328e-febe-3299-8e26-cf6ab2c07f0f?view=all
+  response:
+    body:
+      string: !!binary |
+        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
+        CwaMGi0PAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['1775']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Fri, 29 Aug 2014 16:17:15 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [_MhzPCcp60o]
+    status: {code: 200, message: OK}
+version: 1

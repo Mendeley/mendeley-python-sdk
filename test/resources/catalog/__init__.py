@@ -29,3 +29,10 @@ def assert_stats_view(doc):
     assert doc.reader_count_by_academic_status['Professor'] == 17
     assert doc.reader_count_by_subdiscipline['Biological Sciences']['Genetics'] == 4
     assert doc.reader_count_by_country['United States'] == 6
+
+
+def assert_all_view(doc):
+    assert_core_view(doc)
+    assert_bib_view(doc)
+    assert_client_view(doc)
+    assert_stats_view(doc)

@@ -1,7 +1,8 @@
 import pytest
+
 from mendeley.exception import MendeleyException
 from test import get_client_credentials_session, cassette
-from test.resources.catalog import assert_core_view, assert_bib_view, assert_client_view, assert_stats_view
+from test.resources.catalog import assert_core_view, assert_all_view
 
 
 def test_should_get_by_doi():
@@ -19,10 +20,7 @@ def test_should_get_by_doi_all_view():
     with cassette('fixtures/resources/catalog/get_catalog_by_identifier/get_by_doi_all_view.yaml'):
         doc = session.catalog.by_identifier(doi='10.1371/journal.pone.0000908', view='all')
 
-        assert_core_view(doc)
-        assert_bib_view(doc)
-        assert_client_view(doc)
-        assert_stats_view(doc)
+        assert_all_view(doc)
 
 
 def test_should_get_by_scopus():
@@ -58,7 +56,7 @@ def test_should_raise_if_not_found():
     session = get_client_credentials_session()
 
     with cassette('fixtures/resources/catalog/get_catalog_by_identifier/not_found.yaml'), \
-            pytest.raises(MendeleyException) as ex_info:
+         pytest.raises(MendeleyException) as ex_info:
         _ = session.catalog.by_identifier(doi='dodgy-doi')
 
     ex = ex_info.value

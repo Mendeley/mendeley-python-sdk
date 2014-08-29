@@ -3,7 +3,7 @@ from future.utils import iteritems
 from mendeley.exception import MendeleyException
 from mendeley.models import Person
 from mendeley.resources.base import add_query_params
-from mendeley.response import ResponseObject
+from mendeley.response import ResponseObject, LazyResponseObject
 
 
 class Catalog(object):
@@ -28,6 +28,14 @@ class Catalog(object):
             raise MendeleyException('Catalog document not found')
 
         return self.__view_type(view)(self.session, rsp.json()[0])
+
+    def lookup(self, arxiv=None, doi=None, pmid=None, filehash=None, title=None, authors=None, year=None, source=None,
+               view=None):
+        url = add_query_params('/metadata', {'arxiv': arxiv, 'doi': doi, 'pmid': pmid, 'filehash': filehash,
+                                             'title': title, 'authors': authors, 'year': year, 'source': source})
+        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-document-lookup.1+json'})
+
+        return LookupResponse(self.session, rsp.json(), view, self.__view_type(view))
 
     @staticmethod
     def __view_type(view):
@@ -110,6 +118,19 @@ class CatalogAllDocument(CatalogBibView, CatalogClientView, CatalogStatsView, Ca
     @classmethod
     def fields(cls):
         return CatalogCoreDocument.fields() + \
-               CatalogBibView.fields() + \
-               CatalogClientView.fields() + \
-               CatalogStatsView.fields()
+            CatalogBibView.fields() + \
+            CatalogClientView.fields() + \
+            CatalogStatsView.fields()
+
+
+class LookupResponse(LazyResponseObject):
+    def __init__(self, session, json, view, obj_type):
+        super(LookupResponse, self).__init__(session, json['catalog_id'], obj_type)
+        self.score = json['score']
+        self.view = view
+
+    def _load(self):
+        url = add_query_params('/catalog/%s' % self.id, {'view': self.view})
+        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-document.1+json'})
+
+        return rsp.json()
