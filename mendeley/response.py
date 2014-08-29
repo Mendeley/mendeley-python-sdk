@@ -1,6 +1,3 @@
-from memoized_property import memoized_property
-
-
 class ResponseObject(object):
     def __init__(self, session, json):
         self.session = session
@@ -20,14 +17,27 @@ class ResponseObject(object):
         return sorted(d)
 
 
-class LazyLoader(object):
-    def __init__(self, session, id):
+class LazyResponseObject(object):
+    def __init__(self, session, id, obj_type):
         self.session = session
         self.id = id
+        self._obj_type = obj_type
+        self._json = None
 
-    @memoized_property
-    def _json(self):
-        return self._load()
+    def __getattr__(self, name):
+        return getattr(self._delegate, name)
+
+    @property
+    def _delegate(self):
+        if not self._json:
+            self._json = self._load()
+
+        return self._obj_type(self.session, self._json)
 
     def _load(self):
         raise NotImplementedError
+
+    def __dir__(self):
+        d = set(dir(self.__class__) + self._obj_type.__dir__())
+
+        return sorted(d)

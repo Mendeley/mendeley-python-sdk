@@ -1,4 +1,4 @@
-from mendeley.response import ResponseObject, LazyLoader
+from mendeley.response import ResponseObject, LazyResponseObject
 
 
 class DummyResponseObject(ResponseObject):
@@ -11,7 +11,7 @@ class DummyResponseObject(ResponseObject):
         return ['bar']
 
 
-class DummyLazyResponseObject(LazyLoader, DummyResponseObject):
+class DummyLazyResponseObject(LazyResponseObject):
     load_count = 0
 
     def _load(self):

@@ -1,6 +1,6 @@
 import arrow
 from mendeley.models import Discipline, Photo, Location, Education, Employment
-from mendeley.response import ResponseObject, LazyLoader
+from mendeley.response import ResponseObject, LazyResponseObject
 
 
 class Profiles(object):
@@ -67,9 +67,9 @@ class Profile(ResponseObject):
                 'academic_status', 'verified', 'user_type']
 
 
-class LazyProfile(LazyLoader, Profile):
+class LazyProfile(LazyResponseObject):
     def __init__(self, session, id):
-        super(LazyProfile, self).__init__(session, id)
+        super(LazyProfile, self).__init__(session, id, Profile)
 
     def _load(self):
         url = '/profiles/%s' % self.id
