@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/search/catalog?title=mapreduce&limit=2&author=Jeffrey+Dean
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAJ1WW2/bNhT+K4Re9mIpvimO81Z0Q9EBxYqtAwYUxXAsHVlsKFEjqbha0f++71CS
+        7SQbUOzJkahz+y48+fg10WVyn+xpebtecpHyvqR0s6626Z7uypTKgnPK87zKd8kiCToYxuc/fenY
+        aW4L9uqkQ63eUfcrl33BC0WtooMPjoqgbasq65Qhd+TUF2RYFbbp+kByJgmHTvJ9tr1ryeAF9aG2
+        zif3H78mlXY+/NlSI5/8zFXleMAnhi5vf2Rqk2+fFsnA5JL79XJ5u0g8shVy+v7V6w8I0CW3QVea
+        JS8G9ocWh6t8n+8369vtH/iktFpeLbPVapvfrFb5epVvs/E3T74tkgceTtaV0lhC5mgdpm68RLLX
+        RxkFiGDWhgAKnhwbTQdtdBgStGd0+4ACdQjd/c3N6XTKGm5LNjxkAOTGsUf/RX3DF2DThjoXMU2v
+        8EwjlhHK9CmU80coc2ZDaa9Idc4eHTWNbo+qsagKjsrIk/e20BS4VLrpDKOnMV1kDWFow0uUfH/k
+        lh1O8Rh7UCUFUp6Dz9TvHtgq33GhqwEV0YCq+nZUQKgpzMlY+gGWN49kelYdaaeCnXOzigmVrZRu
+        A7uGS+nuWYBfjP2racanhRoWfBQZ8zRHjPfXI0fhhpqVh5ZeFMwwRDsox2QUmDelCuQfkMCxAktO
+        kDkYiUMOwByBzdT7EWvYAgoJ3J7P5y6RzocBgZIIarcNMAWdZsBwDr8Qzt9cxhH5Cxe9tIrhaEK9
+        ML1Hp4IR+EdVKEw1VNS6ZZ99wDgX9l3fpkFjOD8gpsEED4CgkMoIl9FLDqSNl0dUh73RoTAsZ7qF
+        uiLLC+WLGinNfDQp6gc/tSjoU+Gs9xcG554WqsYsMXR6pSrU7B1PRMIydJwzO/6r104EGfmYAmTS
+        vgVMUilTHwRQQGVP/ixuEaAwatGzEHdx0kj0DG4sWWp4RR8itiM2XmTI5DV4wDzCwdTPeJtEiGYO
+        XoZnv/TuuYcQ8IQK/900xh4xYq2PNfoRtxO0do9oXJiilqvMV7fAlcsawQAF6DCEsflo1+gS23sU
+        8NcknYUbcaw06kdnjLoBLoPg03v08CT+0kY3C7+mR1YHFunPeExy9vyIhsw5w+WPS5rP9jB77KL9
+        N9YeDUNtE2qQHTINGGnI3k7+CmQe1NsfYHvcyAXYGfk7gNLi5Q24EA6LHnoFu9da6eN9p4P4lnBp
+        4DWIEfhgVN1Oko3F6CBai07BoJM4Rys9L+eV0Q/XziQRA0dRlvrYCLg+ZsH1WWI4YzsBbvLlKFxv
+        q3ASaORybnoTNDYAHhsN503MY3VmWFfTVt8sebvf7TZpRVSkm3K7Sfd3xTrNqw3W/e623O+2V1v9
+        3N5lMceLWRf/dzEvnn37G7Wf6fmnb2pu6EThyR5fLa/2+Otr+/v57nr1+t2/LXcvy325RIbd3frl
+        ar9d71e7PIu/+ztZ7d+7my/7eHv3X/uWykeC/2UDWUj0Qp64D1rEe91CxSW8Fawj+bdo9Bgsx53U
+        FRWKxmBCTiEjCLEisA2NGNhHjs//U0W7gPBP/wCq61z6yAkAAA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['1177']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Mon, 01 Sep 2014 14:18:43 GMT']
+      link: ['<https://api.mendeley.com/search/catalog?limit=2&author=Jeffrey%20Dean&reverse=false&title=mapreduce&order=asc&marker=00000000-0000-0002-0000-000000000000>;
+          rel="next"']
+      mendeley-count: ['173631']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [IcfIIwGpheU]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/search/catalog?limit=2&author=Jeffrey%20Dean&reverse=false&title=mapreduce&order=asc&marker=00000000-0000-0002-0000-000000000000
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAO1Uy47bRhD8lQEP8UWUSFEPSrdgDRgIYsCInZNhBM2Zpji78yBmhqvQCwP5jfye
+        v8Q9I+5yd+OLDwYcwAdBUrMf1VXFfn+XSZEds3WBe4HVOm9bscurbS3yui5FzsuG75Fvqi2vskUW
+        ZFBI6a+h/wPFwJFp6NkvzF3+tIPhQVrDWuuYAndCJiCAx+Bj8djH2ms7OAOKAjCEzjqfHd/fZa10
+        PvxlQMeU37BtHY6UomCOvkQw2afFs9y3YK7heeqrDjWcIWSfPiyyEcFlx3VR1IvM03AeM66s1oOR
+        HCJez2zLQofs16vX1EkKNEG2EiO2u0xYSQVlsSzLzXZVVuv9Zrtepu/DOqZ7byihKIqy2NeXSBMj
+        h31dbg/bQ7WrdzWFe524Lstdvd+VNe2SKWluKNSF0B9Xq/P5vNRoBCocl9zqlUNP4Hm3IpovHOf0
+        K59+3tOdJ6rzR1RD44MDHp5IJT0D1jt7cqC1NCemLU1iYAR9GHhvuYSAgkndKyQcAR7EpDKO3seq
+        mH9Cg46e0t+nMhOLENIkqodGIQuWpjbOgmC34CSGMZLtEFR+tk4JRoU3fsn+9EQ38z1y2Y5JDCKg
+        HyYM0rCATiehIJkuwX5uvEUKx+KBWHRqjAjdQGpqZH70ATUj11lNXTkoNbIeHH2jkh/R/2cqcGe9
+        v6yYeyqgx2qgLi4B0cA7adAvWEdjFTWYIqwFqQYXn0Q8nncEMz6Xhmrz+yz+2IORKA03yMj7kkti
+        nw0e741pMBBbN6mdkImwN5OSEUwrp7WnHRH8GBtShyPJ7DDqEimkT2cHP7UhAXlgs0Mmc3ja5xZZ
+        g5T+4IXoi4jeJNpI5FfWnogQe4suje7p/SOvDI7FF25aPRqLEuCUNrG0dEfKkGozjnn8tW3IOAQW
+        /0Y+xIlEy2XMCz8zj9RwJMeNiye2pH0DqKTLvPCZkJPIGKAZAybVolUp4mKHZbon6a2s66ZoYFPn
+        sDlAXlX7Km+4qPN9haLZbA7bhq+/dgGP7G3kKJ4L8ZJav5khWfN7dM7VBPyHPoGRmXcPF/Dbz5J/
+        ICHyO+uSW5NeHz6T8Pg4sf/Tdfp5nH4ep68dp8///PvdztOHL/U4sBiiCQAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['843']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Mon, 01 Sep 2014 14:18:44 GMT']
+      link: ['<https://api.mendeley.com/search/catalog?limit=2&author=Jeffrey%20Dean&title=mapreduce&reverse=false&order=asc&marker=00000000-0000-0004-0000-000000000000>;
+          rel="next"', '<https://api.mendeley.com/search/catalog?limit=2&author=Jeffrey%20Dean&title=mapreduce&reverse=false&order=asc>;
+          rel="first"']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [iE0srr5vR10]
+    status: {code: 200, message: OK}
+version: 1

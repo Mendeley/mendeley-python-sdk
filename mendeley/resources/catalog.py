@@ -51,6 +51,11 @@ class Catalog(object):
     def search(self, query, view=None):
         return CatalogSearch(self.session, query=query, view=view)
 
+    def advanced_search(self, title=None, author=None, source=None, abstract=None, min_year=None, max_year=None,
+                        open_access=None, view=None):
+        return CatalogSearch(self.session, title=title, author=author, source=source, abstract=abstract,
+                             min_year=min_year, max_year=max_year, open_access=open_access, view=view)
+
     @staticmethod
     def __select_identifier(**kwargs):
         identifiers = [(k, v) for k, v in iteritems(kwargs) if v]

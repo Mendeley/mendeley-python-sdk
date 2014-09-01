@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/search/catalog?title=mapreduce&view=all&limit=2&author=Jeffrey+Dean
+  response:
+    body:
+      string: !!binary |
+        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
+        0BQmiv5/RaEkIqn/9ie8zRHFoBIAAA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['1960']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Mon, 01 Sep 2014 14:20:45 GMT']
+      link: ['<https://api.mendeley.com/search/catalog?limit=2&author=Jeffrey%20Dean&reverse=false&title=mapreduce&order=asc&marker=00000000-0000-0002-0000-000000000000&view=all>;
+          rel="next"']
+      mendeley-count: ['173631']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [ubjSvPaq6nk]
+    status: {code: 200, message: OK}
+version: 1
