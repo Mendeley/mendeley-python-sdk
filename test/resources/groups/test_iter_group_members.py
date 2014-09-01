@@ -7,7 +7,7 @@ from test import get_user_session, cassette
 def test_should_iterate_through_group_members():
     session = get_user_session()
 
-    with cassette('fixtures/resources/group_members/iter_group_members/iterate_through_group_members.yaml'):
+    with cassette('fixtures/resources/groups/iter_group_members/iterate_through_group_members.yaml'):
         members = session.groups.get('bcb12b97-db8a-3c1d-b696-d99ed4371175').members.iter(page_size=1)
 
         first_member = next(members)

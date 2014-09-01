@@ -2,7 +2,6 @@ import arrow
 
 from mendeley.models.common import Photo
 from mendeley.models.profiles import LazyProfile
-from mendeley.resources.group_members import GroupMembers
 from mendeley.response import ResponseObject
 
 
@@ -30,9 +29,27 @@ class Group(ResponseObject):
 
     @property
     def members(self):
-        return GroupMembers(self.session, self.id)
+        return self.session.group_members(self.id)
 
     @classmethod
     def fields(cls):
         return ['id', 'name', 'description', 'disciplines', 'tags', 'webpage', 'link', 'access_level',
                 'role']
+
+
+class GroupMember(LazyProfile):
+    def __init__(self, session, member_json):
+        super(GroupMember, self).__init__(session, member_json.get('profile_id'))
+
+        self.member_json = member_json
+
+    @property
+    def joined(self):
+        if 'joined' in self.member_json:
+            return arrow.get(self.member_json['joined'])
+        else:
+            return None
+
+    @property
+    def role(self):
+        return self.member_json.get('role')

@@ -6,7 +6,7 @@ from test import get_user_session, cassette
 def test_should_list_a_groups_members():
     session = get_user_session()
 
-    with cassette('fixtures/resources/group_members/list_group_members/list_group_members.yaml'):
+    with cassette('fixtures/resources/groups/list_group_members/list_group_members.yaml'):
         page = session.groups.get('bcb12b97-db8a-3c1d-b696-d99ed4371175').members.list()
         assert len(page.items) == 2
         assert page.count == 2
@@ -23,7 +23,7 @@ def test_should_list_a_groups_members():
 def test_should_list_profiles_for_members():
     session = get_user_session()
 
-    with cassette('fixtures/resources/group_members/list_group_members/list_profiles_for_members.yaml'):
+    with cassette('fixtures/resources/groups/list_group_members/list_profiles_for_members.yaml'):
         page = session.groups.get('bcb12b97-db8a-3c1d-b696-d99ed4371175').members.list()
         assert len(page.items) == 2
         assert page.count == 2
@@ -38,7 +38,7 @@ def test_should_list_profiles_for_members():
 def test_should_page_through_group_members():
     session = get_user_session()
 
-    with cassette('fixtures/resources/group_members/list_group_members/page_through_group_members.yaml'):
+    with cassette('fixtures/resources/groups/list_group_members/page_through_group_members.yaml'):
         first_page = session.groups.get('bcb12b97-db8a-3c1d-b696-d99ed4371175').members.list(page_size=1)
         assert len(first_page.items) == 1
         assert first_page.count == 2
