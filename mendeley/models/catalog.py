@@ -3,7 +3,9 @@ from mendeley.resources.base import add_query_params
 from mendeley.response import ResponseObject, LazyResponseObject
 
 
-class CatalogCoreDocument(ResponseObject):
+class CatalogDocument(ResponseObject):
+    content_type = 'application/vnd.mendeley-document.1+json'
+
     @property
     def authors(self):
         if 'authors' in self._json:
@@ -43,28 +45,28 @@ class CatalogStatsView(ResponseObject):
                 'reader_count_by_country']
 
 
-class CatalogBibDocument(CatalogBibView, CatalogCoreDocument):
+class CatalogBibDocument(CatalogBibView, CatalogDocument):
     @classmethod
     def fields(cls):
-        return CatalogCoreDocument.fields() + CatalogBibView.fields()
+        return CatalogDocument.fields() + CatalogBibView.fields()
 
 
-class CatalogClientDocument(CatalogClientView, CatalogCoreDocument):
+class CatalogClientDocument(CatalogClientView, CatalogDocument):
     @classmethod
     def fields(cls):
-        return CatalogCoreDocument.fields() + CatalogClientView.fields()
+        return CatalogDocument.fields() + CatalogClientView.fields()
 
 
-class CatalogStatsDocument(CatalogStatsView, CatalogCoreDocument):
+class CatalogStatsDocument(CatalogStatsView, CatalogDocument):
     @classmethod
     def fields(cls):
-        return CatalogCoreDocument.fields() + CatalogStatsView.fields()
+        return CatalogDocument.fields() + CatalogStatsView.fields()
 
 
-class CatalogAllDocument(CatalogBibView, CatalogClientView, CatalogStatsView, CatalogCoreDocument):
+class CatalogAllDocument(CatalogBibView, CatalogClientView, CatalogStatsView, CatalogDocument):
     @classmethod
     def fields(cls):
-        return CatalogCoreDocument.fields() + \
+        return CatalogDocument.fields() + \
             CatalogBibView.fields() + \
             CatalogClientView.fields() + \
             CatalogStatsView.fields()

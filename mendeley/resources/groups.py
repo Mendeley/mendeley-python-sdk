@@ -5,7 +5,6 @@ from mendeley.resources.base import ListResource
 
 class Groups(ListResource):
     _url = '/groups'
-    _content_type = 'application/vnd.mendeley-group.1+json'
     _obj_type = Group
 
     def __init__(self, session):
@@ -13,7 +12,7 @@ class Groups(ListResource):
 
     def get(self, id):
         url = '/groups/%s' % id
-        rsp = self.session.get(url, headers={'Accept': self._content_type})
+        rsp = self.session.get(url, headers={'Accept': Group.content_type})
 
         return Group(self.session, rsp.json())
 
@@ -23,7 +22,6 @@ class Groups(ListResource):
 
 
 class GroupMembers(ListResource):
-    _content_type = 'application/vnd.mendeley-membership.1+json'
     _obj_type = GroupMember
 
     def __init__(self, session, id):

@@ -7,7 +7,7 @@ from mendeley.pagination import Page
 class ListResource(object):
     def list(self, page_size=None):
         url = add_query_params(self._url, {'limit': page_size})
-        rsp = self._session.get(url, headers={'Accept': self._content_type})
+        rsp = self._session.get(url, headers={'Accept': self._obj_type.content_type})
         return Page(self._session, rsp, self._obj_type)
 
     def iter(self, page_size=None):
@@ -25,10 +25,6 @@ class ListResource(object):
 
     @property
     def _url(self):
-        raise NotImplementedError
-
-    @property
-    def _content_type(self):
         raise NotImplementedError
 
     @property

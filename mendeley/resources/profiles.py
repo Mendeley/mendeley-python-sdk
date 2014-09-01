@@ -2,8 +2,6 @@ from mendeley.models.profiles import Profile
 
 
 class Profiles(object):
-    _content_type = 'application/vnd.mendeley-profiles.1+json'
-
     def __init__(self, session):
         self.session = session
 
@@ -13,6 +11,6 @@ class Profiles(object):
 
     def get(self, profile_id):
         url = '/profiles/%s' % profile_id
-        rsp = self.session.get(url, headers={'Accept': self._content_type})
+        rsp = self.session.get(url, headers={'Accept': Profile.content_type})
 
         return Profile(self.session, rsp.json())

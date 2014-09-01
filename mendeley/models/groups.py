@@ -6,6 +6,8 @@ from mendeley.response import ResponseObject
 
 
 class Group(ResponseObject):
+    content_type = 'application/vnd.mendeley-group.1+json'
+
     @property
     def created(self):
         if 'created' in self._json:
@@ -38,6 +40,8 @@ class Group(ResponseObject):
 
 
 class GroupMember(LazyProfile):
+    content_type = 'application/vnd.mendeley-membership.1+json'
+
     def __init__(self, session, member_json):
         super(GroupMember, self).__init__(session, member_json.get('profile_id'))
 

@@ -5,6 +5,8 @@ from mendeley.response import ResponseObject, LazyResponseObject
 
 
 class Profile(ResponseObject):
+    content_type = 'application/vnd.mendeley-profiles.1+json'
+
     @property
     def created(self):
         if 'created' in self._json:
