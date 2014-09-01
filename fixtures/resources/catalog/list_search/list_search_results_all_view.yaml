@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/search/catalog?query=mapreduce&limit=2&view=all
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['2031']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Mon, 01 Sep 2014 13:29:23 GMT']
+      link: ['<https://api.mendeley.com/search/catalog?limit=2&reverse=false&order=asc&marker=00000000-0000-0002-0000-000000000000&query=mapreduce&view=all>;
+          rel="next"']
+      mendeley-count: ['1781']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [LH7Pw1DKEi4]
+    status: {code: 200, message: OK}
+version: 1
