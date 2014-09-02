@@ -4,7 +4,7 @@ interactions:
     headers:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
-      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+      User-Agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-34-generic]
     method: GET
     uri: https://api.mendeley.com:443/catalog?doi=dodgy-doi
   response:

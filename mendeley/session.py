@@ -1,8 +1,11 @@
+import platform
+
 from future.moves.urllib.parse import urljoin
 from requests_oauthlib import OAuth2Session
 
 from mendeley.exception import MendeleyApiException
 from mendeley.resources import Catalog, GroupMembers, Groups, Profiles
+from mendeley.version import __version__
 
 
 class MendeleySession(OAuth2Session):
@@ -29,9 +32,23 @@ class MendeleySession(OAuth2Session):
 
     def request(self, method, url, data=None, headers=None, **kwargs):
         full_url = urljoin(self.mendeley.host, url)
+
+        if not headers:
+            headers = {}
+
+        headers['user-agent'] = self.__user_agent()
+
         rsp = super(MendeleySession, self).request(method, full_url, data, headers, **kwargs)
 
         if rsp.ok:
             return rsp
         else:
             raise MendeleyApiException(rsp)
+
+    @staticmethod
+    def __user_agent():
+        return 'mendeley/%s %s/%s %s/%s' % (__version__,
+                                            platform.python_implementation(),
+                                            platform.python_version(),
+                                            platform.system(),
+                                            platform.release())

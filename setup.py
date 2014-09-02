@@ -1,8 +1,12 @@
 from setuptools import setup
 
+__version__ = None
+with open('mendeley/version.py') as f:
+    exec(f.read())
+
 setup(
     name='mendeley',
-    version='0.0.1',
+    version=__version__,
     packages=['mendeley'],
     url='http://dev.mendeley.com',
     license='MIT',

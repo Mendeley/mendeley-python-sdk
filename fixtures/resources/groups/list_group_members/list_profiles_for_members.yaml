@@ -4,7 +4,7 @@ interactions:
     headers:
       Accept: [application/vnd.mendeley-group.1+json]
       Accept-Encoding: ['gzip, deflate']
-      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+      User-Agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-34-generic]
     method: GET
     uri: https://api.mendeley.com:443/groups/bcb12b97-db8a-3c1d-b696-d99ed4371175
   response:
@@ -32,7 +32,7 @@ interactions:
     headers:
       Accept: [application/vnd.mendeley-membership.1+json]
       Accept-Encoding: ['gzip, deflate']
-      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+      User-Agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-34-generic]
     method: GET
     uri: https://api.mendeley.com:443/groups/bcb12b97-db8a-3c1d-b696-d99ed4371175/members
   response:
@@ -55,7 +55,7 @@ interactions:
     headers:
       Accept: [application/vnd.mendeley-profiles.1+json]
       Accept-Encoding: ['gzip, deflate']
-      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+      User-Agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-34-generic]
     method: GET
     uri: https://api.mendeley.com:443/profiles/3e71f6e3-e2b4-3f20-a873-da62554c5c38
   response:
@@ -83,7 +83,7 @@ interactions:
     headers:
       Accept: [application/vnd.mendeley-profiles.1+json]
       Accept-Encoding: ['gzip, deflate']
-      User-Agent: [python-requests/2.3.0 CPython/2.7.6 Linux/3.13.0-34-generic]
+      User-Agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-34-generic]
     method: GET
     uri: https://api.mendeley.com:443/profiles/9930207c-c19f-3de0-b531-86bd4388fa94
   response:
