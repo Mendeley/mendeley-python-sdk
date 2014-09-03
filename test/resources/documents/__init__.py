@@ -4,44 +4,60 @@ from mendeley.models import Person
 from test import load_config, get_user_session
 
 
-def delete_all_documents():
+def __delete_all(doc_resource):
     config = load_config()
-    session = get_user_session()
-
     if config['recordMode'] != 'none':
-        for doc in session.documents.iter():
+        for doc in doc_resource.iter():
             doc.delete()
 
 
+def delete_all_documents():
+    session = get_user_session()
+    __delete_all(session.documents)
+
+
+def delete_all_group_documents():
+    session = get_user_session()
+    __delete_all(session.groups.get('164d48fb-2343-332d-b566-1a4884a992e4').documents)
+
+
 def create_document(session, title='Underwater basket weaving'):
-    return session.documents.create(title,
-                                    'journal',
-                                    authors=[Person.create('Piers', 'Bursill')],
-                                    source='Journal of Submarine Bambrology',
-                                    year=2014,
-                                    abstract='The wonders of creating exotic baskets in an underwater environment',
-                                    identifiers={'doi': 'doi123'},
-                                    keywords=['bambrology', 'submarine'],
-                                    pages='1-6',
-                                    volume='loud',
-                                    issue='73',
-                                    websites=['http://example.com/foo', 'http://example.com/bar'],
-                                    month=11,
-                                    publisher='Elsevier',
-                                    day=14,
-                                    city='Scunthorpe',
-                                    edition='First',
-                                    institution='University of Cambridge',
-                                    series='World Series',
-                                    chapter='99',
-                                    revision='2',
-                                    editors=[Person.create('John', 'Smith')],
-                                    accessed=arrow.get(2014, 9, 3),
-                                    read=False,
-                                    starred=True,
-                                    authored=False,
-                                    confirmed=True,
-                                    tags=['baskety', 'wet'])
+    return __create(session.documents, title)
+
+
+def create_group_document(session, title='Underwater basket weaving'):
+    return __create(session.groups.get('164d48fb-2343-332d-b566-1a4884a992e4').documents, title)
+
+
+def __create(doc_resource, title):
+    return doc_resource.create(title,
+                               'journal',
+                               authors=[Person.create('Piers', 'Bursill')],
+                               source='Journal of Submarine Bambrology',
+                               year=2014,
+                               abstract='The wonders of creating exotic baskets in an underwater environment',
+                               identifiers={'doi': 'doi123'},
+                               keywords=['bambrology', 'submarine'],
+                               pages='1-6',
+                               volume='loud',
+                               issue='73',
+                               websites=['http://example.com/foo', 'http://example.com/bar'],
+                               month=11,
+                               publisher='Elsevier',
+                               day=14,
+                               city='Scunthorpe',
+                               edition='First',
+                               institution='University of Cambridge',
+                               series='World Series',
+                               chapter='99',
+                               revision='2',
+                               editors=[Person.create('John', 'Smith')],
+                               accessed=arrow.get(2014, 9, 3),
+                               read=False,
+                               starred=True,
+                               authored=False,
+                               confirmed=True,
+                               tags=['baskety', 'wet'])
 
 
 def assert_core_document(doc):

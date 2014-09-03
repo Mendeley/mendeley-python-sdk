@@ -6,22 +6,23 @@ from mendeley.pagination import Page
 
 class ListResource(object):
     def list(self, page_size=None, **kwargs):
-        obj_type = self._obj_type(**kwargs)
-
-        kwargs['limit'] = page_size
-        url = add_query_params(self._url, kwargs)
-
-        rsp = self._session.get(url, headers={'Accept': obj_type.content_type})
-        return Page(self._session, rsp, obj_type)
+        return self._list(page_size, **kwargs)
 
     def iter(self, page_size=None, **kwargs):
-        page = self.list(page_size, **kwargs)
+        page = self._list(page_size, **kwargs)
 
         while page:
             for item in page.items:
                 yield item
 
             page = page.next_page
+
+    def _list(self, page_size, **kwargs):
+        obj_type = self._obj_type(**kwargs)
+        kwargs['limit'] = page_size
+        url = add_query_params(self._url, kwargs)
+        rsp = self._session.get(url, headers={'Accept': obj_type.content_type})
+        return Page(self._session, rsp, obj_type)
 
     @property
     def _session(self):

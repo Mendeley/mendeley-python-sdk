@@ -2,7 +2,7 @@ import arrow
 
 from mendeley.models.common import Photo
 from mendeley.models.profiles import LazyProfile
-from mendeley.response import SessionResponseObject
+from mendeley.response import SessionResponseObject, LazyResponseObject
 
 
 class Group(SessionResponseObject):
@@ -33,10 +33,25 @@ class Group(SessionResponseObject):
     def members(self):
         return self.session.group_members(self.id)
 
+    @property
+    def documents(self):
+        return self.session.group_documents(self.id)
+
     @classmethod
     def fields(cls):
         return ['id', 'name', 'description', 'disciplines', 'tags', 'webpage', 'link', 'access_level',
                 'role']
+
+
+class LazyGroup(LazyResponseObject):
+    def __init__(self, session, id):
+        super(LazyGroup, self).__init__(session, id, Group)
+
+    def _load(self):
+        url = '/groups/%s' % self.id
+        rsp = self.session.get(url, headers={'Accept': Group.content_type})
+
+        return rsp.json()
 
 
 class GroupMember(LazyProfile):

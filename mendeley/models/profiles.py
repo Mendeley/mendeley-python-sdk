@@ -61,6 +61,6 @@ class LazyProfile(LazyResponseObject):
 
     def _load(self):
         url = '/profiles/%s' % self.id
-        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-profiles.1+json'})
+        rsp = self.session.get(url, headers={'Accept': Profile.content_type})
 
         return rsp.json()
