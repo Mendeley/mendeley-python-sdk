@@ -1,7 +1,6 @@
 import json
 
 from mendeley.models.documents import *
-from mendeley.resources.base import add_query_params
 from mendeley.resources.base_documents import DocumentsBase
 
 
@@ -25,14 +24,6 @@ class Documents(DocumentsBase):
         })
 
         return UserAllDocument(self.session, rsp.json())
-
-    def get(self, id, view=None):
-        url = add_query_params('%s/%s' % (self._url, id), {'view': view})
-        obj_type = self._view_type(view)
-
-        rsp = self.session.get(url, headers={'Accept': obj_type.content_type})
-
-        return obj_type(self.session, rsp.json())
 
     def update(self, id, **kwargs):
         url = '%s/%s' % (self._url, id)

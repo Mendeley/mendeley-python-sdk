@@ -1,7 +1,10 @@
 from mendeley.models.profiles import Profile
+from mendeley.resources.base import GetByIdResource
 
 
-class Profiles(object):
+class Profiles(GetByIdResource):
+    _url = '/profiles'
+
     def __init__(self, session):
         self.session = session
 
@@ -9,8 +12,9 @@ class Profiles(object):
     def me(self):
         return self.get('me')
 
-    def get(self, profile_id):
-        url = '/profiles/%s' % profile_id
-        rsp = self.session.get(url, headers={'Accept': Profile.content_type})
+    @property
+    def _session(self):
+        return self.session
 
-        return Profile(self.session, rsp.json())
+    def _obj_type(self, **kwargs):
+        return Profile

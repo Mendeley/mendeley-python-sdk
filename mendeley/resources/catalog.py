@@ -1,6 +1,6 @@
 from mendeley.exception import MendeleyException
 from mendeley.models.catalog import *
-from mendeley.resources.base import add_query_params, ListResource
+from mendeley.resources.base import add_query_params, ListResource, GetByIdResource
 
 
 def view_type(view):
@@ -13,17 +13,14 @@ def view_type(view):
     }.get(view, CatalogDocument)
 
 
-class Catalog(object):
+class Catalog(GetByIdResource):
+    _url = '/catalog'
+
     def __init__(self, session):
         self.session = session
 
     def get(self, id, view=None):
-        url = add_query_params('/catalog/%s' % id, {'view': view})
-        obj_type = view_type(view)
-
-        rsp = self.session.get(url, headers={'Accept': obj_type.content_type})
-
-        return obj_type(self.session, rsp.json())
+        return super(Catalog, self).get(id, view=view)
 
     def by_identifier(self, arxiv=None, doi=None, isbn=None, issn=None, pmid=None, scopus=None, filehash=None,
                       view=None):
@@ -55,6 +52,13 @@ class Catalog(object):
                         open_access=None, view=None):
         return CatalogSearch(self.session, title=title, author=author, source=source, abstract=abstract,
                              min_year=min_year, max_year=max_year, open_access=open_access, view=view)
+
+    @property
+    def _session(self):
+        return self.session
+
+    def _obj_type(self, **kwargs):
+        return view_type(kwargs.get('view'))
 
 
 class CatalogSearch(ListResource):

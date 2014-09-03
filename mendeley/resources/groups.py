@@ -1,19 +1,13 @@
 from mendeley.models.groups import Group, GroupMember
 
-from mendeley.resources.base import ListResource
+from mendeley.resources.base import ListResource, GetByIdResource
 
 
-class Groups(ListResource):
+class Groups(GetByIdResource, ListResource):
     _url = '/groups'
 
     def __init__(self, session):
         self.session = session
-
-    def get(self, id):
-        url = '/groups/%s' % id
-        rsp = self.session.get(url, headers={'Accept': Group.content_type})
-
-        return Group(self.session, rsp.json())
 
     @property
     def _session(self):

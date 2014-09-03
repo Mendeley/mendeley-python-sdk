@@ -4,7 +4,30 @@ from future.utils import iteritems
 from mendeley.pagination import Page
 
 
-class ListResource(object):
+class BaseResource(object):
+    @property
+    def _session(self):
+        raise NotImplementedError
+
+    @property
+    def _url(self):
+        raise NotImplementedError
+
+    def _obj_type(self, **kwargs):
+        raise NotImplementedError
+
+
+class GetByIdResource(BaseResource):
+    def get(self, id, **kwargs):
+        url = add_query_params('%s/%s' % (self._url, id), kwargs)
+        obj_type = self._obj_type(**kwargs)
+
+        rsp = self._session.get(url, headers={'Accept': obj_type.content_type})
+
+        return obj_type(self._session, rsp.json())
+
+
+class ListResource(BaseResource):
     def list(self, page_size=None, **kwargs):
         return self._list(page_size, **kwargs)
 
@@ -23,17 +46,6 @@ class ListResource(object):
         url = add_query_params(self._url, kwargs)
         rsp = self._session.get(url, headers={'Accept': obj_type.content_type})
         return Page(self._session, rsp, obj_type)
-
-    @property
-    def _session(self):
-        raise NotImplementedError
-
-    @property
-    def _url(self):
-        raise NotImplementedError
-
-    def _obj_type(self, **kwargs):
-        raise NotImplementedError
 
 
 def add_query_params(url, params):
