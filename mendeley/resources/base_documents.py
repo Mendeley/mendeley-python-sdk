@@ -6,10 +6,6 @@ class DocumentsBase(GetByIdResource, ListResource):
         self.session = session
         self.group_id = group_id
 
-    def delete(self, id):
-        url = '%s/%s' % (self._url, id)
-        self.session.delete(url)
-
     def get(self, id, view=None):
         return super(DocumentsBase, self).get(id, view=view)
 

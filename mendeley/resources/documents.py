@@ -1,5 +1,3 @@
-import json
-
 from mendeley.models.documents import *
 from mendeley.resources.base_documents import DocumentsBase
 
@@ -25,21 +23,6 @@ class Documents(DocumentsBase):
 
         return UserAllDocument(self.session, rsp.json())
 
-    def update(self, id, **kwargs):
-        url = '%s/%s' % (self._url, id)
-        content_type = UserDocument.content_type
-
-        rsp = self.session.patch(url, data=json.dumps(format_args(kwargs)), headers={
-            'Accept': content_type,
-            'Content-Type': content_type
-        })
-
-        return UserAllDocument(self.session, rsp.json())
-
-    def move_to_trash(self, id):
-        url = '%s/%s/trash' % (self._url, id)
-        self.session.post(url)
-
     @staticmethod
     def _view_type(view):
         return {
@@ -49,14 +32,3 @@ class Documents(DocumentsBase):
             'tags': UserTagsDocument,
             'core': UserDocument,
         }.get(view, UserDocument)
-
-
-def format_args(kwargs):
-    if 'authors' in kwargs:
-        kwargs['authors'] = [author.json for author in kwargs['authors']]
-    if 'editors' in kwargs:
-        kwargs['editors'] = [editor.json for editor in kwargs['editors']]
-    if 'accessed' in kwargs:
-        kwargs['accessed'] = arrow.get(kwargs['accessed']).format('YYYY-MM-DD')
-
-    return kwargs

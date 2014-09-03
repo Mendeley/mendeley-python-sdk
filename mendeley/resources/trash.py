@@ -9,10 +9,6 @@ class Trash(DocumentsBase):
     def __init__(self, session, group_id):
         super(Trash, self).__init__(session, group_id)
 
-    def restore(self, id):
-        url = '%s/%s/restore' % (self._url, id)
-        self.session.post(url)
-
     @staticmethod
     def _view_type(view):
         return {

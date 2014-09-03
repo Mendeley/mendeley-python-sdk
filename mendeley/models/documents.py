@@ -1,4 +1,7 @@
+import json
+
 import arrow
+
 from mendeley.models.base_documents import BaseDocument, BaseBibView, BaseClientView
 from mendeley.models.groups import LazyGroup
 from mendeley.models.profiles import LazyProfile
@@ -59,13 +62,19 @@ class UserTagsView(object):
 
 class UserDocument(UserBaseDocument):
     def update(self, **kwargs):
-        return self.session.documents.update(self.id, **kwargs)
+        rsp = self.session.patch('/documents/%s' % self.id, data=json.dumps(format_args(kwargs)), headers={
+            'Accept': self.content_type,
+            'Content-Type': self.content_type
+        })
+
+        return UserAllDocument(self.session, rsp.json())
 
     def delete(self):
-        self.session.documents.delete(self.id)
+        url = '/documents/%s' % self.id
+        self.session.delete(url)
 
     def move_to_trash(self):
-        self.session.documents.move_to_trash(self.id)
+        self.session.post('/documents/%s/trash' % self.id)
         return self._trashed_type()(self.session, self.json)
 
     @classmethod
@@ -115,10 +124,11 @@ class UserAllDocument(UserDocument, UserBibView, UserClientView, UserTagsView):
 
 class TrashDocument(UserBaseDocument):
     def delete(self):
-        self.session.trash.delete(self.id)
+        url = '/trash/%s' % self.id
+        self.session.delete(url)
 
     def restore(self):
-        self.session.trash.restore(self.id)
+        self.session.post('/trash/%s/restore' % self.id)
         return self._restored_type()(self.session, self.json)
 
     @classmethod
@@ -164,3 +174,14 @@ class TrashBibDocument(TrashDocument, UserBibView):
     @classmethod
     def _restored_type(cls):
         return UserBibDocument
+
+
+def format_args(kwargs):
+    if 'authors' in kwargs:
+        kwargs['authors'] = [author.json for author in kwargs['authors']]
+    if 'editors' in kwargs:
+        kwargs['editors'] = [editor.json for editor in kwargs['editors']]
+    if 'accessed' in kwargs:
+        kwargs['accessed'] = arrow.get(kwargs['accessed']).format('YYYY-MM-DD')
+
+    return kwargs
