@@ -5,7 +5,6 @@ from mendeley.resources.base import ListResource
 
 class Groups(ListResource):
     _url = '/groups'
-    _obj_type = Group
 
     def __init__(self, session):
         self.session = session
@@ -20,10 +19,11 @@ class Groups(ListResource):
     def _session(self):
         return self.session
 
+    def _obj_type(self, **kwargs):
+        return Group
+
 
 class GroupMembers(ListResource):
-    _obj_type = GroupMember
-
     def __init__(self, session, id):
         self.session = session
         self.id = id
@@ -31,6 +31,9 @@ class GroupMembers(ListResource):
     @property
     def _session(self):
         return self.session
+
+    def _obj_type(self, **kwargs):
+        return GroupMember
 
     @property
     def _url(self):

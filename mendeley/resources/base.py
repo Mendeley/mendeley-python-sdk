@@ -5,13 +5,17 @@ from mendeley.pagination import Page
 
 
 class ListResource(object):
-    def list(self, page_size=None):
-        url = add_query_params(self._url, {'limit': page_size})
-        rsp = self._session.get(url, headers={'Accept': self._obj_type.content_type})
-        return Page(self._session, rsp, self._obj_type)
+    def list(self, page_size=None, **kwargs):
+        obj_type = self._obj_type(**kwargs)
 
-    def iter(self, page_size=None):
-        page = self.list(page_size)
+        kwargs['limit'] = page_size
+        url = add_query_params(self._url, kwargs)
+
+        rsp = self._session.get(url, headers={'Accept': obj_type.content_type})
+        return Page(self._session, rsp, obj_type)
+
+    def iter(self, page_size=None, **kwargs):
+        page = self.list(page_size, **kwargs)
 
         while page:
             for item in page.items:
@@ -27,8 +31,7 @@ class ListResource(object):
     def _url(self):
         raise NotImplementedError
 
-    @property
-    def _obj_type(self):
+    def _obj_type(self, **kwargs):
         raise NotImplementedError
 
 

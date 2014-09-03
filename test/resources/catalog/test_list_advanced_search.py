@@ -5,7 +5,8 @@ def test_should_page_through_search_results():
     session = get_client_credentials_session()
 
     with cassette('fixtures/resources/catalog/list_advanced_search/page_through_search_results.yaml'):
-        first_page = session.catalog.advanced_search(title='mapreduce', author='Jeffrey Dean').list(page_size=2)
+        search = session.catalog.advanced_search(title='mapreduce', author='Jeffrey Dean')
+        first_page = search.list(page_size=2)
 
         assert len(first_page.items) == 2
         assert first_page.count == 173631

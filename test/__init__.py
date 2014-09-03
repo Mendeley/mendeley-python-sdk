@@ -1,3 +1,4 @@
+import time
 import vcr
 
 import yaml
@@ -43,3 +44,10 @@ def get_client_credentials_session():
 def cassette(path):
     config = load_config()
     return vcr.use_cassette(path, filter_headers=['authorization'], record_mode=config['recordMode'])
+
+
+def sleep(seconds):
+    config = load_config()
+
+    if config['recordMode'] != 'none':
+        time.sleep(seconds)

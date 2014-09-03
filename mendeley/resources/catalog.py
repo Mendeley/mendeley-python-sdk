@@ -62,9 +62,8 @@ class CatalogSearch(ListResource):
         self.session = session
         self.params = kwargs
 
-    @property
-    def _obj_type(self):
-        return view_type(self.params.get('view'))
+    def _obj_type(self, **kwargs):
+        return view_type(self.params['view'])
 
     @property
     def _url(self):
