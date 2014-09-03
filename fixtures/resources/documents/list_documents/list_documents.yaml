@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: '{"type": "journal", "title": "Underwater basket weaving"}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['57']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"709b5582-0ba9-347f-8b44-ed6ec4c32717","title":"Underwater
+        basket weaving","type":"journal","created":"2014-09-03T10:10:19.272Z","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['187']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 03 Sep 2014 10:10:19 GMT']
+      location: ['https://api.mendeley.com/documents/709b5582-0ba9-347f-8b44-ed6ec4c32717']
+      x-mendeley-trace-id: [ML2LSKM8IYM]
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAH3OTQ7CIBAF4KsY1o4ZChXwHLrRGMPPYNDaGoo2xnh3qQcwmdXLN/Pm8GYpsA1T
+        aFzb6gbQWQNCqgjaSQkU1uSlF43iii1ZSaWjynd9oDzZQnnh7HilspjIPlN/ns3rPpPL8Mi97Wrg
+        M1U5tzTIJaABFFuOm3nMChH3Fd3zEFNHp983xghsUHnw3EQQgRBcKzjotQtSaB2tkXWns2M53YaQ
+        Yvp//nP8AnTvKyXoAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['186']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 03 Sep 2014 10:10:19 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [PqqGMy3hqus]
+    status: {code: 200, message: OK}
+version: 1

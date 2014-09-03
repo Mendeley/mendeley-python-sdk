@@ -4,7 +4,7 @@ from future.moves.urllib.parse import urljoin
 from requests_oauthlib import OAuth2Session
 
 from mendeley.exception import MendeleyApiException
-from mendeley.resources import Catalog, GroupMembers, Groups, Profiles
+from mendeley.resources import Catalog, Documents, GroupMembers, Groups, Profiles
 from mendeley.version import __version__
 
 
@@ -14,9 +14,10 @@ class MendeleySession(OAuth2Session):
                                               token=self.__token_dict(access_token, expires_in, refresh_token))
         self.mendeley = mendeley
 
-        self.profiles = Profiles(self)
-        self.groups = Groups(self)
         self.catalog = Catalog(self)
+        self.documents = Documents(self)
+        self.groups = Groups(self)
+        self.profiles = Profiles(self)
 
     def group_members(self, id):
         return GroupMembers(self, id)
