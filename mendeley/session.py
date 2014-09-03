@@ -15,15 +15,19 @@ class MendeleySession(OAuth2Session):
         self.mendeley = mendeley
 
         self.catalog = Catalog(self)
-        self.documents = Documents(self)
+        self.documents = Documents(self, None)
         self.groups = Groups(self)
         self.profiles = Profiles(self)
+        self.trash = Trash(self, None)
 
     def group_members(self, id):
         return GroupMembers(self, id)
 
     def group_documents(self, group_id):
-        return GroupDocuments(self, group_id)
+        return Documents(self, group_id)
+
+    def group_trash(self, group_id):
+        return Trash(self, group_id)
 
     @staticmethod
     def __token_dict(access_token, expires_in, refresh_token):

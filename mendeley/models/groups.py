@@ -37,6 +37,10 @@ class Group(SessionResponseObject):
     def documents(self):
         return self.session.group_documents(self.id)
 
+    @property
+    def trash(self):
+        return self.session.group_trash(self.id)
+
     @classmethod
     def fields(cls):
         return ['id', 'name', 'description', 'disciplines', 'tags', 'webpage', 'link', 'access_level',
