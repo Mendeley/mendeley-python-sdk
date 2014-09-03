@@ -6,24 +6,24 @@ from mendeley.models.profiles import LazyProfile
 class UserDocument(BaseDocument):
     @property
     def created(self):
-        if 'created' in self._json:
-            return arrow.get(self._json['created'])
+        if 'created' in self.json:
+            return arrow.get(self.json['created'])
         else:
             return None
 
     @property
     def last_modified(self):
-        if 'last_modified' in self._json:
-            return arrow.get(self._json['last_modified'])
-        elif 'created' in self._json:
-            return arrow.get(self._json['created'])
+        if 'last_modified' in self.json:
+            return arrow.get(self.json['last_modified'])
+        elif 'created' in self.json:
+            return arrow.get(self.json['created'])
         else:
             return None
 
     @property
     def profile(self):
-        if 'profile_id' in self._json:
-            return LazyProfile(self.session, self._json['profile_id'])
+        if 'profile_id' in self.json:
+            return LazyProfile(self.session, self.json['profile_id'])
         else:
             return None
 
@@ -34,8 +34,8 @@ class UserDocument(BaseDocument):
 class UserBibView(BaseBibView):
     @property
     def accessed(self):
-        if 'accessed' in self._json:
-            return arrow.get(self._json['accessed'])
+        if 'accessed' in self.json:
+            return arrow.get(self.json['accessed'])
         else:
             return None
 

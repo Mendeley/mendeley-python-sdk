@@ -1,4 +1,6 @@
 import arrow
+
+from mendeley.models import Person
 from test import load_config, get_user_session
 
 
@@ -14,6 +16,7 @@ def delete_all_documents():
 def create_document(session, title='Underwater basket weaving'):
     return session.documents.create(title,
                                     'journal',
+                                    authors=[Person.create('Piers', 'Bursill')],
                                     source='Journal of Submarine Bambrology',
                                     year=2014,
                                     abstract='The wonders of creating exotic baskets in an underwater environment',
@@ -32,6 +35,7 @@ def create_document(session, title='Underwater basket weaving'):
                                     series='World Series',
                                     chapter='99',
                                     revision='2',
+                                    editors=[Person.create('John', 'Smith')],
                                     accessed=arrow.get(2014, 9, 3),
                                     read=False,
                                     starred=True,
@@ -52,6 +56,10 @@ def assert_core_document(doc):
     assert doc.created
     assert doc.last_modified
 
+    assert len(doc.authors) == 1
+    assert doc.authors[0].first_name == 'Piers'
+    assert doc.authors[0].last_name == 'Bursill'
+
 
 def assert_bib_document(doc):
     assert doc.pages == '1-6'
@@ -68,6 +76,10 @@ def assert_bib_document(doc):
     assert doc.chapter == '99'
     assert doc.revision == '2'
     assert doc.accessed == arrow.get(2014, 9, 3)
+
+    assert len(doc.editors) == 1
+    assert doc.editors[0].first_name == 'John'
+    assert doc.editors[0].last_name == 'Smith'
 
 
 def assert_client_document(doc):

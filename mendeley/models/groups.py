@@ -2,30 +2,30 @@ import arrow
 
 from mendeley.models.common import Photo
 from mendeley.models.profiles import LazyProfile
-from mendeley.response import ResponseObject
+from mendeley.response import SessionResponseObject
 
 
-class Group(ResponseObject):
+class Group(SessionResponseObject):
     content_type = 'application/vnd.mendeley-group.1+json'
 
     @property
     def created(self):
-        if 'created' in self._json:
-            return arrow.get(self._json['created'])
+        if 'created' in self.json:
+            return arrow.get(self.json['created'])
         else:
             return None
 
     @property
     def photo(self):
-        if 'photo' in self._json:
-            return Photo(self.session, self._json['photo'])
+        if 'photo' in self.json:
+            return Photo(self.json['photo'])
         else:
             return None
 
     @property
     def owner(self):
-        if 'owning_profile_id' in self._json:
-            return LazyProfile(self.session, self._json['owning_profile_id'])
+        if 'owning_profile_id' in self.json:
+            return LazyProfile(self.session, self.json['owning_profile_id'])
         else:
             return None
 

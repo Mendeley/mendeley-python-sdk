@@ -1,51 +1,51 @@
 import arrow
 
 from mendeley.models.common import Discipline, Photo, Location, Education, Employment
-from mendeley.response import ResponseObject, LazyResponseObject
+from mendeley.response import ResponseObject, LazyResponseObject, SessionResponseObject
 
 
-class Profile(ResponseObject):
+class Profile(SessionResponseObject):
     content_type = 'application/vnd.mendeley-profiles.1+json'
 
     @property
     def created(self):
-        if 'created' in self._json:
-            return arrow.get(self._json['created'])
+        if 'created' in self.json:
+            return arrow.get(self.json['created'])
         else:
             return None
 
     @property
     def discipline(self):
-        if 'discipline' in self._json:
-            return Discipline(self.session, self._json['discipline'])
+        if 'discipline' in self.json:
+            return Discipline(self.json['discipline'])
         else:
             return None
 
     @property
     def photo(self):
-        if 'photo' in self._json:
-            return Photo(self.session, self._json['photo'])
+        if 'photo' in self.json:
+            return Photo(self.json['photo'])
         else:
             return None
 
     @property
     def location(self):
-        if 'location' in self._json:
-            return Location(self.session, self._json['location'])
+        if 'location' in self.json:
+            return Location(self.json['location'])
         else:
             return None
 
     @property
     def education(self):
-        if 'education' in self._json:
-            return [Education(self.session, e) for e in self._json['education']]
+        if 'education' in self.json:
+            return [Education(e) for e in self.json['education']]
         else:
             return None
 
     @property
     def employment(self):
-        if 'employment' in self._json:
-            return [Employment(self.session, e) for e in self._json['employment']]
+        if 'employment' in self.json:
+            return [Employment(e) for e in self.json['employment']]
         else:
             return None
 

@@ -3,34 +3,36 @@ interactions:
     body: '{"series": "World Series", "abstract": "The wonders of creating exotic
       baskets in an underwater environment", "month": 11, "edition": "First", "year":
       2014, "keywords": ["bambrology", "submarine"], "city": "Scunthorpe", "confirmed":
-      true, "title": "Underwater basket weaving", "day": 14, "pages": "1-6", "source":
-      "Journal of Submarine Bambrology", "issue": "73", "authored": false, "revision":
-      "2", "tags": ["baskety", "wet"], "read": false, "volume": "loud", "institution":
-      "University of Cambridge", "chapter": "99", "publisher": "Elsevier", "type":
-      "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
-      "http://example.com/bar"], "accessed": "2014-09-03", "starred": true}'
+      true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
+      "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
+      "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}],
+      "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
+      "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
+      "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
+      true}'
     headers:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['706']
+      Content-Length: ['827']
       Content-Type: [application/vnd.mendeley-document.1+json]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"191f500d-7348-3395-ab68-2d8d3cb240fb","title":"Underwater
-        basket weaving","type":"journal","year":2014,"source":"Journal of Submarine
-        Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T11:31:42.558Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
-        of Cambridge","series":"World Series","chapter":"99","revision":"2","accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+    body: {string: !!python/unicode '{"id":"d719056a-f4b9-3f92-b043-f786a8987b13","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:05:16.091Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['784']
+      content-length: ['895']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 11:31:42 GMT']
-      location: ['https://api.mendeley.com/documents/191f500d-7348-3395-ab68-2d8d3cb240fb']
-      x-mendeley-trace-id: [mmy8upb8xSQ]
+      date: ['Wed, 03 Sep 2014 13:05:16 GMT']
+      location: ['https://api.mendeley.com/documents/d719056a-f4b9-3f92-b043-f786a8987b13']
+      x-mendeley-trace-id: [7BwVVbzfnBw]
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -40,23 +42,24 @@ interactions:
       Connection: [keep-alive]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: GET
-    uri: https://api.mendeley.com:443/documents/191f500d-7348-3395-ab68-2d8d3cb240fb?view=tags
+    uri: https://api.mendeley.com:443/documents/d719056a-f4b9-3f92-b043-f786a8987b13?view=tags
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAIWQzU7DMBCEX8Xac4zsOG2THDlypVxAqPLPppgmdmW7DVHVd8cuILhx8WFnZj37
-        XcAa6IF3fFgxZuhGNC0VoltRqdYtrU1rhFZ1wwYFFSSbRsz2J2cwzDJhIErGAyYyozxbty+e5Vgs
-        7/4UnBzzYEEZoK8ZbyqIeaqL/PAlEz+Qx5OaZLAOyb2cVPCj3y85Zg26ZAeLIUJ/AeNtjuWX1wKu
-        FRxwmX0wWXsB9TcXf9bBawU6YG5ZLiz/U9ZRJrac94L3TX3HGHvOiWPwgx1xdyPRdYLVbKOp5t1A
-        hUFG1Upw2q6VaUTbDrJrcmaUMe0mb0rBf9Ynuf9uWUiVijOmUk6qmILUKce3b0hmX6jGguRWO+Mk
-        +OGT1d+QI7GOSEdOv/TRnW3wbsqo4PoJ5ZLqncwBAAA=
+        H4sIAAAAAAAAAIVRTW/jIBD9K2jOZoWDkxgfe+xppU0vrapqMENKa0MFON4oyn9fyLbq3vb69ObN
+        +7iAMzCA2bdKbHfIbacVl1ZtuBad5Hbf77BX/V63EhrILk9U6A/eUFwxU2Qa0ztlthKenD9Wzvmj
+        Ut7CEj1OBcAlv4aYYHi6gHUx5RePc6X8dFTgBib8xu6WmNw0wfW5gTNhhGEj2q6BVOTGSrj/q8uC
+        Zb8WPWN0ntgdzjqGKRzPRc4Z8tnZm/hwARNcDRhcu5FwbeCdzmuIpvoB/e9d+pKD8nuMVOLVaup/
+        LhQX8tDKQWyHdvdDCPFYLj5isG6il1uFSkmxEfuRj62yXBoSXG9ly/udNp3se4uq+wo7B1MN/kc+
+        4/HTZa24WlwpV3OoU4445nJ+eCW2hjpHqpXcbJcdGP0O2Y2f6yTmPEPPlu/ZyJ9cDH4uVcH1D1Fq
+        bj0FAgAA
     headers:
       connection: [keep-alive]
       content-encoding: [gzip]
-      content-length: ['317']
+      content-length: ['348']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 11:31:42 GMT']
+      date: ['Wed, 03 Sep 2014 13:05:16 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [h6pfWX76UzE]
+      x-mendeley-trace-id: [dm4v7YQpPug]
     status: {code: 200, message: OK}
 version: 1

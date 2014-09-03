@@ -1,14 +1,14 @@
 from mendeley.models.common import Person
-from mendeley.response import ResponseObject
+from mendeley.response import SessionResponseObject
 
 
-class BaseDocument(ResponseObject):
+class BaseDocument(SessionResponseObject):
     content_type = 'application/vnd.mendeley-document.1+json'
 
     @property
     def authors(self):
-        if 'authors' in self._json:
-            return [Person(self.session, p) for p in self._json['authors']]
+        if 'authors' in self.json:
+            return [Person(p) for p in self.json['authors']]
         else:
             return None
 
@@ -17,17 +17,17 @@ class BaseDocument(ResponseObject):
         return ['id', 'title', 'type', 'source', 'year', 'identifiers', 'keywords', 'abstract']
 
 
-class BaseClientView(ResponseObject):
+class BaseClientView(SessionResponseObject):
     @classmethod
     def fields(cls):
         return ['file_attached']
 
 
-class BaseBibView(ResponseObject):
+class BaseBibView(SessionResponseObject):
     @property
     def editors(self):
-        if 'editors' in self._json:
-            return [Person(self.session, p) for p in self._json['editors']]
+        if 'editors' in self.json:
+            return [Person(p) for p in self.json['editors']]
         else:
             return None
 

@@ -1,7 +1,7 @@
-from mendeley.response import ResponseObject, LazyResponseObject
+from mendeley.response import LazyResponseObject, SessionResponseObject
 
 
-class DummyResponseObject(ResponseObject):
+class DummyResponseObject(SessionResponseObject):
     @property
     def foo(self):
         return 'foo-value'

@@ -33,6 +33,12 @@ class Documents(ListResource):
         kwargs['title'] = title
         kwargs['type'] = type
 
+        if 'authors' in kwargs:
+            kwargs['authors'] = [author.json for author in kwargs['authors']]
+
+        if 'editors' in kwargs:
+            kwargs['editors'] = [editor.json for editor in kwargs['editors']]
+
         if 'accessed' in kwargs:
             kwargs['accessed'] = arrow.get(kwargs['accessed']).format('YYYY-MM-DD')
 
