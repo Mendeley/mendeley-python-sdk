@@ -21,18 +21,18 @@ interactions:
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"dcef7671-88ee-3d60-a755-c02b9c2d0ba6","title":"Underwater
+    body: {string: !!python/unicode '{"id":"85957b3c-47f2-3570-b702-79b5a8741dd3","title":"Underwater
         basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:05:15.419Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:16:53.050Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
       content-length: ['895']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:05:15 GMT']
-      location: ['https://api.mendeley.com/documents/dcef7671-88ee-3d60-a755-c02b9c2d0ba6']
-      x-mendeley-trace-id: [9dB-fOMlXHc]
+      date: ['Wed, 03 Sep 2014 13:16:53 GMT']
+      location: ['https://api.mendeley.com/documents/85957b3c-47f2-3570-b702-79b5a8741dd3']
+      x-mendeley-trace-id: [qQDn3X5Pp-E]
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -42,24 +42,24 @@ interactions:
       Connection: [keep-alive]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: GET
-    uri: https://api.mendeley.com:443/documents/dcef7671-88ee-3d60-a755-c02b9c2d0ba6?view=client
+    uri: https://api.mendeley.com:443/documents/85957b3c-47f2-3570-b702-79b5a8741dd3?view=client
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAIWSQU/DMAyF/0rkc4vSdt3WHjlyQgIuIIScxN0CbYKclDFN++8kgzFuXJ3n9+zP
-        OYA10IPRNKyWq6pcr4nKxixliau2LbWsVadrIxUuoYBo40hJ/uAM8Q4jsVAY3iiKHeGHdZus2b9n
-        yauf2eGYCjjHrecA/dMBBsshvjicsuTWUioXMOKldj1zsOMIx+cC9oQMfS2rRQEh2eksuPn2FX4Q
-        d7OakK0jcY2TYj/6zT7ZWUMu2uFk3h/AeJsX9LaqGzgW8Eb7nWeT5wH1ty+c7SBla6a0XkaT80vZ
-        lbK5r5petn3VXkkpH1PHYEd6wRhRb7N0wDFQAe/sTw8nsF3XyFqudKmrbkhgSZaqbRLnpTKLZr0e
-        sFucEUze5LH/CU2DXbJCRObcEXmmM+o/s2jvEvLpothak/D8vqMKkVHHFHm/JbHz+bAhwz0BSBcV
-        9Omj1T93DsI6gU7Mlw9A7sOyd1OCDscvrVPbuU8CAAA=
+        H4sIAAAAAAAAAIWST2/cIBDFvwqas6mwseM/xxxzipTk0qiKBhhnSWyIAGezWu13L2y73dx64TC8
+        eW/4DUewBiYYurHrldS87eeGy64XXPWi4f2oOhz6tjZGQgXJpoWy/MkZCntMFJjC+E6J7Qk/rXst
+        msNHkbz5LThccgG3tPMhwvR8hNmGmF4crkVybymXK1jwWrvdQrTLAqdfFRwIA0yNqNsKYrbTRXD3
+        x5f5mT1sasVgHbFbXFXwi389ZDtryCU7n82nIxhvc1s+60bCqYJ3Oux9MGUeUN/74sUOcrYOlJ9X
+        0JR8LkYu5GMtp/pm6uQPIcTP3DHbhV4wJdS7Ip1xiVTBR/DnizPYcZSiEb3muh5nLg1lsJ2s+XCj
+        TCuHYcaxvSBYvSlj/yc0D3bNiglDKB0pbHRB/W0W7V1Gvl4VO2synn/3qGIKqFOOfNwR2/uy2Fjg
+        ngHkjTL68snqv3uOzDqGjm3XD0Du0wbv1gwdTr8BMSqbIE8CAAA=
     headers:
       connection: [keep-alive]
       content-encoding: [gzip]
-      content-length: ['374']
+      content-length: ['380']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:05:15 GMT']
+      date: ['Wed, 03 Sep 2014 13:16:53 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [Mt-T67wi9fM]
+      x-mendeley-trace-id: [DtzrWFsTM_g]
     status: {code: 200, message: OK}
 version: 1

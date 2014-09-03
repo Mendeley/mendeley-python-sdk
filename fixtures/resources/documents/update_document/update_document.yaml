@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: '{"series": "World Series", "abstract": "The wonders of creating exotic
+      baskets in an underwater environment", "month": 11, "edition": "First", "year":
+      2014, "keywords": ["bambrology", "submarine"], "city": "Scunthorpe", "confirmed":
+      true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
+      "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
+      "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}],
+      "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
+      "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
+      "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
+      true}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['827']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"1af24422-b00b-3ff3-bc09-90b8ac77985a","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:16:56.754Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+        wonders of creating exotic baskets in an underwater environment"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['895']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 03 Sep 2014 13:16:56 GMT']
+      location: ['https://api.mendeley.com/documents/1af24422-b00b-3ff3-bc09-90b8ac77985a']
+      x-mendeley-trace-id: [-mAX77Z1WUM]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"title": "Overground bucket sawing"}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['37']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: PATCH
+    uri: https://api.mendeley.com:443/documents/1af24422-b00b-3ff3-bc09-90b8ac77985a
+  response:
+    body: {string: !!python/unicode '{"id":"1af24422-b00b-3ff3-bc09-90b8ac77985a","title":"Overground
+        bucket sawing","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:16:56.000Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","file_attached":false,"profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","last_modified":"2014-09-03T13:16:57.000Z","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"hidden":false,"client_data":"{\"desktop_id\":\"1af24422-b00b-3ff3-bc09-90b8ac77985a\"}","abstract":"The
+        wonders of creating exotic baskets in an underwater environment"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['1048']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 03 Sep 2014 13:16:57 GMT']
+      x-mendeley-trace-id: [SkpIThSCpdo]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/documents/1af24422-b00b-3ff3-bc09-90b8ac77985a
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAG2RzW7CMBCEX8Xac1w5cYAkR469tFI5taqq9R+4JDayHShCvHttKtQeevFhNfvt
+        zPgCVsEANZqmbZuGCsYE5cZwKiTrac9Eh3K16rsFQgXJplFn+dNRh23ws1NEzHKvE4l4sm5bJOdD
+        UXz6OTgc8wDntPMhwvB2AWNDTB8OpyJ5tjqPKxjxd7aeQ7TjCNf3Cs4aAwwNq9sKYsbJInj84RJv
+        yMssJgzWabLGSQQ/+u0546zSLllzgw8XUN7mtfzWDYdrBXt9Pvmgih8Qf/fiHQf5tgwaky7NlPs0
+        N8H4puZDvRwWywfG2GveOARv7Kg/bg32PWcNW0kq695QrjSjYsFr2i2FannXGezbe9jJq2Lwf/zq
+        jkcRU0CZsmqz0+TkncqZSvKbu1w30V8+WUkExvwHkVhH0JG56E7ZfiDaHW3wbsqNwPUbbSPgfesB
+        AAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['344']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 03 Sep 2014 13:16:57 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [9bfxWKs7dNw]
+    status: {code: 200, message: OK}
+version: 1

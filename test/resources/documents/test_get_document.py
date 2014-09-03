@@ -1,5 +1,6 @@
 from test import cassette
 from test.resources.documents import *
+from test.resources.documents import assert_all_document
 
 
 def test_should_get_document_core_view():
@@ -57,9 +58,7 @@ def test_should_get_document_all_view():
         created_doc = create_document(session)
 
         doc = session.documents.get(created_doc.id, view='all')
-        assert_core_document(doc)
-        assert_client_document(doc)
-        assert_tags_document(doc)
+        assert_all_document(doc)
 
 
 def test_should_be_able_to_get_profile_for_document():

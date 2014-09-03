@@ -4,16 +4,6 @@ from mendeley.models.documents import *
 from mendeley.resources.base import ListResource, add_query_params
 
 
-def view_type(view):
-    return {
-        'all': UserAllDocument,
-        'bib': UserBibDocument,
-        'client': UserClientDocument,
-        'tags': UserTagsDocument,
-        'core': UserDocument,
-    }.get(view, UserDocument)
-
-
 class Documents(ListResource):
     _url = '/documents'
     _obj_type = UserDocument
@@ -33,16 +23,18 @@ class Documents(ListResource):
         kwargs['title'] = title
         kwargs['type'] = type
 
-        if 'authors' in kwargs:
-            kwargs['authors'] = [author.json for author in kwargs['authors']]
-
-        if 'editors' in kwargs:
-            kwargs['editors'] = [editor.json for editor in kwargs['editors']]
-
-        if 'accessed' in kwargs:
-            kwargs['accessed'] = arrow.get(kwargs['accessed']).format('YYYY-MM-DD')
+        kwargs = format_args(kwargs)
 
         rsp = self.session.post(self._url, data=json.dumps(kwargs), headers={
+            'Accept': self._obj_type.content_type,
+            'Content-Type': self._obj_type.content_type
+        })
+
+        return UserAllDocument(self.session, rsp.json())
+
+    def update(self, id, **kwargs):
+        url = '%s/%s' % (self._url, id)
+        rsp = self.session.patch(url, data=json.dumps(kwargs), headers={
             'Accept': self._obj_type.content_type,
             'Content-Type': self._obj_type.content_type
         })
@@ -56,3 +48,24 @@ class Documents(ListResource):
     @property
     def _session(self):
         return self.session
+
+
+def view_type(view):
+    return {
+        'all': UserAllDocument,
+        'bib': UserBibDocument,
+        'client': UserClientDocument,
+        'tags': UserTagsDocument,
+        'core': UserDocument,
+    }.get(view, UserDocument)
+
+
+def format_args(kwargs):
+    if 'authors' in kwargs:
+        kwargs['authors'] = [author.json for author in kwargs['authors']]
+    if 'editors' in kwargs:
+        kwargs['editors'] = [editor.json for editor in kwargs['editors']]
+    if 'accessed' in kwargs:
+        kwargs['accessed'] = arrow.get(kwargs['accessed']).format('YYYY-MM-DD')
+
+    return kwargs

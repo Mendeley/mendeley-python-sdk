@@ -11,14 +11,14 @@ interactions:
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"2984781d-7e46-3f03-821d-9d7a7f33e050","title":"Underwater
-        basket weaving","type":"journal","created":"2014-09-03T13:04:43.604Z","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94"}'}
+    body: {string: !!python/unicode '{"id":"db580382-2998-382f-a2e6-4f860a5116a4","title":"Underwater
+        basket weaving","type":"journal","created":"2014-09-03T13:16:50.140Z","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94"}'}
     headers:
       connection: [keep-alive]
       content-length: ['187']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:04:43 GMT']
-      location: ['https://api.mendeley.com/documents/2984781d-7e46-3f03-821d-9d7a7f33e050']
-      x-mendeley-trace-id: [ujZGP9XWFdo]
+      date: ['Wed, 03 Sep 2014 13:16:50 GMT']
+      location: ['https://api.mendeley.com/documents/db580382-2998-382f-a2e6-4f860a5116a4']
+      x-mendeley-trace-id: [6zbUXQ61b9o]
     status: {code: 201, message: Created}
 version: 1

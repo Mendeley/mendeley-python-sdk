@@ -92,3 +92,10 @@ def assert_client_document(doc):
 
 def assert_tags_document(doc):
     assert doc.tags == ['baskety', 'wet']
+
+
+def assert_all_document(doc):
+    assert_core_document(doc)
+    assert_bib_document(doc)
+    assert_client_document(doc)
+    assert_tags_document(doc)

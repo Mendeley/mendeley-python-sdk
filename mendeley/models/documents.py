@@ -27,6 +27,9 @@ class UserDocument(BaseDocument):
         else:
             return None
 
+    def update(self, **kwargs):
+        return self.session.documents.update(self.id, **kwargs)
+
     def delete(self):
         self.session.documents.delete(self.id)
 

@@ -21,17 +21,17 @@ interactions:
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"6469ee0a-172d-38f5-b325-6f313fc7c582","title":"Underwater
+    body: {string: !!python/unicode '{"id":"731990c8-c11d-3cc8-b773-a0d256a3882a","title":"Underwater
         basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:05:12.387Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:16:49.438Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
       content-length: ['895']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:05:12 GMT']
-      location: ['https://api.mendeley.com/documents/6469ee0a-172d-38f5-b325-6f313fc7c582']
-      x-mendeley-trace-id: [CXRgv8VLOyk]
+      date: ['Wed, 03 Sep 2014 13:16:49 GMT']
+      location: ['https://api.mendeley.com/documents/731990c8-c11d-3cc8-b773-a0d256a3882a']
+      x-mendeley-trace-id: [ixS_CYgKwgE]
     status: {code: 201, message: Created}
 version: 1
