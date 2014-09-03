@@ -1,44 +1,23 @@
-from mendeley.models.common import Person
+from mendeley.models.base_documents import BaseDocument, BaseClientView, BaseBibView
 from mendeley.resources.base import add_query_params
-from mendeley.response import ResponseObject, LazyResponseObject
+from mendeley.response import LazyResponseObject
 
 
-class CatalogDocument(ResponseObject):
-    content_type = 'application/vnd.mendeley-document.1+json'
-
-    @property
-    def authors(self):
-        if 'authors' in self._json:
-            return [Person(self.session, p) for p in self._json['authors']]
-        else:
-            return None
-
+class CatalogDocument(BaseDocument):
     @classmethod
     def fields(cls):
-        return ['id', 'title', 'type', 'source', 'year', 'identifiers', 'link', 'keywords', 'abstract']
+        return super(CatalogDocument, cls).fields() + ['link']
 
 
-class CatalogBibView(ResponseObject):
-    @property
-    def editors(self):
-        if 'editors' in self._json:
-            return [Person(self.session, p) for p in self._json['editors']]
-        else:
-            return None
-
-    @classmethod
-    def fields(cls):
-        return ['pages', 'volume', 'issue', 'websites', 'month', 'publisher', 'day', 'city', 'edition', 'institution',
-                'series', 'chapter', 'revision']
+class CatalogBibView(BaseBibView):
+    pass
 
 
-class CatalogClientView(ResponseObject):
-    @classmethod
-    def fields(cls):
-        return ['file_attached']
+class CatalogClientView(BaseClientView):
+    pass
 
 
-class CatalogStatsView(ResponseObject):
+class CatalogStatsView(object):
     @classmethod
     def fields(cls):
         return ['reader_count', 'reader_count_by_academic_status', 'reader_count_by_subdiscipline',

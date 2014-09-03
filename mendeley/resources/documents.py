@@ -1,7 +1,17 @@
 import json
 
-from mendeley.models.documents import UserDocument
-from mendeley.resources.base import ListResource
+from mendeley.models.documents import *
+from mendeley.resources.base import ListResource, add_query_params
+
+
+def view_type(view):
+    return {
+        'all': UserAllDocument,
+        'bib': UserBibDocument,
+        'client': UserClientDocument,
+        'tags': UserTagsDocument,
+        'core': UserDocument,
+    }.get(view, UserDocument)
 
 
 class Documents(ListResource):
@@ -11,14 +21,27 @@ class Documents(ListResource):
     def __init__(self, session):
         self.session = session
 
-    def create(self, title, type):
-        doc = {'title': title, 'type': type}
-        rsp = self.session.post(self._url, data=json.dumps(doc), headers={
+    def get(self, id, view=None):
+        url = add_query_params('%s/%s' % (self._url, id), {'view': view})
+        obj_type = view_type(view)
+
+        rsp = self.session.get(url, headers={'Accept': obj_type.content_type})
+
+        return obj_type(self.session, rsp.json())
+
+    def create(self, title, type, **kwargs):
+        kwargs['title'] = title
+        kwargs['type'] = type
+
+        if 'accessed' in kwargs:
+            kwargs['accessed'] = arrow.get(kwargs['accessed']).format('YYYY-MM-DD')
+
+        rsp = self.session.post(self._url, data=json.dumps(kwargs), headers={
             'Accept': self._obj_type.content_type,
             'Content-Type': self._obj_type.content_type
         })
 
-        return UserDocument(self.session, rsp.json())
+        return UserAllDocument(self.session, rsp.json())
 
     def delete(self, id):
         url = '%s/%s' % (self._url, id)
