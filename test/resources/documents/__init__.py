@@ -5,24 +5,26 @@ from test import load_config, get_user_session
 
 
 def __delete_all(doc_resource):
-    config = load_config()
-    if config['recordMode'] != 'none':
-        for doc in doc_resource.iter():
-            doc.delete()
+    for doc in doc_resource.iter():
+        doc.delete()
 
 
 def delete_all_documents():
-    session = get_user_session()
-    __delete_all(session.documents)
-    __delete_all(session.trash)
+    config = load_config()
+    if config['recordMode'] != 'none':
+        session = get_user_session()
+        __delete_all(session.documents)
+        __delete_all(session.trash)
 
 
 def delete_all_group_documents():
-    session = get_user_session()
-    group = session.groups.get('164d48fb-2343-332d-b566-1a4884a992e4')
+    config = load_config()
+    if config['recordMode'] != 'none':
+        session = get_user_session()
+        group = session.groups.get('164d48fb-2343-332d-b566-1a4884a992e4')
 
-    __delete_all(group.documents)
-    __delete_all(group.trash)
+        __delete_all(group.documents)
+        __delete_all(group.trash)
 
 
 def create_document(session, title='Underwater basket weaving'):
