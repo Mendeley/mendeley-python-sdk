@@ -41,19 +41,9 @@ class UserBaseDocument(BaseDocument):
         else:
             return None
 
-    def attach_file(self, path):
-        filename = basename(path)
-        headers = {
-            'content-disposition': 'attachment; filename=%s' % filename,
-            'content-type': guess_type(filename),
-            'link': '<%s/documents/%s>; rel="document"' % (self.session.host, self.id),
-            'accept': File.content_type
-        }
-
-        with open(path) as f:
-            rsp = self.session.post('/files', data=f, headers=headers)
-
-        return File(self.session, rsp.json())
+    @property
+    def files(self):
+        return self.session.document_files(document_id=self.id)
 
 
 class UserBibView(BaseBibView):
@@ -87,12 +77,25 @@ class UserDocument(UserBaseDocument):
         return UserAllDocument(self.session, rsp.json())
 
     def delete(self):
-        url = '/documents/%s' % self.id
-        self.session.delete(url)
+        self.session.delete('/documents/%s' % self.id)
 
     def move_to_trash(self):
         self.session.post('/documents/%s/trash' % self.id)
         return self._trashed_type()(self.session, self.json)
+
+    def attach_file(self, path):
+        filename = basename(path)
+        headers = {
+            'content-disposition': 'attachment; filename=%s' % filename,
+            'content-type': guess_type(filename),
+            'link': '<%s/documents/%s>; rel="document"' % (self.session.host, self.id),
+            'accept': File.content_type
+        }
+
+        with open(path) as f:
+            rsp = self.session.post('/files', data=f, headers=headers)
+
+        return File(self.session, rsp.json())
 
     @classmethod
     def _trashed_type(cls):

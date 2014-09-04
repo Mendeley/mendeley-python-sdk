@@ -12,10 +12,6 @@ class File(SessionResponseObject):
     def download_url(self):
         return '%s/files/%s' % (self.session.host, self.id)
 
-    @classmethod
-    def fields(cls):
-        return ['id', 'size', 'file_name', 'mime_type', 'filehash']
-
     def download(self, directory):
         rsp = self.session.get('/files/%s' % self.id, stream=True)
         filename = self.filename_regex.search(rsp.headers['content-disposition']).group(1)
@@ -29,3 +25,10 @@ class File(SessionResponseObject):
                 f.write(block)
 
         return path
+
+    def delete(self):
+        self.session.delete('/files/%s' % self.id)
+
+    @classmethod
+    def fields(cls):
+        return ['id', 'size', 'file_name', 'mime_type', 'filehash']

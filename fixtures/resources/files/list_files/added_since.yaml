@@ -1,0 +1,173 @@
+interactions:
+- request:
+    body: '{"series": "World Series", "abstract": "The wonders of creating exotic
+      baskets in an underwater environment", "month": 11, "edition": "First", "year":
+      2014, "keywords": ["bambrology", "submarine"], "city": "Scunthorpe", "confirmed":
+      true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
+      "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
+      "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
+      "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
+      "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
+      "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
+      true, "group_id": null}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['850']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"8e7d9c78-6449-3c96-a3ed-90b0108d31e9","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T14:17:18.937Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+        wonders of creating exotic baskets in an underwater environment"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['900']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Thu, 04 Sep 2014 14:17:18 GMT']
+      location: ['https://api.mendeley.com/documents/8e7d9c78-6449-3c96-a3ed-90b0108d31e9']
+      x-mendeley-trace-id: [qdx0-nLVssQ]
+    status: {code: 201, message: Created}
+- request:
+    body: !!python/object:__builtin__.file {}
+    headers:
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['178']
+      accept: [application/vnd.mendeley-file.1+json]
+      content-disposition: [attachment; filename=basket.txt]
+      content-type: [text/plain]
+      link: [!!python/unicode '<https://api.mendeley.com/documents/8e7d9c78-6449-3c96-a3ed-90b0108d31e9>;
+          rel="document"']
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/files
+  response:
+    body: {string: !!python/unicode '{"id":"43efe1c4-84cc-852d-38c4-8f588d9e9350","document_id":"8e7d9c78-6449-3c96-a3ed-90b0108d31e9","mime_type":"text/plain","file_name":"Underwater
+        basket weaving","size":178,"filehash":"92c7a71b371eb439579be559b5eac9c09a743c42"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['228']
+      content-type: [application/vnd.mendeley-file.1+json]
+      date: ['Thu, 04 Sep 2014 14:17:19 GMT']
+      location: ['https://api.mendeley.com/files/43efe1c4-84cc-852d-38c4-8f588d9e9350']
+      x-mendeley-trace-id: [fVLs00a9QpI]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"series": "World Series", "abstract": "The wonders of creating exotic
+      baskets in an underwater environment", "month": 11, "edition": "First", "year":
+      2014, "keywords": ["bambrology", "submarine"], "city": "Scunthorpe", "confirmed":
+      true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
+      "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
+      "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
+      "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
+      "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
+      "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
+      true, "group_id": null}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['850']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"59babf71-eced-3d4f-927b-ed8b872cb9f5","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T14:17:21.865Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+        wonders of creating exotic baskets in an underwater environment"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['900']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Thu, 04 Sep 2014 14:17:21 GMT']
+      location: ['https://api.mendeley.com/documents/59babf71-eced-3d4f-927b-ed8b872cb9f5']
+      x-mendeley-trace-id: [T4CewT0Mo_g]
+    status: {code: 201, message: Created}
+- request:
+    body: !!python/object:__builtin__.file {}
+    headers:
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['178']
+      accept: [application/vnd.mendeley-file.1+json]
+      content-disposition: [attachment; filename=basket.txt]
+      content-type: [text/plain]
+      link: [!!python/unicode '<https://api.mendeley.com/documents/59babf71-eced-3d4f-927b-ed8b872cb9f5>;
+          rel="document"']
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/files
+  response:
+    body: {string: !!python/unicode '{"id":"43efe1c4-84cc-852d-5919-f8662b5693aa","document_id":"59babf71-eced-3d4f-927b-ed8b872cb9f5","mime_type":"text/plain","file_name":"Underwater
+        basket weaving","size":178,"filehash":"92c7a71b371eb439579be559b5eac9c09a743c42"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['228']
+      content-type: [application/vnd.mendeley-file.1+json]
+      date: ['Thu, 04 Sep 2014 14:17:22 GMT']
+      location: ['https://api.mendeley.com/files/43efe1c4-84cc-852d-5919-f8662b5693aa']
+      x-mendeley-trace-id: [VPWxQTmzLGU]
+    status: {code: 201, message: Created}
+- request:
+    body: !!python/object:__builtin__.file {}
+    headers:
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['196']
+      accept: [application/vnd.mendeley-file.1+json]
+      content-disposition: [attachment; filename=weaving.txt]
+      content-type: [text/plain]
+      link: [!!python/unicode '<https://api.mendeley.com/documents/59babf71-eced-3d4f-927b-ed8b872cb9f5>;
+          rel="document"']
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/files
+  response:
+    body: {string: !!python/unicode '{"id":"765ad574-e731-7835-5919-f8662b5693aa","document_id":"59babf71-eced-3d4f-927b-ed8b872cb9f5","mime_type":"text/plain","file_name":"Underwater
+        basket weaving","size":196,"filehash":"3f7d22ad2bb50ff8a13b9c485f2991e48bc9b5af"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['228']
+      content-type: [application/vnd.mendeley-file.1+json]
+      date: ['Thu, 04 Sep 2014 14:17:22 GMT']
+      location: ['https://api.mendeley.com/files/765ad574-e731-7835-5919-f8662b5693aa']
+      x-mendeley-trace-id: [Ynf5_s2zgc0]
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-file.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
+    method: GET
+    uri: https://api.mendeley.com:443/files?added_since=2014-09-04T14%3A17%3A20.000865%2B00%3A00
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAM2PSU4DMRBFrxJ5HYt4qC5X7sEKoVaVXSYt0k2UNoRBuTtm2HAD1v896b+7DzMV
+        szcxaFWXo00xZ5vAFwvkyNY0DF5goMBstqY85edZlzZ+S0DCUtFZzVpsKLFa8ihWS5KEPgtV6NI8
+        zTq2t5N2pelruzkdeVr6UKejjgvPX8PtUvR84abnjfD6qG1zUX6ZlofOrdN7RxymH+XA66Eb5DMy
+        OgnoVGIgQBKF/gmUM+UdMcaQozfX7W8kDsAFMFrF4CymAP8vkoY/kaFi8Z6LF4FdrYldEMoxQfVE
+        TmOS3IO5muv9J8SjnRfLAQAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['246']
+      content-type: [application/vnd.mendeley-file.1+json]
+      date: ['Thu, 04 Sep 2014 14:17:22 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [XuyFHxkfKhE]
+    status: {code: 200, message: OK}
+version: 1

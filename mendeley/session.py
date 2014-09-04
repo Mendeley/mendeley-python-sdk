@@ -16,18 +16,25 @@ class MendeleySession(OAuth2Session):
 
         self.catalog = Catalog(self)
         self.documents = Documents(self, None)
+        self.files = Files(self)
         self.groups = Groups(self)
         self.profiles = Profiles(self)
         self.trash = Trash(self, None)
 
-    def group_members(self, id):
-        return GroupMembers(self, id)
+    def group_members(self, group_id):
+        return GroupMembers(self, group_id)
 
     def group_documents(self, group_id):
         return Documents(self, group_id)
 
     def group_trash(self, group_id):
         return Trash(self, group_id)
+
+    def group_files(self, group_id):
+        return Files(self, group_id=group_id)
+
+    def document_files(self, document_id):
+        return Files(self, document_id=document_id)
 
     def request(self, method, url, data=None, headers=None, **kwargs):
         full_url = urljoin(self.host, url)
