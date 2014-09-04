@@ -24,9 +24,9 @@ interactions:
       content-encoding: [gzip]
       content-length: ['409']
       content-type: [application/vnd.mendeley-group.1+json]
-      date: ['Wed, 03 Sep 2014 15:12:18 GMT']
+      date: ['Thu, 04 Sep 2014 11:38:10 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [QRJzXKL6vMo]
+      x-mendeley-trace-id: [BIsUKtEmrkA]
     status: {code: 200, message: OK}
 - request:
     body: '{"group_id": "164d48fb-2343-332d-b566-1a4884a992e4", "type": "journal",
@@ -41,14 +41,14 @@ interactions:
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"c505f7f8-b830-30d0-9fc3-ff8c2434fe28","title":"Underwater
-        basket weaving","type":"journal","created":"2014-09-03T15:12:18.990Z","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","group_id":"164d48fb-2343-332d-b566-1a4884a992e4"}'}
+    body: {string: !!python/unicode '{"id":"c8669d9c-f580-3b0e-9c9a-a7d412709480","title":"Underwater
+        basket weaving","type":"journal","created":"2014-09-04T11:38:10.072Z","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","group_id":"164d48fb-2343-332d-b566-1a4884a992e4"}'}
     headers:
       connection: [keep-alive]
       content-length: ['237']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 15:12:18 GMT']
-      location: ['https://api.mendeley.com/documents/c505f7f8-b830-30d0-9fc3-ff8c2434fe28']
-      x-mendeley-trace-id: [u-Xfn1-mFAI]
+      date: ['Thu, 04 Sep 2014 11:38:10 GMT']
+      location: ['https://api.mendeley.com/documents/c8669d9c-f580-3b0e-9c9a-a7d412709480']
+      x-mendeley-trace-id: [oGBJbncnrtc]
     status: {code: 201, message: Created}
 version: 1

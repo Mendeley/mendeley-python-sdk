@@ -6,7 +6,7 @@ interactions:
       true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
       "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
       "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
-      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}],
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
       "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
       "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
       "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
@@ -15,24 +15,24 @@ interactions:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['845']
+      Content-Length: ['850']
       Content-Type: [application/vnd.mendeley-document.1+json]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"30734c59-97b9-3501-9bd9-dce4dc0ab941","title":"Underwater
-        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T15:34:45.232Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+    body: {string: !!python/unicode '{"id":"922b0b34-dcb0-39ea-9617-57745e983b78","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T11:39:41.201Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['895']
+      content-length: ['900']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 15:34:45 GMT']
-      location: ['https://api.mendeley.com/documents/30734c59-97b9-3501-9bd9-dce4dc0ab941']
-      x-mendeley-trace-id: [me03Na9uXro]
+      date: ['Thu, 04 Sep 2014 11:39:41 GMT']
+      location: ['https://api.mendeley.com/documents/922b0b34-dcb0-39ea-9617-57745e983b78']
+      x-mendeley-trace-id: [oTe_nA8hcDY]
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -43,14 +43,14 @@ interactions:
       Content-Length: ['0']
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
-    uri: https://api.mendeley.com:443/documents/30734c59-97b9-3501-9bd9-dce4dc0ab941/trash
+    uri: https://api.mendeley.com:443/documents/922b0b34-dcb0-39ea-9617-57745e983b78/trash
   response:
     body: {string: !!python/unicode ''}
     headers:
       connection: [keep-alive]
-      date: ['Wed, 03 Sep 2014 15:34:45 GMT']
-      location: ['https://api.mendeley.com/trash/30734c59-97b9-3501-9bd9-dce4dc0ab941']
-      x-mendeley-trace-id: [ELyl4r_xaPo]
+      date: ['Thu, 04 Sep 2014 11:39:41 GMT']
+      location: ['https://api.mendeley.com/trash/922b0b34-dcb0-39ea-9617-57745e983b78']
+      x-mendeley-trace-id: [v7UDKwwNkqE]
     status: {code: 204, message: No Content}
 - request:
     body: null
@@ -60,14 +60,14 @@ interactions:
       Connection: [keep-alive]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: GET
-    uri: https://api.mendeley.com:443/documents/30734c59-97b9-3501-9bd9-dce4dc0ab941
+    uri: https://api.mendeley.com:443/documents/922b0b34-dcb0-39ea-9617-57745e983b78
   response:
     body: {string: !!python/unicode '{"message":"Document not found"}'}
     headers:
       connection: [keep-alive]
       content-length: ['32']
       content-type: [application/json]
-      date: ['Wed, 03 Sep 2014 15:34:45 GMT']
-      x-mendeley-trace-id: [wf-pfdBs5J4]
+      date: ['Thu, 04 Sep 2014 11:39:41 GMT']
+      x-mendeley-trace-id: [lNF_gG1yGQE]
     status: {code: 404, message: Not Found}
 version: 1

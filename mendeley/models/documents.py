@@ -1,8 +1,11 @@
 import json
+from mimetypes import guess_type
+from os.path import basename
 
 import arrow
 
 from mendeley.models.base_documents import BaseDocument, BaseBibView, BaseClientView
+from mendeley.models.files import File
 from mendeley.models.groups import LazyGroup
 from mendeley.models.profiles import LazyProfile
 
@@ -37,6 +40,20 @@ class UserBaseDocument(BaseDocument):
             return LazyGroup(self.session, self.json['group_id'])
         else:
             return None
+
+    def attach_file(self, path):
+        filename = basename(path)
+        headers = {
+            'content-disposition': 'attachment; filename=%s' % filename,
+            'content-type': guess_type(filename),
+            'link': '<%s/documents/%s>; rel="document"' % (self.session.host, self.id),
+            'accept': File.content_type
+        }
+
+        with open(path) as f:
+            rsp = self.session.post('/files', data=f, headers=headers)
+
+        return File(self.session, rsp.json())
 
 
 class UserBibView(BaseBibView):

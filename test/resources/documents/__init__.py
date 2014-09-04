@@ -38,7 +38,7 @@ def create_group_document(session, title='Underwater basket weaving'):
 def __create(doc_resource, title):
     return doc_resource.create(title,
                                'journal',
-                               authors=[Person.create('Piers', 'Bursill')],
+                               authors=[Person.create('Piers', 'Bursill-Hall')],
                                source='Journal of Submarine Bambrology',
                                year=2014,
                                abstract='The wonders of creating exotic baskets in an underwater environment',
@@ -80,7 +80,7 @@ def assert_core_document(doc):
 
     assert len(doc.authors) == 1
     assert doc.authors[0].first_name == 'Piers'
-    assert doc.authors[0].last_name == 'Bursill'
+    assert doc.authors[0].last_name == 'Bursill-Hall'
 
 
 def assert_bib_document(doc):

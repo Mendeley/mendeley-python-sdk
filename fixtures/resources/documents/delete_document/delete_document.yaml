@@ -6,33 +6,33 @@ interactions:
       true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
       "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
       "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
-      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}],
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
       "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
       "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
       "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
-      true}'
+      true, "group_id": null}'
     headers:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['827']
+      Content-Length: ['850']
       Content-Type: [application/vnd.mendeley-document.1+json]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"5b1c3f84-b989-3e5b-b326-33655e039ae6","title":"Underwater
-        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:16:51.032Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+    body: {string: !!python/unicode '{"id":"c1e1af82-65dd-3646-a076-218fb24a295d","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T11:38:11.069Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['895']
+      content-length: ['900']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:16:51 GMT']
-      location: ['https://api.mendeley.com/documents/5b1c3f84-b989-3e5b-b326-33655e039ae6']
-      x-mendeley-trace-id: [2CuJhvP2yBI]
+      date: ['Thu, 04 Sep 2014 11:38:11 GMT']
+      location: ['https://api.mendeley.com/documents/c1e1af82-65dd-3646-a076-218fb24a295d']
+      x-mendeley-trace-id: [Ko4gFvmIHow]
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -43,13 +43,13 @@ interactions:
       Content-Length: ['0']
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: DELETE
-    uri: https://api.mendeley.com:443/documents/5b1c3f84-b989-3e5b-b326-33655e039ae6
+    uri: https://api.mendeley.com:443/documents/c1e1af82-65dd-3646-a076-218fb24a295d
   response:
     body: {string: !!python/unicode ''}
     headers:
       connection: [keep-alive]
-      date: ['Wed, 03 Sep 2014 13:16:51 GMT']
-      x-mendeley-trace-id: [XFB2UbHuTsU]
+      date: ['Thu, 04 Sep 2014 11:38:11 GMT']
+      x-mendeley-trace-id: [Na0-2yq9brg]
     status: {code: 204, message: No Content}
 - request:
     body: null
@@ -69,8 +69,8 @@ interactions:
       content-encoding: [gzip]
       content-length: ['22']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:16:51 GMT']
+      date: ['Thu, 04 Sep 2014 11:38:11 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [er5NV3qhuks]
+      x-mendeley-trace-id: [HvN64BTjWMg]
     status: {code: 200, message: OK}
 version: 1

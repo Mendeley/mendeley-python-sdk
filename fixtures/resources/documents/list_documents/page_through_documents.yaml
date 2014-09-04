@@ -6,33 +6,33 @@ interactions:
       true, "title": "title 1", "editors": [{"first_name": "John", "last_name": "Smith"}],
       "pages": "1-6", "source": "Journal of Submarine Bambrology", "issue": "73",
       "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read": false, "volume":
-      "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}], "institution":
+      "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}], "institution":
       "University of Cambridge", "chapter": "99", "publisher": "Elsevier", "type":
       "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
       "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
-      true}'
+      true, "group_id": null}'
     headers:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['809']
+      Content-Length: ['832']
       Content-Type: [application/vnd.mendeley-document.1+json]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"7813bc3c-e3d1-3842-84b8-c08ce42e66dd","title":"title
-        1","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:27:55.195Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+    body: {string: !!python/unicode '{"id":"095e0cd4-0033-3a3f-a9ed-12dc9b6018a2","title":"title
+        1","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T11:38:22.691Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['877']
+      content-length: ['882']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:27:55 GMT']
-      location: ['https://api.mendeley.com/documents/7813bc3c-e3d1-3842-84b8-c08ce42e66dd']
-      x-mendeley-trace-id: [tBvuKFU62yc]
+      date: ['Thu, 04 Sep 2014 11:38:22 GMT']
+      location: ['https://api.mendeley.com/documents/095e0cd4-0033-3a3f-a9ed-12dc9b6018a2']
+      x-mendeley-trace-id: [ZtBlzPjHwWs]
     status: {code: 201, message: Created}
 - request:
     body: '{"series": "World Series", "abstract": "The wonders of creating exotic
@@ -41,33 +41,33 @@ interactions:
       true, "title": "title 2", "editors": [{"first_name": "John", "last_name": "Smith"}],
       "pages": "1-6", "source": "Journal of Submarine Bambrology", "issue": "73",
       "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read": false, "volume":
-      "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}], "institution":
+      "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}], "institution":
       "University of Cambridge", "chapter": "99", "publisher": "Elsevier", "type":
       "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
       "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
-      true}'
+      true, "group_id": null}'
     headers:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['809']
+      Content-Length: ['832']
       Content-Type: [application/vnd.mendeley-document.1+json]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"d440fb94-5bbe-323f-8dc4-99c25529e69a","title":"title
-        2","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:27:55.527Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+    body: {string: !!python/unicode '{"id":"26b71a29-e23a-3fe7-9ac7-3e552c1dac9f","title":"title
+        2","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T11:38:23.017Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['877']
+      content-length: ['882']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:27:55 GMT']
-      location: ['https://api.mendeley.com/documents/d440fb94-5bbe-323f-8dc4-99c25529e69a']
-      x-mendeley-trace-id: [1KByM6ctNpY]
+      date: ['Thu, 04 Sep 2014 11:38:23 GMT']
+      location: ['https://api.mendeley.com/documents/26b71a29-e23a-3fe7-9ac7-3e552c1dac9f']
+      x-mendeley-trace-id: [D5IBusY-7Qg]
     status: {code: 201, message: Created}
 - request:
     body: '{"series": "World Series", "abstract": "The wonders of creating exotic
@@ -76,33 +76,33 @@ interactions:
       true, "title": "title 3", "editors": [{"first_name": "John", "last_name": "Smith"}],
       "pages": "1-6", "source": "Journal of Submarine Bambrology", "issue": "73",
       "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read": false, "volume":
-      "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}], "institution":
+      "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}], "institution":
       "University of Cambridge", "chapter": "99", "publisher": "Elsevier", "type":
       "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
       "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
-      true}'
+      true, "group_id": null}'
     headers:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['809']
+      Content-Length: ['832']
       Content-Type: [application/vnd.mendeley-document.1+json]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"11c14814-e843-36ba-83c3-cbdbf1298e85","title":"title
-        3","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T13:27:55.896Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+    body: {string: !!python/unicode '{"id":"bd70393d-d048-3f22-a767-70b5855e97fa","title":"title
+        3","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T11:38:23.362Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['877']
+      content-length: ['882']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:27:55 GMT']
-      location: ['https://api.mendeley.com/documents/11c14814-e843-36ba-83c3-cbdbf1298e85']
-      x-mendeley-trace-id: [oKoyb86-jKU]
+      date: ['Thu, 04 Sep 2014 11:38:23 GMT']
+      location: ['https://api.mendeley.com/documents/bd70393d-d048-3f22-a767-70b5855e97fa']
+      x-mendeley-trace-id: [XIN5MK29o_4]
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -116,25 +116,25 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAO1RPU/kMBT8K9ar45NjO7t2SsqrkKACIeSPF/CR2Mhx2Fut+O/Yy6FDorj2Chpb
-        Gs2bN/Pm9gTBwwh71QvrhKMofE+FkpwqaRV1TDmUHHc776GDEsqMlX7+Sd+Q43MDfqUtRzNXwGzl
-        MeUVxtsTTCGv5T6apVEuA1a4g9n8xS62vIZ5hte7Do5oMoyc9bKDtcq5Rvj5rkvSRK42u5gcIpIL
-        s9ic5vRwrHLBYyxhOouPJ/Ap1LH69lzAawdPeDyk7JsfsJ/n1g85qLtdRlOwHaLtp0xTJq57MfL9
-        OAw/GGM3deI5pynMeH8+mNaCcbZ31PV6osIjo3YQPVU766VQajJafoRdkm8G/yFv7FqycaWyrh+R
-        HFL0NVNLfnYX4gPB36kER6xZn7CsJERiItka71DtZ4LxJeQUl3qRmv1PtV5KNlkt6WAtUsHFRJV3
-        kmrt+DBwjTttvlTLv6v9j6u9ewNnm0j0twMAAA==
+        H4sIAAAAAAAAAOVRPW8cIRT8K4h6ifjYu1u2dBW5shRXsSzrAQ+bmAWLZXM5nfzfA5dYiZQilSs3
+        II3mzZt5c3emwdGZcr1Dbt3IOFeKKVCegUbHhHRWmz0XE0g60BpqxEa//ER05PTSgW95KwliA2Cr
+        T7msdL47Ux/KWh8SLJ1yE7DBA43wB7vayhpiZJ8hRvp6P9ATQqGz5GIc6No0bWdd/xIn2ZMvm1mg
+        hITkChZTcsyPp6YZHKYa/GXDfKYuhzbWXiEVfR3oM56Oubhuipq/59Y3Odp224JQsV+j72dcMz7e
+        CjGraZbyE+f8a5t4KdmHiA+Xq2mtuOQHy6zQnimHnJmdEmzaGzeqafKgx7fES3bd4H/kway1gK2N
+        dfuE5JiTa5l68ou7kB4J/sg1WGJgfca6kpAIJLJ13rHZLwTT91ByWtpFWvbf/cq9OQiQmqFUwJTH
+        A9NgD0zhbietcGC1/6df+XH6Ve/br3qvfu9/ApI6funBAwAA
     headers:
       connection: [keep-alive]
       content-encoding: [gzip]
-      content-length: ['370']
+      content-length: ['378']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:27:56 GMT']
-      link: ['<https://api.mendeley.com/documents?limit=2&reverse=false&order=asc&marker=d440fb94-5bbe-323f-8dc4-99c25529e69a>;
+      date: ['Thu, 04 Sep 2014 11:38:23 GMT']
+      link: ['<https://api.mendeley.com/documents?limit=2&reverse=false&order=asc&marker=26b71a29-e23a-3fe7-9ac7-3e552c1dac9f>;
           rel="next"', '<https://api.mendeley.com/documents?limit=2&reverse=true&order=asc>;
           rel="last"']
       mendeley-count: ['3']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [n_TgISXzhx4]
+      x-mendeley-trace-id: [pWlkfvqvF1A]
     status: {code: 200, message: OK}
 - request:
     body: null
@@ -144,26 +144,26 @@ interactions:
       Connection: [keep-alive]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: GET
-    uri: https://api.mendeley.com:443/documents?limit=2&reverse=false&order=asc&marker=d440fb94-5bbe-323f-8dc4-99c25529e69a
+    uri: https://api.mendeley.com:443/documents?limit=2&reverse=false&order=asc&marker=26b71a29-e23a-3fe7-9ac7-3e552c1dac9f
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAG2QzW7DIBCEXwXt2VRg7AT7mGNPlZpToyrizwmNDRHgplaUdy+kitpDLyCNZr+d
-        nd0VrIYeKFW04bTBhjcMs5UUmDPFsJJaDrTuuOEtVJBsGk2233/EirKci/Dh5+DEmAUxp6MPEfrd
-        FQYbYto7MRXLizVZrmAUv9pmDtGOI9zeK1iMCNDXhDYVxIxTxfD8w0V+QK+znESwzqCNmGTwoz8s
-        GWe1cckOd3h/Be1tHssvrRncKjiZ5eKDLnlA/p2LDxzk3SoYkUwpouzHpMOEbSnr63Xftk+EkLc8
-        cQ5+sKPZ3wvrOkZqslZY0W7ATBuCZcso5iupG8b5ILrmcezkdQn4P371wAsZUxAqZdf2aNDFO51v
-        Kpff01l3QObLJ6uQFPFkUkTWIeHQXHyXHD8g4z5t8G7KjeRKvwEFKLMv3AEAAA==
+        H4sIAAAAAAAAAIVQzW7DIBh7FfSdw0RC0vwce5p2mrSeVk0VBGhZCVRA1kVV332Qadpuu4Bk2f5s
+        72+gBQzARUtoTwUWpO4wVVWFWbtpcUt40zWN7FvFoICoo5GJvv6IZmS5ZODdzd4ykwA2x5PzAYb9
+        DZT2IR4smzLlWcsEF2DYL7adfdDG4EdmDNzfClgk8zBUpKwLCMlzzKynb3PkFHqZ+cS8thJt2cS9
+        M+64JE8tpI1arReGGwinkyy9ZUXhXsBZLlfnRQ4F/K8u/NhBuj16yaLMa+T7mPSY1LuyHGg3VPSB
+        EPKaFBfvlDbysK7W95RUpB3xWPYKUyEJ5g0tcbfhoqZdp1hf/zSenMgB/7FnPETPxphYu5NEV2dF
+        6pSbr+m0PSL56aIeEWfhLGNA2iJm0Zx51xTfI2k/tHd2SoukSb8A8fbZXuEBAAA=
     headers:
       connection: [keep-alive]
       content-encoding: [gzip]
-      content-length: ['331']
+      content-length: ['332']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 13:27:56 GMT']
+      date: ['Thu, 04 Sep 2014 11:38:23 GMT']
       link: ['<https://api.mendeley.com/documents?limit=2&reverse=false&order=asc>;
-          rel="first"', '<https://api.mendeley.com/documents?limit=2&reverse=true&order=asc&marker=11c14814-e843-36ba-83c3-cbdbf1298e85>;
+          rel="first"', '<https://api.mendeley.com/documents?limit=2&reverse=true&order=asc&marker=bd70393d-d048-3f22-a767-70b5855e97fa>;
           rel="previous"']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [pdOPg8ZIwfQ]
+      x-mendeley-trace-id: [CFNcYiKc6_w]
     status: {code: 200, message: OK}
 version: 1

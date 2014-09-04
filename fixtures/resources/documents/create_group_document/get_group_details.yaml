@@ -24,9 +24,9 @@ interactions:
       content-encoding: [gzip]
       content-length: ['409']
       content-type: [application/vnd.mendeley-group.1+json]
-      date: ['Wed, 03 Sep 2014 15:12:49 GMT']
+      date: ['Thu, 04 Sep 2014 11:38:10 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [tYVRVQpNpZ4]
+      x-mendeley-trace-id: [wt964ddkJaw]
     status: {code: 200, message: OK}
 - request:
     body: '{"series": "World Series", "abstract": "The wonders of creating exotic
@@ -35,7 +35,7 @@ interactions:
       true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
       "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
       "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
-      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill"}],
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
       "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
       "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
       "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
@@ -44,24 +44,24 @@ interactions:
       Accept: [application/vnd.mendeley-document.1+json]
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['879']
+      Content-Length: ['884']
       Content-Type: [application/vnd.mendeley-document.1+json]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"84cb0560-a1ea-34bc-90f2-a97e8f1809d5","title":"Underwater
-        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-03T15:12:49.509Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+    body: {string: !!python/unicode '{"id":"76f6dbee-2a2a-3355-b86b-90916325f454","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2014-09-04T11:38:10.505Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
         of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"9930207c-c19f-3de0-b531-86bd4388fa94","group_id":"164d48fb-2343-332d-b566-1a4884a992e4","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['945']
+      content-length: ['950']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 03 Sep 2014 15:12:49 GMT']
-      location: ['https://api.mendeley.com/documents/84cb0560-a1ea-34bc-90f2-a97e8f1809d5']
-      x-mendeley-trace-id: [92SMffOUKOU]
+      date: ['Thu, 04 Sep 2014 11:38:10 GMT']
+      location: ['https://api.mendeley.com/documents/76f6dbee-2a2a-3355-b86b-90916325f454']
+      x-mendeley-trace-id: [UC8U_zfON_c]
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -88,8 +88,8 @@ interactions:
       content-encoding: [gzip]
       content-length: ['409']
       content-type: [application/vnd.mendeley-group.1+json]
-      date: ['Wed, 03 Sep 2014 15:12:49 GMT']
+      date: ['Thu, 04 Sep 2014 11:38:10 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [oIvu5Og70Ss]
+      x-mendeley-trace-id: [p9TZ76ucXcM]
     status: {code: 200, message: OK}
 version: 1

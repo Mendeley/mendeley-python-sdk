@@ -23,4 +23,4 @@ def test_should_get_authenticated_session():
         session = auth.authenticate('https://example.com?state=state1234&code=IXpvu_-TpqiWYz-i0nBfO45PxIE')
 
         assert session.token['access_token']
-        assert session.mendeley.host == 'https://api.mendeley.com'
+        assert session.host == 'https://api.mendeley.com'

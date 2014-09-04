@@ -1,10 +1,10 @@
 from test import get_user_session, cassette
-from test.resources.documents import delete_all_documents, create_group_document
+from test.resources.documents import create_group_document, delete_all_group_documents
 
 
 def test_should_page_through_documents():
     session = get_user_session()
-    delete_all_documents()
+    delete_all_group_documents()
 
     with cassette('fixtures/resources/trash/list_group_trash/page_through_documents.yaml'):
         doc1 = create_group_document(session, 'title 1')

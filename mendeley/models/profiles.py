@@ -1,7 +1,7 @@
 import arrow
 
 from mendeley.models.common import Discipline, Photo, Location, Education, Employment
-from mendeley.response import ResponseObject, LazyResponseObject, SessionResponseObject
+from mendeley.response import LazyResponseObject, SessionResponseObject
 
 
 class Profile(SessionResponseObject):

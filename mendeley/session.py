@@ -12,7 +12,7 @@ class MendeleySession(OAuth2Session):
     def __init__(self, mendeley, access_token, expires_in=None, refresh_token=None):
         super(MendeleySession, self).__init__(client_id=mendeley.client_id,
                                               token=self.__token_dict(access_token, expires_in, refresh_token))
-        self.mendeley = mendeley
+        self.host = mendeley.host
 
         self.catalog = Catalog(self)
         self.documents = Documents(self, None)
@@ -29,17 +29,8 @@ class MendeleySession(OAuth2Session):
     def group_trash(self, group_id):
         return Trash(self, group_id)
 
-    @staticmethod
-    def __token_dict(access_token, expires_in, refresh_token):
-        token = {'access_token': access_token}
-        if expires_in:
-            token['expires_in'] = expires_in
-        if refresh_token:
-            token['refresh_token'] = refresh_token
-        return token
-
     def request(self, method, url, data=None, headers=None, **kwargs):
-        full_url = urljoin(self.mendeley.host, url)
+        full_url = urljoin(self.host, url)
 
         if not headers:
             headers = {}
@@ -52,6 +43,15 @@ class MendeleySession(OAuth2Session):
             return rsp
         else:
             raise MendeleyApiException(rsp)
+
+    @staticmethod
+    def __token_dict(access_token, expires_in, refresh_token):
+        token = {'access_token': access_token}
+        if expires_in:
+            token['expires_in'] = expires_in
+        if refresh_token:
+            token['refresh_token'] = refresh_token
+        return token
 
     @staticmethod
     def __user_agent():
