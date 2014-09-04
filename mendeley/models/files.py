@@ -8,6 +8,10 @@ class File(SessionResponseObject):
     content_type = 'application/vnd.mendeley-file.1+json'
     filename_regex = re.compile('filename="(\S+)"')
 
+    @property
+    def download_url(self):
+        return '%s/files/%s' % (self.session.host, self.id)
+
     @classmethod
     def fields(cls):
         return ['id', 'size', 'file_name', 'mime_type', 'filehash']
