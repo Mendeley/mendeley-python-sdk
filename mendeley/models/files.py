@@ -12,6 +12,9 @@ class File(SessionResponseObject):
     def download_url(self):
         return '%s/files/%s' % (self.session.host, self.id)
 
+    def document(self, view=None):
+        return self.session.documents.get_lazy(self.json['document_id'], view=view)
+
     def download(self, directory):
         rsp = self.session.get('/files/%s' % self.id, stream=True)
         filename = self.filename_regex.search(rsp.headers['content-disposition']).group(1)

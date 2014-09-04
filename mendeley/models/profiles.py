@@ -1,7 +1,7 @@
 import arrow
 
 from mendeley.models.common import Discipline, Photo, Location, Education, Employment
-from mendeley.response import LazyResponseObject, SessionResponseObject
+from mendeley.response import SessionResponseObject
 
 
 class Profile(SessionResponseObject):
@@ -53,14 +53,3 @@ class Profile(SessionResponseObject):
     def fields(cls):
         return ['id', 'first_name', 'last_name', 'display_name', 'email', 'link', 'research_interests',
                 'academic_status', 'verified', 'user_type']
-
-
-class LazyProfile(LazyResponseObject):
-    def __init__(self, session, id):
-        super(LazyProfile, self).__init__(session, id, Profile)
-
-    def _load(self):
-        url = '/profiles/%s' % self.id
-        rsp = self.session.get(url, headers={'Accept': Profile.content_type})
-
-        return rsp.json()

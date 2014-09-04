@@ -1,8 +1,8 @@
-from test.response import DummyLazyResponseObject, DummyResponseObject
+from test.response import DummyLazyResponseObject
 
 
 def test_should_get_id():
-    response = DummyLazyResponseObject(None, 'id123', DummyResponseObject)
+    response = DummyLazyResponseObject(None, 'id123')
 
     assert response.id == 'id123'
 
@@ -10,7 +10,7 @@ def test_should_get_id():
 
 
 def test_should_delegate_to_method():
-    response = DummyLazyResponseObject(None, 'id123', DummyResponseObject)
+    response = DummyLazyResponseObject(None, 'id123')
 
     assert response.foo == 'foo-value'
 
@@ -18,7 +18,7 @@ def test_should_delegate_to_method():
 
 
 def test_should_delegate_to_field():
-    response = DummyLazyResponseObject(None, 'id123', DummyResponseObject)
+    response = DummyLazyResponseObject(None, 'id123')
 
     assert response.bar == 'bar-value'
 
@@ -26,7 +26,7 @@ def test_should_delegate_to_field():
 
 
 def test_should_not_call_loader_multiple_times():
-    response = DummyLazyResponseObject(None, 'id123', DummyResponseObject)
+    response = DummyLazyResponseObject(None, 'id123')
 
     assert response.bar == 'bar-value'
     assert response.bar == 'bar-value'
@@ -35,7 +35,7 @@ def test_should_not_call_loader_multiple_times():
 
 
 def test_should_return_valid_dir():
-    response = DummyLazyResponseObject(None, 'id123', DummyResponseObject)
+    response = DummyLazyResponseObject(None, 'id123')
 
     filtered_dir = [d for d in dir(response) if not d.startswith('_')]
     assert filtered_dir == ['bar', 'foo', 'load_count']

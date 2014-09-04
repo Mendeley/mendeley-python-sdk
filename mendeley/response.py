@@ -24,25 +24,24 @@ class SessionResponseObject(ResponseObject):
 
 
 class LazyResponseObject(object):
-    def __init__(self, session, id, obj_type):
+    def __init__(self, session, id, obj_type, loader):
         self.session = session
         self.id = id
-        self._obj_type = obj_type
 
-        self.json = None
+        self._obj_type = obj_type
+        self._loader = loader
+
+        self._value = None
 
     def __getattr__(self, name):
         return getattr(self._delegate, name)
 
     @property
     def _delegate(self):
-        if not self.json:
-            self.json = self._load()
+        if not self._value:
+            self._value = self._loader()
 
-        return self._obj_type(self.session, self.json)
-
-    def _load(self):
-        raise NotImplementedError
+        return self._value
 
     def __dir__(self):
         d = set(dir(self.__class__) + self._obj_type.__dir__())

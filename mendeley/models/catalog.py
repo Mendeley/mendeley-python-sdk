@@ -1,5 +1,4 @@
 from mendeley.models.base_documents import BaseDocument, BaseClientView, BaseBibView
-from mendeley.resources.base import add_query_params
 from mendeley.response import LazyResponseObject
 
 
@@ -53,12 +52,9 @@ class CatalogAllDocument(CatalogBibView, CatalogClientView, CatalogStatsView, Ca
 
 class LookupResponse(LazyResponseObject):
     def __init__(self, session, json, view, obj_type):
-        super(LookupResponse, self).__init__(session, json['catalog_id'], obj_type)
+        super(LookupResponse, self).__init__(session, json['catalog_id'], obj_type, lambda: self._load())
         self.score = json['score']
         self.view = view
 
     def _load(self):
-        url = add_query_params('/catalog/%s' % self.id, {'view': self.view})
-        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-document.1+json'})
-
-        return rsp.json()
+        return self.session.catalog.get(self.id, view=self.view)

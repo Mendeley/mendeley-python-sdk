@@ -6,8 +6,6 @@ import arrow
 
 from mendeley.models.base_documents import BaseDocument, BaseBibView, BaseClientView
 from mendeley.models.files import File
-from mendeley.models.groups import LazyGroup
-from mendeley.models.profiles import LazyProfile
 
 
 class UserBaseDocument(BaseDocument):
@@ -30,14 +28,14 @@ class UserBaseDocument(BaseDocument):
     @property
     def profile(self):
         if 'profile_id' in self.json:
-            return LazyProfile(self.session, self.json['profile_id'])
+            return self.session.profiles.get_lazy(self.json['profile_id'])
         else:
             return None
 
     @property
     def group(self):
         if 'group_id' in self.json:
-            return LazyGroup(self.session, self.json['group_id'])
+            return self.session.groups.get_lazy(self.json['group_id'])
         else:
             return None
 

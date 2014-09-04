@@ -2,6 +2,7 @@ from future.moves.urllib.parse import urlsplit, parse_qs, urlencode, urlunsplit
 from future.utils import iteritems
 
 from mendeley.pagination import Page
+from mendeley.response import LazyResponseObject
 
 
 class BaseResource(object):
@@ -25,6 +26,9 @@ class GetByIdResource(BaseResource):
         rsp = self._session.get(url, headers={'Accept': obj_type.content_type})
 
         return obj_type(self._session, rsp.json())
+
+    def get_lazy(self, id, **kwargs):
+        return LazyResponseObject(self._session, id, self._obj_type(**kwargs), lambda: self.get(id, **kwargs))
 
 
 class ListResource(BaseResource):

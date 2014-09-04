@@ -1,7 +1,7 @@
 import arrow
 
 from mendeley.models.common import Photo
-from mendeley.models.profiles import LazyProfile
+from mendeley.models.profiles import Profile
 from mendeley.response import SessionResponseObject, LazyResponseObject
 
 
@@ -25,7 +25,7 @@ class Group(SessionResponseObject):
     @property
     def owner(self):
         if 'owning_profile_id' in self.json:
-            return LazyProfile(self.session, self.json['owning_profile_id'])
+            return self.session.profiles.get_lazy(self.json['owning_profile_id'])
         else:
             return None
 
@@ -51,22 +51,11 @@ class Group(SessionResponseObject):
                 'role']
 
 
-class LazyGroup(LazyResponseObject):
-    def __init__(self, session, id):
-        super(LazyGroup, self).__init__(session, id, Group)
-
-    def _load(self):
-        url = '/groups/%s' % self.id
-        rsp = self.session.get(url, headers={'Accept': Group.content_type})
-
-        return rsp.json()
-
-
-class GroupMember(LazyProfile):
+class GroupMember(LazyResponseObject):
     content_type = 'application/vnd.mendeley-membership.1+json'
 
     def __init__(self, session, member_json):
-        super(GroupMember, self).__init__(session, member_json.get('profile_id'))
+        super(GroupMember, self).__init__(session, member_json.get('profile_id'), Profile, lambda: self._load())
 
         self.member_json = member_json
 
@@ -80,3 +69,6 @@ class GroupMember(LazyProfile):
     @property
     def role(self):
         return self.member_json.get('role')
+
+    def _load(self):
+        return self.session.profiles.get(self.id)

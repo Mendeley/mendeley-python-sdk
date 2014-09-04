@@ -115,3 +115,18 @@ def test_should_list_files_deleted_since():
 
         assert page.items[0].id == file1.id
         assert page.items[1].id == file2.id
+
+
+def test_should_get_document_for_file():
+    session = get_user_session()
+    delete_all_documents()
+
+    with cassette('fixtures/resources/files/list_files/get_document_for_file.yaml'):
+        doc = create_document(session)
+        doc.attach_file('fixtures/resources/files/basket.txt')
+
+        page = session.files.list()
+        assert len(page.items) == 1
+        assert page.count == 1
+
+        assert page.items[0].document().title == 'Underwater basket weaving'
