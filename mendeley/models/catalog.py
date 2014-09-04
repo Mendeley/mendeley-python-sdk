@@ -7,6 +7,10 @@ class CatalogDocument(BaseDocument):
     def fields(cls):
         return super(CatalogDocument, cls).fields() + ['link']
 
+    @property
+    def files(self):
+        return self.session.catalog_files(catalog_id=self.id)
+
 
 class CatalogBibView(BaseBibView):
     pass

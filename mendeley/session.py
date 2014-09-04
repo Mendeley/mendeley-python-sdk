@@ -36,6 +36,9 @@ class MendeleySession(OAuth2Session):
     def document_files(self, document_id):
         return Files(self, document_id=document_id)
 
+    def catalog_files(self, catalog_id):
+        return Files(self, catalog_id=catalog_id)
+
     def request(self, method, url, data=None, headers=None, **kwargs):
         full_url = urljoin(self.host, url)
 

@@ -13,7 +13,12 @@ class File(SessionResponseObject):
         return '%s/files/%s' % (self.session.host, self.id)
 
     def document(self, view=None):
-        return self.session.documents.get_lazy(self.json['document_id'], view=view)
+        if 'document_id' in self.json:
+            return self.session.documents.get_lazy(self.json['document_id'], view=view)
+        elif 'catalog_id' in self.json:
+            return self.session.catalog.get_lazy(self.json['catalog_id'], view=view)
+        else:
+            return None
 
     def download(self, directory):
         rsp = self.session.get('/files/%s' % self.id, stream=True)

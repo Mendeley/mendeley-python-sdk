@@ -1,4 +1,4 @@
-from test import cassette, sleep
+from test import cassette, sleep, get_client_credentials_session
 from test.resources.documents import *
 from test.resources.files import assert_basket_file, assert_weaving_file
 
@@ -56,6 +56,19 @@ def test_should_list_files_by_document():
         assert page.count == 1
 
         assert_basket_file(file)
+
+
+def test_should_list_files_by_catalog_document():
+    session = get_client_credentials_session()
+
+    with cassette('fixtures/resources/files/list_files/list_files_by_catalog_document.yaml'):
+        doc = session.catalog.get('5cd8328e-febe-3299-8e26-cf6ab2c07f0f')
+
+        page = doc.files.list()
+        assert len(page.items) == 1
+        assert page.count == 1
+
+        assert page.items[0].filehash == 'f9d3777596893362bbf49618e758d6b8a5271d04'
 
 
 def test_should_list_files_by_group():
@@ -130,3 +143,17 @@ def test_should_get_document_for_file():
         assert page.count == 1
 
         assert page.items[0].document().title == 'Underwater basket weaving'
+
+
+def test_should_get_catalog_document_for_file():
+    session = get_client_credentials_session()
+
+    with cassette('fixtures/resources/files/list_files/get_catalog_document_for_file.yaml'):
+        doc = session.catalog.get('5cd8328e-febe-3299-8e26-cf6ab2c07f0f')
+
+        page = doc.files.list()
+        assert len(page.items) == 1
+        assert page.count == 1
+
+        assert page.items[0].document().title == 'Changes in tree reproductive traits reduce functional diversity ' \
+                                                 'in a fragmented Atlantic forest landscape'
