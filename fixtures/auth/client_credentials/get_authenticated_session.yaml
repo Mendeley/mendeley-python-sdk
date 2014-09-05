@@ -10,6 +10,7 @@ interactions:
     method: POST
     uri: https://api.mendeley.com:443/oauth/token
   response:
+    # N.B.  The tokens below are expired and will not work.
     body: {string: !!python/unicode '{"access_token":"MSwxNDA5MDczNTA2MzQ2LCw4MDEsYWxsLCxqNW9xcUI1bTdFeUM2LVNoOC1YUHB5TjRQcGs","token_type":"bearer","expires_in":3600,"refresh_token":null}'}
     headers:
       connection: [keep-alive]
