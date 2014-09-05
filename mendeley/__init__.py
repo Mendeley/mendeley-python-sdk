@@ -4,7 +4,7 @@ from mendeley.auth import MendeleyClientCredentialsAuthenticator, \
 
 
 class Mendeley(object):
-    def __init__(self, client_id, client_secret, redirect_uri, host='https://api.mendeley.com'):
+    def __init__(self, client_id, client_secret=None, redirect_uri=None, host='https://api.mendeley.com'):
         self.client_id = client_id
         self.client_secret = client_secret
         self.redirect_uri = redirect_uri

@@ -11,6 +11,9 @@ from mendeley.models.files import File
 class UserBaseDocument(BaseDocument):
     @property
     def created(self):
+        """
+        an :class:`Arrow <arrow.arrow.Arrow>` object.
+        """
         if 'created' in self.json:
             return arrow.get(self.json['created'])
         else:
@@ -18,6 +21,9 @@ class UserBaseDocument(BaseDocument):
 
     @property
     def last_modified(self):
+        """
+        an :class:`Arrow <arrow.arrow.Arrow>` object.
+        """
         if 'last_modified' in self.json:
             return arrow.get(self.json['last_modified'])
         elif 'created' in self.json:
@@ -27,6 +33,9 @@ class UserBaseDocument(BaseDocument):
 
     @property
     def profile(self):
+        """
+        a :class:`Profile <mendeley.models.profiles.Profile>`.
+        """
         if 'profile_id' in self.json:
             return self.session.profiles.get_lazy(self.json['profile_id'])
         else:
@@ -34,6 +43,9 @@ class UserBaseDocument(BaseDocument):
 
     @property
     def group(self):
+        """
+        a :class:`Group <mendeley.models.groups.Group>`.
+        """
         if 'group_id' in self.json:
             return self.session.groups.get_lazy(self.json['group_id'])
         else:
@@ -41,12 +53,37 @@ class UserBaseDocument(BaseDocument):
 
     @property
     def files(self):
+        """
+        a :class:`Files <mendeley.resources.files.Files>` resource, from which
+        :class:`Files <mendeley.models.files.File>` can be retrieved.
+        """
         return self.session.document_files(document_id=self.id)
 
 
 class UserBibView(BaseBibView):
+    """
+    Additional fields returned when getting a :class:`UserDocument <mendeley.models.documents.UserDocument>` or
+    :class:`TrashDocument <mendeley.models.documents.TrashDocument>` with view='bib' or 'all'.
+
+    .. attribute:: pages
+    .. attribute:: volume
+    .. attribute:: issue
+    .. attribute:: websites
+    .. attribute:: month
+    .. attribute:: publisher
+    .. attribute:: day
+    .. attribute:: city
+    .. attribute:: edition
+    .. attribute:: institution
+    .. attribute:: series
+    .. attribute:: chapter
+    .. attribute:: revision
+    """
     @property
     def accessed(self):
+        """
+        an :class:`Arrow <arrow.arrow.Arrow>` object.
+        """
         if 'accessed' in self.json:
             return arrow.get(self.json['accessed'])
         else:
@@ -54,19 +91,54 @@ class UserBibView(BaseBibView):
 
 
 class UserClientView(BaseClientView):
+    """
+    Additional fields returned when getting a :class:`UserDocument <mendeley.models.documents.UserDocument>` or
+    :class:`TrashDocument <mendeley.models.documents.TrashDocument>` with view='client' or 'all'.
+
+    .. attribute:: file_attached
+    .. attribute:: read
+    .. attribute:: starred
+    .. attribute:: authored
+    .. attribute:: confirmed
+    .. attribute:: hidden
+    """
     @classmethod
     def fields(cls):
         return super(UserClientView, cls).fields() + ['read', 'starred', 'authored', 'confirmed', 'hidden']
 
 
 class UserTagsView(object):
+    """
+    Additional fields returned when getting a :class:`UserDocument <mendeley.models.documents.UserDocument>` or
+    :class:`TrashDocument <mendeley.models.documents.TrashDocument>` with view='tags' or 'all'.
+
+    .. attribute:: tags
+    """
     @classmethod
     def fields(cls):
         return ['tags']
 
 
 class UserDocument(UserBaseDocument):
+    """
+    Base class for user documents.
+
+    .. attribute:: id
+    .. attribute:: title
+    .. attribute:: type
+    .. attribute:: source
+    .. attribute:: year
+    .. attribute:: identifiers
+    .. attribute:: keywords
+    .. attribute:: abstract
+    """
     def update(self, **kwargs):
+        """
+        Updates this document.
+
+        :param kwargs: updated field values.  Only the values supplied will be modified.
+        :return: the updated document.
+        """
         rsp = self.session.patch('/documents/%s' % self.id, data=json.dumps(format_args(kwargs)), headers={
             'Accept': self.content_type,
             'Content-Type': self.content_type
@@ -75,13 +147,27 @@ class UserDocument(UserBaseDocument):
         return UserAllDocument(self.session, rsp.json())
 
     def delete(self):
+        """
+        Permanently deletes this document.
+        """
         self.session.delete('/documents/%s' % self.id)
 
     def move_to_trash(self):
+        """
+        Moves this document to the trash.
+
+        :return: a :class:`TrashDocument <mendeley.models.documents.TrashDocument>`.
+        """
         self.session.post('/documents/%s/trash' % self.id)
         return self._trashed_type()(self.session, self.json)
 
     def attach_file(self, path):
+        """
+        Attaches a file to this document.
+
+        :param path: the path of the file to attach.
+        :return: a :class:`File <mendeley.models.files.File>`.
+        """
         filename = basename(path)
         headers = {
             'content-disposition': 'attachment; filename=%s' % filename,
@@ -141,11 +227,32 @@ class UserAllDocument(UserDocument, UserBibView, UserClientView, UserTagsView):
 
 
 class TrashDocument(UserBaseDocument):
+    """
+    Base class for trashed documents.
+
+    .. attribute:: id
+    .. attribute:: title
+    .. attribute:: type
+    .. attribute:: source
+    .. attribute:: year
+    .. attribute:: identifiers
+    .. attribute:: keywords
+    .. attribute:: abstract
+    """
+
     def delete(self):
+        """
+        Permanently deletes this document.
+        """
         url = '/trash/%s' % self.id
         self.session.delete(url)
 
     def restore(self):
+        """
+        Restores this document from the trash.
+
+        :return: a :class:`UserDocument <mendeley.models.documents.UserDocument>`.
+        """
         self.session.post('/trash/%s/restore' % self.id)
         return self._restored_type()(self.session, self.json)
 
@@ -154,24 +261,14 @@ class TrashDocument(UserBaseDocument):
         return UserDocument
 
 
-class TrashAllDocument(TrashDocument, UserBibView, UserClientView, UserTagsView):
+class TrashBibDocument(TrashDocument, UserBibView):
     @classmethod
     def fields(cls):
-        return TrashDocument.fields() + UserBibView.fields() + UserClientView.fields() + UserTagsView.fields()
+        return TrashDocument.fields() + UserBibView.fields()
 
     @classmethod
     def _restored_type(cls):
-        return UserAllDocument
-
-
-class TrashTagsDocument(TrashDocument, UserTagsView):
-    @classmethod
-    def fields(cls):
-        return TrashDocument.fields() + UserTagsView.fields()
-
-    @classmethod
-    def _restored_type(cls):
-        return UserTagsDocument
+        return UserBibDocument
 
 
 class TrashClientDocument(TrashDocument, UserClientView):
@@ -184,14 +281,24 @@ class TrashClientDocument(TrashDocument, UserClientView):
         return UserClientDocument
 
 
-class TrashBibDocument(TrashDocument, UserBibView):
+class TrashTagsDocument(TrashDocument, UserTagsView):
     @classmethod
     def fields(cls):
-        return TrashDocument.fields() + UserBibView.fields()
+        return TrashDocument.fields() + UserTagsView.fields()
 
     @classmethod
     def _restored_type(cls):
-        return UserBibDocument
+        return UserTagsDocument
+
+
+class TrashAllDocument(TrashDocument, UserBibView, UserClientView, UserTagsView):
+    @classmethod
+    def fields(cls):
+        return TrashDocument.fields() + UserBibView.fields() + UserClientView.fields() + UserTagsView.fields()
+
+    @classmethod
+    def _restored_type(cls):
+        return UserAllDocument
 
 
 def format_args(kwargs):

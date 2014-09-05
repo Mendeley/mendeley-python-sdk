@@ -7,6 +7,9 @@ class BaseDocument(SessionResponseObject):
 
     @property
     def authors(self):
+        """
+        a list of :class:`Persons <mendeley.models.common.Person>`.
+        """
         if 'authors' in self.json:
             return [Person(p) for p in self.json['authors']]
         else:
@@ -26,6 +29,9 @@ class BaseClientView(SessionResponseObject):
 class BaseBibView(SessionResponseObject):
     @property
     def editors(self):
+        """
+        a list of :class:`Persons <mendeley.models.common.Person>`.
+        """
         if 'editors' in self.json:
             return [Person(p) for p in self.json['editors']]
         else:

@@ -5,6 +5,16 @@ from mendeley.response import SessionResponseObject
 
 
 class File(SessionResponseObject):
+    """
+    A file attached to a document.
+
+    .. attribute:: id
+    .. attribute:: size
+    .. attribute:: file_name
+    .. attribute:: mime_type
+    .. attribute:: filehash
+    .. attribute:: download_url
+    """
     content_type = 'application/vnd.mendeley-file.1+json'
     filename_regex = re.compile('filename="(\S+)"')
 
@@ -13,6 +23,12 @@ class File(SessionResponseObject):
         return '%s/files/%s' % (self.session.host, self.id)
 
     def document(self, view=None):
+        """
+        :param view: document view to return.
+        :return: a :class:`UserDocument <mendeley.models.documents.UserDocument>` or
+                 :class:`CatalogDocument <mendeley.models.catalog.CatalogDocument>`, depending on which the document is
+                 attached to.
+        """
         if 'document_id' in self.json:
             return self.session.documents.get_lazy(self.json['document_id'], view=view)
         elif 'catalog_id' in self.json:
@@ -21,6 +37,12 @@ class File(SessionResponseObject):
             return None
 
     def download(self, directory):
+        """
+        Downloads the file.
+
+        :param directory: the directory to download the file to.  This must exist.
+        :return: the path to the downloaded file.
+        """
         rsp = self.session.get('/files/%s' % self.id, stream=True)
         filename = self.filename_regex.search(rsp.headers['content-disposition']).group(1)
         path = os.path.join(directory, filename)
@@ -35,6 +57,9 @@ class File(SessionResponseObject):
         return path
 
     def delete(self):
+        """
+        Deletes the file.
+        """
         self.session.delete('/files/%s' % self.id)
 
     @classmethod

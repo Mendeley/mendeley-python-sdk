@@ -8,3 +8,4 @@ build/
 MANIFEST
 test_config.yml
 junit-*.xml
+docs/_build/
