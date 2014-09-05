@@ -29,12 +29,3 @@ There are two sample applications that illustrate how to use the SDK:
 - `mendeley-api-python-catalog-example <https://github.com/Mendeley/mendeley-api-python-catalog-example>`_, a
   command-line application for accessing the Mendeley catalog.
 
-Contents
---------
-
-.. toctree::
-   :maxdepth: 2
-
-   usage
-   resources
-   models
