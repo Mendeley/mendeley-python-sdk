@@ -9,6 +9,35 @@ from mendeley.version import __version__
 
 
 class MendeleySession(OAuth2Session):
+    """
+    Entry point for accessing Mendeley resources.
+
+    .. attribute:: catalog
+
+       A :class:`Catalog <mendeley.resources.catalog.Catalog>` resource for accessing the Mendeley catalog.
+
+    .. attribute:: documents
+
+       A :class:`Documents <mendeley.resources.documents.Documents>` resource for accessing documents in the logged-in
+       user's library.
+
+    .. attribute:: files
+
+       A :class:`Files <mendeley.resources.files.Files>` resource for accessing files in the logged-in user's library.
+
+    .. attribute:: groups
+
+       A :class:`Groups <mendeley.resources.groups.Groups>` resource for accessing groups that the user is a member of.
+
+    .. attribute:: profiles
+
+       A :class:`Profiles <mendeley.resources.profiles.Profiles>` resource for accessing profiles of Mendeley users.
+
+    .. attribute:: trash
+
+       A :class:`Trash <mendeley.resources.trash.Trash>` resource for accessing trashed documents in the logged-in
+       user's library.
+    """
     def __init__(self, mendeley, access_token, expires_in=None, refresh_token=None):
         super(MendeleySession, self).__init__(client_id=mendeley.client_id,
                                               token=self.__token_dict(access_token, expires_in, refresh_token))
