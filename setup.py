@@ -7,7 +7,7 @@ with open('mendeley/version.py') as f:
 setup(
     name='mendeley',
     version=__version__,
-    packages=['mendeley'],
+    packages=['mendeley', 'mendeley.models', 'mendeley.resources'],
     url='http://dev.mendeley.com',
     license='MIT',
     author='Mendeley',
