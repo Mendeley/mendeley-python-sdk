@@ -12,7 +12,7 @@ package manager for Python.
 
 .. code-block:: bash
 
-    pip install twilio
+    pip install mendeley
 
 Compatibility
 -------------
