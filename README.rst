@@ -14,6 +14,11 @@ package manager for Python.
 
     pip install mendeley
 
+Documentation
+-------------
+
+Full documentation, including examples, can be found on `ReadTheDocs <http://mendeley-python.readthedocs.org/>`_.
+
 Compatibility
 -------------
 
