@@ -38,8 +38,18 @@ class MendeleySession(OAuth2Session):
        A :class:`Trash <mendeley.resources.trash.Trash>` resource for accessing trashed documents in the logged-in
        user's library.
     """
+
     def __init__(self, mendeley, token):
-        super(MendeleySession, self).__init__(client_id=mendeley.client_id, token=token)
+        if mendeley.client_secret:
+            refresh_args = {'client_id': mendeley.client_id, 'client_secret': mendeley.client_secret}
+
+            super(MendeleySession, self).__init__(client_id=mendeley.client_id,
+                                                  token=token,
+                                                  auto_refresh_url='%s/oauth/token' % mendeley.host,
+                                                  auto_refresh_kwargs=refresh_args,
+                                                  token_updater=lambda x: None)
+        else:
+            super(MendeleySession, self).__init__(client_id=mendeley.client_id, token=token)
 
         self.host = mendeley.host
 
@@ -82,15 +92,6 @@ class MendeleySession(OAuth2Session):
             return rsp
         else:
             raise MendeleyApiException(rsp)
-
-    @staticmethod
-    def __token_dict(access_token, expires_in, refresh_token):
-        token = {'access_token': access_token}
-        if expires_in:
-            token['expires_in'] = expires_in
-        if refresh_token:
-            token['refresh_token'] = refresh_token
-        return token
 
     @staticmethod
     def __user_agent():
