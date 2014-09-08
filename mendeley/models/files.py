@@ -20,7 +20,12 @@ class File(SessionResponseObject):
 
     @property
     def download_url(self):
-        return '%s/files/%s' % (self.session.host, self.id)
+        """
+        the URL at which the file can be downloaded.  This is only valid for a short time, so should not be cached.
+        """
+        file_url = '/files/%s' % self.id
+        rsp = self.session.get(file_url, allow_redirects=False)
+        return rsp.headers['location']
 
     def document(self, view=None):
         """

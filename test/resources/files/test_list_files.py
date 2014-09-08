@@ -18,6 +18,18 @@ def test_should_list_files():
         assert_basket_file(page.items[0])
 
 
+def test_should_get_download_url_for_file():
+    session = get_user_session()
+    delete_all_documents()
+
+    with cassette('fixtures/resources/files/list_files/get_download_url.yaml'):
+        doc = create_document(session)
+        doc.attach_file('fixtures/resources/files/basket.txt')
+
+        url = session.files.list().items[0].download_url
+        assert '92c7a71b371eb439579be559b5eac9c09a743c42' in url
+
+
 def test_should_page_through_files():
     session = get_user_session()
     delete_all_documents()

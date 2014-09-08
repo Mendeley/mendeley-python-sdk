@@ -15,5 +15,3 @@ def test_should_upload_file():
         assert file.file_name == 'Underwater basket weaving'
         assert file.mime_type == 'text/plain'
         assert file.filehash == '92c7a71b371eb439579be559b5eac9c09a743c42'
-
-        assert file.download_url == 'https://api.mendeley.com/files/%s' % file.id
