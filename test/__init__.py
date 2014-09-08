@@ -7,6 +7,12 @@ from mendeley import Mendeley
 from mendeley.session import MendeleySession
 
 
+class DummyStateGenerator(object):
+    @staticmethod
+    def generate_state():
+        return 'state1234'
+
+
 def load_config_from_file(filename):
     with open(filename) as f:
         return yaml.load(f)
@@ -21,7 +27,10 @@ def load_config():
 
 def configure_mendeley():
     config = load_config()
-    return Mendeley(config['clientId'], config['clientSecret'], config['redirectUri'])
+    return Mendeley(config['clientId'],
+                    config['clientSecret'],
+                    config['redirectUri'],
+                    state_generator=DummyStateGenerator())
 
 
 def get_user_session():

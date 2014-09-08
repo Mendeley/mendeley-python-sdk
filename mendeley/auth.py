@@ -1,5 +1,3 @@
-import random
-import string
 import json
 
 from oauthlib.oauth2 import MobileApplicationClient, BackendApplicationClient, WebApplicationClient
@@ -8,15 +6,6 @@ from requests_oauthlib import OAuth2Session
 from future.builtins import bytes
 
 from mendeley.session import MendeleySession
-
-
-class DefaultStateGenerator(object):
-    ASCII_CHARACTER_SET = string.ascii_uppercase + string.digits
-
-    @staticmethod
-    def generate_state(length=30, chars=ASCII_CHARACTER_SET):
-        rand = random.SystemRandom()
-        return ''.join(rand.choice(chars) for _ in range(length))
 
 
 def handle_text_response(rsp):
@@ -41,21 +30,19 @@ class MendeleyClientCredentialsAuthenticator(object):
         auth = HTTPBasicAuth(self.mendeley.client_id, self.mendeley.client_secret)
 
         token = self.oauth.fetch_token(token_url, auth=auth, scope=['all'])
-        return MendeleySession(self.mendeley, token['access_token'], expires_in=token.get('expires_in'))
+        return MendeleySession(self.mendeley, token)
 
 
 class MendeleyLoginAuthenticator:
-    def __init__(self, mendeley, client, state_generator=None):
+    def __init__(self, mendeley, client, state):
         self.mendeley = mendeley
-
-        state_generator = state_generator or DefaultStateGenerator()
-        self.state = state_generator.generate_state()
+        self.state = state
 
         self.oauth = OAuth2Session(
             client=client,
             redirect_uri=mendeley.redirect_uri,
             scope=['all'],
-            state=self.state)
+            state=state)
         self.oauth.compliance_hook['access_token_response'] = [handle_text_response]
 
     def get_login_url(self):
@@ -65,23 +52,23 @@ class MendeleyLoginAuthenticator:
 
 
 class MendeleyAuthorizationCodeAuthenticator(MendeleyLoginAuthenticator):
-    def __init__(self, mendeley, state_generator=None):
+    def __init__(self, mendeley, state):
         client = WebApplicationClient(mendeley.client_id)
-        MendeleyLoginAuthenticator.__init__(self, mendeley, client, state_generator)
+        MendeleyLoginAuthenticator.__init__(self, mendeley, client, state)
 
     def authenticate(self, redirect_url):
         token_url = self.mendeley.host + '/oauth/token'
         auth = HTTPBasicAuth(self.mendeley.client_id, self.mendeley.client_secret)
 
         token = self.oauth.fetch_token(token_url, authorization_response=redirect_url, auth=auth, scope=['all'])
-        return MendeleySession(self.mendeley, token['access_token'], expires_in=token.get('expires_in'))
+        return MendeleySession(self.mendeley, token)
 
 
 class MendeleyImplicitGrantAuthenticator(MendeleyLoginAuthenticator):
-    def __init__(self, mendeley, state_generator=None):
+    def __init__(self, mendeley, state):
         client = MobileApplicationClient(mendeley.client_id)
-        MendeleyLoginAuthenticator.__init__(self, mendeley, client, state_generator)
+        MendeleyLoginAuthenticator.__init__(self, mendeley, client, state)
 
     def authenticate(self, redirect_url):
         token = self.oauth.token_from_fragment(redirect_url)
-        return MendeleySession(self.mendeley, token['access_token'], expires_in=token.get('expires_in'))
+        return MendeleySession(self.mendeley, token)

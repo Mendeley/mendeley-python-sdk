@@ -38,9 +38,9 @@ class MendeleySession(OAuth2Session):
        A :class:`Trash <mendeley.resources.trash.Trash>` resource for accessing trashed documents in the logged-in
        user's library.
     """
-    def __init__(self, mendeley, access_token, expires_in=None, refresh_token=None):
-        super(MendeleySession, self).__init__(client_id=mendeley.client_id,
-                                              token=self.__token_dict(access_token, expires_in, refresh_token))
+    def __init__(self, mendeley, token):
+        super(MendeleySession, self).__init__(client_id=mendeley.client_id, token=token)
+
         self.host = mendeley.host
 
         self.catalog = Catalog(self)
