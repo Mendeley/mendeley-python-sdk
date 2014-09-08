@@ -47,5 +47,8 @@ class DefaultStateGenerator(object):
 
 
 def is_localhost(url):
+    if not url:
+        return False
+
     split_url = urlsplit(url)
     return split_url.scheme == 'http' and split_url.hostname in ['127.0.0.1', '0.0.0.0', 'localhost']
