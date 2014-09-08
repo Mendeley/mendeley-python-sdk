@@ -36,8 +36,9 @@ def configure_mendeley():
 def get_user_session():
     config = load_config()
     mendeley = configure_mendeley()
+    token = {'access_token': config['accessToken']}
 
-    return MendeleySession(mendeley, config['accessToken'])
+    return MendeleySession(mendeley, token)
 
 
 def get_client_credentials_session():
@@ -45,7 +46,8 @@ def get_client_credentials_session():
     mendeley = configure_mendeley()
 
     if config['recordMode'] == 'none':
-        return MendeleySession(mendeley, config['accessToken'])
+        token = {'access_token': config['accessToken']}
+        return MendeleySession(mendeley, token)
     else:
         return mendeley.start_client_credentials_flow().authenticate()
 
