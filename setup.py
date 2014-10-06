@@ -9,7 +9,7 @@ setup(
     version=__version__,
     packages=['mendeley', 'mendeley.models', 'mendeley.resources'],
     url='http://dev.mendeley.com',
-    license='MIT',
+    license='Apache',
     author='Mendeley',
     author_email='api@mendeley.com',
     description='Python SDK for the Mendeley API',
@@ -30,7 +30,7 @@ setup(
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2",
