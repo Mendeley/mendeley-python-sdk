@@ -1,12 +1,7 @@
-import sys
-
-import pytest
-
 from test import get_user_session, cassette
 from test.resources.documents import delete_all_group_documents, create_group_document
 
 
-@pytest.mark.xfail(sys.version_info[0] == 3, reason='vcrpy issue #96')
 def test_should_page_through_group_documents():
     session = get_user_session()
     delete_all_group_documents()
