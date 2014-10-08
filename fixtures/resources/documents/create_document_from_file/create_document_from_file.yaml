@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: !!python/object:__builtin__.file {}
+    headers:
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['178']
+      accept: [application/vnd.mendeley-document.1+json]
+      content-disposition: [attachment; filename=basket.txt]
+      content-type: [text/plain]
+      user-agent: [mendeley/0.2.1 CPython/2.7.6 Linux/3.13.0-36-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"bbf72534-1dcd-3d10-b6c0-ef7a7de8420b","title":"basket.txt","type":"journal"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['83']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 08 Oct 2014 15:42:24 GMT']
+      location: ['https://api.mendeley.com/documents/bbf72534-1dcd-3d10-b6c0-ef7a7de8420b']
+      x-mendeley-trace-id: [u6lW6FbgA0k]
+    status: {code: 201, message: Created}
+version: 1

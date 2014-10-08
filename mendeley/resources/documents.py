@@ -56,7 +56,7 @@ class Documents(DocumentsBase):
 
     def create(self, title, type, **kwargs):
         """
-        Creates a new document.
+        Creates a new document from metadata.
 
         :param title: title of the document.
         :param type: type of the document.
@@ -75,6 +75,25 @@ class Documents(DocumentsBase):
             'Accept': content_type,
             'Content-Type': content_type
         })
+
+        return UserAllDocument(self.session, rsp.json())
+
+    def create_from_file(self, path):
+        """
+        Creates a new document from a file.
+
+        :param path: path to the file.
+        :return: a :class:`UserDocument <mendeley.models.documents.UserDocument>`.
+        """
+        filename = basename(path)
+        headers = {
+            'content-disposition': 'attachment; filename=%s' % filename,
+            'content-type': guess_type(filename),
+            'accept': UserDocument.content_type
+        }
+
+        with open(path) as f:
+            rsp = self.session.post('/documents', data=f, headers=headers)
 
         return UserAllDocument(self.session, rsp.json())
 
