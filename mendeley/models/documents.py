@@ -171,7 +171,7 @@ class UserDocument(UserBaseDocument):
         filename = basename(path)
         headers = {
             'content-disposition': 'attachment; filename=%s' % filename,
-            'content-type': guess_type(filename),
+            'content-type': guess_type(filename)[0],
             'link': '<%s/documents/%s>; rel="document"' % (self.session.host, self.id),
             'accept': File.content_type
         }

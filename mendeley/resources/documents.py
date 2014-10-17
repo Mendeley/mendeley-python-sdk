@@ -88,7 +88,7 @@ class Documents(DocumentsBase):
         filename = basename(path)
         headers = {
             'content-disposition': 'attachment; filename=%s' % filename,
-            'content-type': guess_type(filename),
+            'content-type': guess_type(filename)[0],
             'accept': UserDocument.content_type
         }
 
