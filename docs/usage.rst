@@ -61,7 +61,7 @@ read-only Mendeley Catalog of crowd sourced documents).
     # These values should match the ones supplied when registering your application.
     mendeley = Mendeley(client_id, client_secret=client_secret)
 
-    auth = mendeley.start_implicit_grant_flow()
+    auth = mendeley.start_client_credentials_flow()
     session = auth.authenticate()
 
 Sessions
