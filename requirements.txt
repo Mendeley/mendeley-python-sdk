@@ -6,12 +6,12 @@ future==0.14.1
 memoized-property==1.0.2
 mock==1.0.1
 oauthlib==0.6.3
-py==1.4.25
-pytest==2.6.3
+py==1.4.26
+pytest==2.6.4
 python-dateutil==2.2
 requests==2.4.3
-requests-oauthlib==0.4.1
+requests-oauthlib==0.4.2
 six==1.8.0
-vcrpy==1.1.1
+vcrpy==1.1.2
 wrapt==1.9.0
 wsgiref==0.1.2

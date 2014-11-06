@@ -15,16 +15,17 @@ setup(
     description='Python SDK for the Mendeley API',
 
     install_requires=[
-        'arrow',
-        'future',
-        'memoized-property',
-        'requests',
-        'requests-oauthlib',
+        'arrow==0.4.4',
+        'future==0.14.1',
+        'memoized-property==1.0.2',
+        'requests==2.4.3',
+        'requests-oauthlib==0.4.2',
+        'oauthlib==0.6.3'
     ],
 
     tests_require=[
-        'pytest',
-        'vcrpy'
+        'pytest==2.6.4',
+        'vcrpy==1.1.2'
     ],
 
     classifiers=[
