@@ -80,7 +80,7 @@ def test_should_list_files_by_catalog_document():
         assert len(page.items) == 1
         assert page.count == 1
 
-        assert page.items[0].filehash == 'f9d3777596893362bbf49618e758d6b8a5271d04'
+        assert page.items[0].filehash == '933b1d7ad3793aaf5de2090b4199cab8f8c6489a'
 
 
 def test_should_list_files_by_group():

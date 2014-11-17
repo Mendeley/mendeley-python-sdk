@@ -92,7 +92,7 @@ class Documents(DocumentsBase):
             'accept': UserDocument.content_type
         }
 
-        with open(path) as f:
+        with open(path, 'rb') as f:
             rsp = self.session.post('/documents', data=f, headers=headers)
 
         return UserAllDocument(self.session, rsp.json())

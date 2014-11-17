@@ -1,10 +1,11 @@
 import time
-import vcr
 
+import vcr
 import yaml
 
 from mendeley import Mendeley
 from mendeley.session import MendeleySession
+from test.yamlfileserializer import YamlFileSerializer
 
 
 class DummyStateGenerator(object):
@@ -54,7 +55,13 @@ def get_client_credentials_session():
 
 def cassette(path):
     config = load_config()
-    return vcr.use_cassette(path, filter_headers=['authorization'], record_mode=config['recordMode'])
+    my_vcr = vcr.VCR()
+    my_vcr.register_serializer('file', YamlFileSerializer())
+
+    return my_vcr.use_cassette(path,
+                               filter_headers=['authorization'],
+                               record_mode=config['recordMode'],
+                               serializer='file')
 
 
 def sleep(seconds):

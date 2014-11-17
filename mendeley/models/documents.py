@@ -176,7 +176,7 @@ class UserDocument(UserBaseDocument):
             'accept': File.content_type
         }
 
-        with open(path) as f:
+        with open(path, 'rb') as f:
             rsp = self.session.post('/files', data=f, headers=headers)
 
         return File(self.session, rsp.json())

@@ -52,7 +52,7 @@ class File(SessionResponseObject):
         filename = self.filename_regex.search(rsp.headers['content-disposition']).group(1)
         path = os.path.join(directory, filename)
 
-        with open(path, 'w') as f:
+        with open(path, 'wb') as f:
             for block in rsp.iter_content(1024):
                 if not block:
                     break
