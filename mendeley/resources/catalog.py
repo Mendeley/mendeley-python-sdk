@@ -86,7 +86,7 @@ class Catalog(GetByIdResource):
     def advanced_search(self, title=None, author=None, source=None, abstract=None, min_year=None, max_year=None,
                         open_access=None, view=None):
         """
-        Executes an advanced search, where individual fields can be searched on.
+        Executes an advanced catalog search, where individual fields can be searched on.
 
         :param title: Title.
         :param author: Author.

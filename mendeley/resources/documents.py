@@ -1,4 +1,6 @@
+from mendeley.exception import MendeleyException
 from mendeley.models.documents import *
+from mendeley.resources.base import add_query_params, ListResource
 from mendeley.resources.base_documents import DocumentsBase
 
 
@@ -97,8 +99,43 @@ class Documents(DocumentsBase):
 
         return UserAllDocument(self.session, rsp.json())
 
+    def search(self, query, view=None):
+        """
+        Searches the logged-in user's library for documents.
+
+        :param query: the search query to execute.
+        :param view: the view to get.  One of 'bib', 'client', 'tags', 'all'.
+        :return: a :class:`DocumentsSearch <mendeley.models.documents.DocumentsSearch>` resource, from which results can
+                 be retrieved.
+        """
+        if self.group_id:
+            raise MendeleyException('Search is not available for group documents')
+
+        return DocumentsSearch(self.session, query=query, view=view)
+
+    def advanced_search(self, title=None, author=None, source=None, abstract=None, min_year=None, max_year=None,
+                        view=None):
+        """
+        Executes an advanced search in the logged-in user's library, where individual fields can be searched on.
+
+        :param title: Title.
+        :param author: Author.
+        :param source: Source.
+        :param abstract: Abstract.
+        :param min_year: Minimum year for documents to return.
+        :param max_year: Maximum year for documents to return.
+        :param view: the view to get.  One of 'bib', 'client', 'tags', 'all'.
+        :return: a :class:`DocumentsSearch <mendeley.models.documents.DocumentsSearch>` resource, from which results can
+                 be retrieved.
+        """
+        if self.group_id:
+            raise MendeleyException('Search is not available for group documents')
+
+        return DocumentsSearch(self.session, title=title, author=author, source=source, abstract=abstract,
+                               min_year=min_year, max_year=max_year, view=view)
+
     @staticmethod
-    def _view_type(view):
+    def view_type(view):
         return {
             'all': UserAllDocument,
             'bib': UserBibDocument,
@@ -106,3 +143,43 @@ class Documents(DocumentsBase):
             'tags': UserTagsDocument,
             'core': UserDocument,
         }.get(view, UserDocument)
+
+
+class DocumentsSearch(ListResource):
+    """
+    Resource for accessing the results of a catalog search.
+    """
+
+    def __init__(self, session, **kwargs):
+        self.session = session
+        self.params = kwargs
+
+    def list(self, page_size=None):
+        """
+        Retrieves search results, as a paginated collection.
+
+        :param page_size: the number of search results to return on each page.  Defaults to 20.
+        :return: a :class:`Page <mendeley.pagination.Page>` of
+                 :class:`CatalogDocuments <mendeley.models.catalog.CatalogDocument>`.
+        """
+        return super(DocumentsSearch, self).list(page_size)
+
+    def iter(self, page_size=None):
+        """
+        Retrieves search results, as an iterator.
+
+        :param page_size: the number of search results to retrieve at a time.  Defaults to 20.
+        :return: an iterator of :class:`CatalogDocuments <mendeley.models.catalog.CatalogDocument>`.
+        """
+        return super(DocumentsSearch, self).iter(page_size)
+
+    def _obj_type(self, **kwargs):
+        return Documents.view_type(self.params['view'])
+
+    @property
+    def _url(self):
+        return add_query_params('/search/documents', self.params)
+
+    @property
+    def _session(self):
+        return self.session

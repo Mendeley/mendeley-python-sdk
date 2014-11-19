@@ -56,7 +56,7 @@ class Trash(DocumentsBase):
         return super(Trash, self).iter(page_size, view, sort, order, modified_since, deleted_since)
 
     @staticmethod
-    def _view_type(view):
+    def view_type(view):
         return {
             'all': TrashAllDocument,
             'bib': TrashBibDocument,

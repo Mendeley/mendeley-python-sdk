@@ -32,8 +32,8 @@ class DocumentsBase(GetByIdResource, ListResource):
         return self.session
 
     def _obj_type(self, **kwargs):
-        return self._view_type(kwargs.get('view'))
+        return self.view_type(kwargs.get('view'))
 
     @staticmethod
-    def _view_type(view):
+    def view_type(view):
         raise NotImplementedError
