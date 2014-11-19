@@ -78,7 +78,7 @@ class Catalog(GetByIdResource):
 
         :param query: the search query to execute.
         :param view: the view to get.  One of 'bib', 'client', 'stats', 'all'.
-        :return: a :class:`CatalogSearch <mendeley.models.catalog.CatalogSearch>` resource, from which results can be
+        :return: a :class:`CatalogSearch <mendeley.resources.catalog.CatalogSearch>` resource, from which results can be
                  retrieved.
         """
         return CatalogSearch(self.session, query=query, view=view)
@@ -96,7 +96,7 @@ class Catalog(GetByIdResource):
         :param max_year: Maximum year for documents to return.
         :param open_access: If 'true', only returns open access documents.
         :param view: the view to get.  One of 'bib', 'client', 'stats', 'all'.
-        :return: a :class:`CatalogSearch <mendeley.models.catalog.CatalogSearch>` resource, from which results can be
+        :return: a :class:`CatalogSearch <mendeley.resources.catalog.CatalogSearch>` resource, from which results can be
                  retrieved.
         """
         return CatalogSearch(self.session, title=title, author=author, source=source, abstract=abstract,

@@ -105,8 +105,8 @@ class Documents(DocumentsBase):
 
         :param query: the search query to execute.
         :param view: the view to get.  One of 'bib', 'client', 'tags', 'all'.
-        :return: a :class:`DocumentsSearch <mendeley.models.documents.DocumentsSearch>` resource, from which results can
-                 be retrieved.
+        :return: a :class:`DocumentsSearch <mendeley.resources.documents.DocumentsSearch>` resource, from which results
+                 can be retrieved.
         """
         if self.group_id:
             raise MendeleyException('Search is not available for group documents')
@@ -125,8 +125,8 @@ class Documents(DocumentsBase):
         :param min_year: Minimum year for documents to return.
         :param max_year: Maximum year for documents to return.
         :param view: the view to get.  One of 'bib', 'client', 'tags', 'all'.
-        :return: a :class:`DocumentsSearch <mendeley.models.documents.DocumentsSearch>` resource, from which results can
-                 be retrieved.
+        :return: a :class:`DocumentsSearch <mendeley.resources.documents.DocumentsSearch>` resource, from which results
+                 can be retrieved.
         """
         if self.group_id:
             raise MendeleyException('Search is not available for group documents')

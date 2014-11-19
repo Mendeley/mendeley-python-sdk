@@ -9,6 +9,9 @@ Documents
 .. autoclass:: mendeley.resources.documents.Documents()
     :members:
 
+.. autoclass:: mendeley.resources.documents.DocumentSearch()
+    :members:
+
 .. autoclass:: mendeley.resources.trash.Trash()
     :members:
 
