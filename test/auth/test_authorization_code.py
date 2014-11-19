@@ -19,7 +19,7 @@ def test_should_get_authenticated_session():
     auth = mendeley.start_authorization_code_flow()
 
     with cassette('fixtures/auth/authorization_code/get_authenticated_session.yaml'):
-        session = auth.authenticate('https://example.com?state=state1234&code=IXpvu_-TpqiWYz-i0nBfO45PxIE')
+        session = auth.authenticate('https://example.com?state=state1234&code=VE1PtGf81OnTA97S545_9a7GWCA')
 
         assert session.token['access_token']
         assert session.host == 'https://api.mendeley.com'

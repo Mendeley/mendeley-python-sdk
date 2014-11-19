@@ -4,7 +4,7 @@ contextlib2==0.4.0
 future==0.14.1
 memoized-property==1.0.2
 mock==1.0.1
-oauthlib==0.6.3
+oauthlib==0.7.2
 py==1.4.26
 pytest==2.6.4
 python-dateutil==2.2

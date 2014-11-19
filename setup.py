@@ -20,7 +20,7 @@ setup(
         'memoized-property==1.0.2',
         'requests==2.4.3',
         'requests-oauthlib==0.4.2',
-        'oauthlib==0.6.3'
+        'oauthlib==0.7.2'
     ],
 
     tests_require=[
