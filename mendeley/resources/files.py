@@ -20,15 +20,6 @@ class Files(ListResource):
         self.document_id = document_id
         self.group_id = group_id
 
-    def get(self, id):
-        """
-        Retrieves a file by ID.
-
-        :param id: the ID of the file to get.
-        :return: a :class:`File <mendeley.models.files.File>`.
-        """
-        return super(Files, self).get(id)
-
     def list(self, page_size=None, added_since=None, deleted_since=None):
         """
         Retrieves files, as a paginated collection.
