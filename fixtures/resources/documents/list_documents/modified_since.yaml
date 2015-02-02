@@ -112,7 +112,7 @@ interactions:
       Connection: [keep-alive]
       user-agent: [mendeley/0.0.1 CPython/2.7.6 Linux/3.13.0-35-generic]
     method: GET
-    uri: https://api.mendeley.com:443/documents?modified_since=2014-09-04T11%3A38%3A28.000720%2B00%3A00
+    uri: https://api.mendeley.com:443/documents?modified_since=2014-09-04T11%3A38%3A28.720000%2B00%3A00
   response:
     body:
       string: !!binary |
