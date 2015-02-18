@@ -68,7 +68,7 @@ class Catalog(GetByIdResource):
                                              'title': title, 'authors': authors, 'year': year, 'source': source})
         obj_type = view_type(view)
 
-        rsp = self.session.get(url, headers={'Accept': obj_type.content_type})
+        rsp = self.session.get(url, headers={'Accept': 'application/vnd.mendeley-document-lookup.1+json'})
 
         return LookupResponse(self.session, rsp.json(), view, obj_type)
 
