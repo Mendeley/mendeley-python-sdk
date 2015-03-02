@@ -186,11 +186,11 @@ class UserDocument(UserBaseDocument):
 
         return File(self.session, rsp.json())
 
-    def add_annotation(self, text):
+    def add_note(self, text):
         """
-        Adds an annotation to this document.
+        Adds a note to this document.
 
-        :param text: the text of the annotation to add.
+        :param text: the text of the note to add.
         :return: a :class:`Annotation <mendeley.models.annotations.Annotation>`.
         """
 
