@@ -3,6 +3,7 @@ from mimetypes import guess_type
 from os.path import basename
 
 import arrow
+from mendeley.models.annotations import Annotation
 
 from mendeley.models.base_documents import BaseDocument, BaseBibView, BaseClientView
 from mendeley.models.files import File
@@ -79,6 +80,7 @@ class UserBibView(BaseBibView):
     .. attribute:: chapter
     .. attribute:: revision
     """
+
     @property
     def accessed(self):
         """
@@ -102,6 +104,7 @@ class UserClientView(BaseClientView):
     .. attribute:: confirmed
     .. attribute:: hidden
     """
+
     @classmethod
     def fields(cls):
         return super(UserClientView, cls).fields() + ['read', 'starred', 'authored', 'confirmed', 'hidden']
@@ -114,6 +117,7 @@ class UserTagsView(object):
 
     .. attribute:: tags
     """
+
     @classmethod
     def fields(cls):
         return ['tags']
@@ -132,6 +136,7 @@ class UserDocument(UserBaseDocument):
     .. attribute:: keywords
     .. attribute:: abstract
     """
+
     def update(self, **kwargs):
         """
         Updates this document.
@@ -180,6 +185,23 @@ class UserDocument(UserBaseDocument):
             rsp = self.session.post('/files', data=f, headers=headers)
 
         return File(self.session, rsp.json())
+
+    def add_annotation(self, text):
+        """
+        Adds an annotation to this document.
+
+        :param text: the text of the annotation to add.
+        :return: a :class:`Annotation <mendeley.models.annotations.Annotation>`.
+        """
+
+        annotation = {'document_id': self.id, 'text': text}
+
+        rsp = self.session.post('/annotations/', data=json.dumps(annotation), headers={
+            'Accept': Annotation.content_type,
+            'Content-Type': Annotation.content_type
+        })
+
+        return Annotation(self.session, rsp.json())
 
     @classmethod
     def _trashed_type(cls):
