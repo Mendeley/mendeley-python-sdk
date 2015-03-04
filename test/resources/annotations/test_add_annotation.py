@@ -1,10 +1,11 @@
 from mendeley.models.common import BoundingBox, Position, Color
 from test import get_user_session, cassette
-from test.resources.documents import create_document
+from test.resources.documents import create_document, delete_all_documents
 
 
 def test_should_add_note():
     session = get_user_session()
+    delete_all_documents()
 
     with cassette('fixtures/resources/annotations/add_annotation/add_note.yaml'):
         doc = create_document(session)
@@ -23,6 +24,7 @@ def test_should_add_note():
 
 def test_should_add_sticky_note():
     session = get_user_session()
+    delete_all_documents()
 
     with cassette('fixtures/resources/annotations/add_annotation/add_sticky_note.yaml'):
 
@@ -48,6 +50,7 @@ def test_should_add_sticky_note():
 
 def test_should_add_highlight():
     session = get_user_session()
+    delete_all_documents()
 
     with cassette('fixtures/resources/annotations/add_annotation/add_highlight.yaml'):
 
