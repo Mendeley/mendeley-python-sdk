@@ -166,7 +166,7 @@ class Position(ResponseObject):
 
 class BoundingBox(ResponseObject):
     """
-    A page, associated with a :class:`Annotation <mendeley.models.annotations.Annotation>`.
+    A bounding box, associated with a :class:`Annotation <mendeley.models.annotations.Annotation>`.
 
     .. attribute:: page
     """
@@ -190,6 +190,15 @@ class BoundingBox(ResponseObject):
 
     @staticmethod
     def create(top_left, bottom_right, page):
+        """
+        Creates a bounding box object, to be used when creating or updating the
+        :class:`Annotation <mendeley.models.annotations.Annotation>`.
+
+        :param top_left:
+        :param bottom_right:
+        :param page:
+        :return: a :class:`BoundingBox <mendeley.models.common.BoundingBox>`.
+        """
         return BoundingBox({'top_left': top_left.json, 'bottom_right': bottom_right.json, 'page': page})
 
 
