@@ -1,0 +1,149 @@
+interactions:
+- request:
+    body: '{"series": "World Series", "abstract": "The wonders of creating exotic
+      baskets in an underwater environment", "month": 11, "edition": "First", "year":
+      2014, "keywords": ["bambrology", "submarine"], "city": "Scunthorpe", "confirmed":
+      true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
+      "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
+      "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
+      "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
+      "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
+      "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
+      true, "group_id": null}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['850']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"1b08d9e9-f1f2-3797-ab82-93b08db643a6","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2015-03-04T15:15:20.000Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","last_modified":"2015-03-04T15:15:20.000Z","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+        wonders of creating exotic baskets in an underwater environment"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['943']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 04 Mar 2015 15:15:20 GMT']
+      location: ['https://api.mendeley.com/documents/1b08d9e9-f1f2-3797-ab82-93b08db643a6']
+      x-mendeley-trace-id: [uwMQ_LbKSpM]
+    status: {code: 201, message: Created}
+- request:
+    body: Some of the boys she knew from college were trying to dodge the draft by
+      taking graduate courses, "underwater basketweaving and things like that," as
+      Vonda contemptuously put it.
+    headers:
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['178']
+      accept: [application/vnd.mendeley-file.1+json]
+      content-disposition: [attachment; filename=basket.txt]
+      content-type: [text/plain]
+      link: [!!python/unicode '<https://api.mendeley.com/documents/1b08d9e9-f1f2-3797-ab82-93b08db643a6>;
+          rel="document"']
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/files
+  response:
+    body: {string: !!python/unicode '{"id":"43efe1c4-84cc-852d-34f4-3e2517418bd9","document_id":"1b08d9e9-f1f2-3797-ab82-93b08db643a6","mime_type":"text/plain","file_name":"Underwater
+        basket weaving","size":178,"filehash":"92c7a71b371eb439579be559b5eac9c09a743c42"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['228']
+      content-type: [application/vnd.mendeley-file.1+json]
+      date: ['Wed, 04 Mar 2015 15:15:20 GMT']
+      location: ['https://api.mendeley.com/files/43efe1c4-84cc-852d-34f4-3e2517418bd9']
+      x-mendeley-trace-id: [u4pfyL94XII]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"text": "A nice sticky note", "filehash": "92c7a71b371eb439579be559b5eac9c09a743c42",
+      "document_id": "1b08d9e9-f1f2-3797-ab82-93b08db643a6", "positions": [{"page":
+      1, "bottom_right": {"y": 200, "x": 100}, "top_left": {"y": 200, "x": 100}}]}'
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['241']
+      Content-Type: [application/vnd.mendeley-annotation.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/annotations/
+  response:
+    body: {string: !!python/unicode '{"id":"e2e67334-ae19-4a0b-a5cd-e5d193494f88","type":"sticky_note","text":"A
+        nice sticky note","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","positions":[{"top_left":{"x":100.0,"y":200.0},"bottom_right":{"x":100.0,"y":200.0},"page":1}],"created":"2015-03-04T15:15:27.229Z","last_modified":"2015-03-04T15:15:27.229Z","privacy_level":"private","filehash":"92c7a71b371eb439579be559b5eac9c09a743c42","document_id":"1b08d9e9-f1f2-3797-ab82-93b08db643a6"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['454']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Wed, 04 Mar 2015 15:15:27 GMT']
+      x-mendeley-trace-id: [Bp_cOM-HO84]
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-profiles.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: GET
+    uri: https://api.mendeley.com:443/profiles/4afc0c0f-88ab-3aed-a20a-f50934fc83b1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAALVVTW+bQBD9K4hDTwaDv+1TlbiHNK1a1e2lVYSG3cFsvLCUXYKo5f/eWcCxm0Rt
+        evDFwvP13szOvt27grsrdwIJC1iQeIsFxN4YkHswCsBLpsFyPEnYYhyH7sBNRKlNlEOGlPNeNQzJ
+        KOFk2xhgO7JxoQsJzdG8Ln2nDXeOAZiBkOS5t1ZfW+vbDHOOEhufqczWFfmOIlJjitVwWNe1fx4w
+        LEqVCIl62Jbw2hLhkPJEro0wlREqp/SbrMBSgHSulZS4tYSBAcdMsIhyTKUp6JNJsXQ+U0XUmvJA
+        dj0wURAL6mDv9p1cq6yoDAVDzp2bPFFlBhbJ2TCBeTsPXcWnVKr+w92oxNRQovMu35KN+ORb9+5w
+        DmHjLgJyN3CLVBlle1ClIBfI01T12IcMflHHtW6nehyx1ybp4QyGMaffmEM8n88SjOcQJnyC03iy
+        nC8RlmwaJ2w+nSR8tPQLwiRyhohDyS+G4x0R/PuiBfxZUecXhGvrt2CHfp7dgVXlxYd5OjRTVngY
+        7N0UxTY17iocBYOLMng65hOVBKRuudSCm9RdTRaDR1r2+7KsTqfxN06j6exEqv3zf6ygBmHoEkUd
+        XkQlnh1Jh0l37IHuWyKQd6c0cDMod2iz+xgC11hGpinsmgLPRG4lTjHodGpPMmpVi5N7GvrTcGy9
+        dJM7kxf44YhMvUB8UDlX+cD5lguD3LklHE6aSbvJSgRjabijIBx7YeAFi6/BcjWarcKZHwTB91Z8
+        C6ka6te0S/ynYH7sx0BxhdKit67xAaUiKXU+VYYwWNrd89JEnADP8exDUWNMqWc3kuOD/0TfhY7o
+        EcijczbHFf+Hhj8P6T2OSpwr+lRsp6TaNi9EPi3mdMN8ReQLIVcgZWN3rEIS6kePpbFJEYtXVaX1
+        Ib/sH0qaTCzUtoQibchym6taIieea9J7RXvWOPT08YoZ3b4PX96sHWBGPNBR0Utw+A3e/sTU0gcA
+        AA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['742']
+      content-type: [application/vnd.mendeley-profiles.1+json]
+      date: ['Wed, 04 Mar 2015 15:15:27 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [kzZhW0F_7oM]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: GET
+    uri: https://api.mendeley.com:443/documents/1b08d9e9-f1f2-3797-ab82-93b08db643a6
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAG1Ry07DMBD8FWvPMXIepUmOnBAnJMoFhKp1sm4Njl3ZDqWq+u/YhaockCwfdmdn
+        ZmePoEfooZSiHTvquCpVxetlt+Qo24p3dW7I26bGWygg6mgowZ/tSH6PkTyTGD4osj3hp7abjDns
+        MuTdzd6iSQWc49b5AP3rEZT2Ia4tThnyqCmVCzB4rd3NPmhj+D0aA6e3Ag6EHvpKlE0BIXEOGfXw
+        Q86cYk+znNBrS+wOJ+mdcZtD4tQj2ajVWaE/wuh0Gkt/WdVwKuCDDnvnx2wK5N+5cKGDpD14Sjvm
+        fJL+gouai2ZVLvr0KnEjhHhJEzvvlDa0PufYoBrEIBRvW5S8Rho5VgK5WoiubtTQ1rK8bDy5MRv8
+        n355oUcZoschJtRqS2zvcvQhb352lzJn9OWiHn4vEZi2DC2bryci+6m9s1NKBE7fyGrFyPEBAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['341']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Wed, 04 Mar 2015 15:15:27 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [wAfDdzRjTaI]
+    status: {code: 200, message: OK}
+version: 1
