@@ -10,6 +10,7 @@ class Discipline(ResponseObject):
     .. attribute:: name
     .. attribute:: subdisciplines
     """
+
     @classmethod
     def fields(cls):
         return ['name', 'subdisciplines']
@@ -24,6 +25,7 @@ class Photo(ResponseObject):
     .. attribute:: standard
     .. attribute:: square
     """
+
     @classmethod
     def fields(cls):
         return ['original', 'standard', 'square']
@@ -37,6 +39,7 @@ class Location(ResponseObject):
     .. attribute:: longitude
     .. attribute:: name
     """
+
     @classmethod
     def fields(cls):
         return ['latitude', 'longitude', 'name']
@@ -50,6 +53,7 @@ class Education(ResponseObject):
     .. attribute:: degree
     .. attribute:: website
     """
+
     @property
     def start_date(self):
         """
@@ -84,6 +88,7 @@ class Employment(ResponseObject):
     .. attribute:: website
     .. attribute:: classes
     """
+
     @property
     def start_date(self):
         """
@@ -92,7 +97,7 @@ class Employment(ResponseObject):
         if 'start_date' in self.json:
             return arrow.get(self.json['start_date'])
         else:
-            return
+            return None
 
     @property
     def end_date(self):
@@ -117,6 +122,7 @@ class Person(ResponseObject):
     .. attribute:: first_name
     .. attribute:: last_name
     """
+
     @classmethod
     def fields(cls):
         return ['first_name', 'last_name']
@@ -132,3 +138,82 @@ class Person(ResponseObject):
         :return: a :class:`Person <mendeley.models.common.Person>`.
         """
         return Person({'first_name': first_name, 'last_name': last_name})
+
+
+class Position(ResponseObject):
+    """
+    A position, associated with a :class:`Annotation <mendeley.models.annotations.Annotation>`.
+
+    .. attribute:: x
+    .. attribute:: y
+    """
+    @classmethod
+    def fields(cls):
+        return ['x', 'y']
+
+    @staticmethod
+    def create(x_position, y_position):
+        """
+        Creates a position object, to be used when creating or updating a
+        :class:`Annotation <mendeley.models.annotations.Annotation>`.
+
+        :param x_position:
+        :param y_position:
+        :return: a :class:`Position <mendeley.models.common.Position>`.
+        """
+        return Position({'x': x_position, 'y': y_position})
+
+
+class BoundingBox(ResponseObject):
+    """
+    A page, associated with a :class:`Annotation <mendeley.models.annotations.Annotation>`.
+
+    .. attribute:: page
+    """
+    @classmethod
+    def fields(cls):
+        return ['page']
+
+    @property
+    def top_left(self):
+        if 'top_left' in self.json:
+            return Position.create(self.json['top_left']['x'], self.json['top_left']['y'])
+        else:
+            return None
+
+    @property
+    def bottom_right(self):
+        if 'bottom_right' in self.json:
+            return Position.create(self.json['bottom_right']['x'], self.json['bottom_right']['y'])
+        else:
+            return None
+
+    @staticmethod
+    def create(top_left, bottom_right, page):
+        return BoundingBox({'top_left': top_left.json, 'bottom_right': bottom_right.json, 'page': page})
+
+
+class Color(ResponseObject):
+    """
+    A color, associated with a :class:`Annotation <mendeley.models.annotations.Annotation>`.
+
+    .. attribute:: r
+    .. attribute:: g
+    .. attribute:: b
+    """
+    @classmethod
+    def fields(cls):
+        return ['r', 'g', 'b']
+
+    @staticmethod
+    def create(red, green, blue):
+        """
+         Creates a color object, to be used when creating or updating a
+        :class:`Annotation <mendeley.models.annotations.Annotation>`.
+
+        :param red:
+        :param green:
+        :param blue:
+        :return: a :class:`Color <mendeley.models.common.Color>`.
+        """
+        return Color({'r': red, 'g': green, 'b': blue})

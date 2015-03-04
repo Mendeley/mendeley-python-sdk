@@ -1,4 +1,5 @@
 import arrow
+from mendeley.models.common import BoundingBox, Color
 from mendeley.response import SessionResponseObject
 
 
@@ -39,7 +40,6 @@ class Annotation (SessionResponseObject):
         else:
             return None
 
-
     def document(self, view=None):
         """
         :param view: document view to return.
@@ -47,6 +47,26 @@ class Annotation (SessionResponseObject):
         """
         if 'document_id' in self.json:
             return self.session.documents.get_lazy(self.json['document_id'], view=view)
+        else:
+            return None
+
+    @property
+    def positions(self):
+        """
+        a list of :class:`BoundingBox <mendeley.models.common.BoundingBox>`.
+        """
+        if 'positions' in self.json:
+            return [BoundingBox(p) for p in self.json['positions']]
+        else:
+            return None
+
+    @property
+    def color(self):
+        """
+        a :class:`Color <mendeley.models.common.Color>`.
+        """
+        if 'color' in self.json:
+            return Color(self.json['color'])
         else:
             return None
 
