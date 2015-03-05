@@ -1,3 +1,4 @@
+import json
 import arrow
 from mendeley.models.common import BoundingBox, Color
 from mendeley.response import SessionResponseObject
@@ -9,6 +10,19 @@ class Annotation (SessionResponseObject):
 
     def __init__(self, session, json):
         super(Annotation, self).__init__(session, json)
+
+    def update(self, **kwargs):
+        """
+        Updates this annotation.
+
+        """
+
+        rsp = self.session.patch('/annotations/%s' % self.id, data=json.dumps(format_args(kwargs)), headers={
+            'Accept': self.content_type,
+            'Content-Type': self.content_type
+        })
+
+        return Annotation(self.session, rsp.json())
 
     @property
     def created(self):
@@ -73,3 +87,10 @@ class Annotation (SessionResponseObject):
     @classmethod
     def fields(cls):
         return ['id', 'text', 'privacy_level', 'note', 'type']
+
+
+def format_args(kwargs):
+    if 'positions' in kwargs:
+        kwargs['positions'] = [box.json for box in kwargs['positions']]
+
+    return kwargs
