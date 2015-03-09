@@ -93,4 +93,7 @@ def format_args(kwargs):
     if 'positions' in kwargs:
         kwargs['positions'] = [box.json for box in kwargs['positions']]
 
+    if 'color' in kwargs:
+        kwargs['color'] = kwargs['color'].json
+
     return kwargs
