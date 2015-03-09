@@ -21,18 +21,18 @@ interactions:
     method: POST
     uri: https://api.mendeley.com:443/documents
   response:
-    body: {string: !!python/unicode '{"id":"e0d7fb9d-9663-3976-9d1e-27f63d17d8a5","title":"Underwater
+    body: {string: !!python/unicode '{"id":"0dc13fbe-9b26-3984-9956-b128be6d24e2","title":"Underwater
         basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
-        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2015-03-04T15:54:58.000Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
-        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","last_modified":"2015-03-04T15:54:58.000Z","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2015-03-09T11:23:39.000Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","last_modified":"2015-03-09T11:23:39.000Z","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
         wonders of creating exotic baskets in an underwater environment"}'}
     headers:
       connection: [keep-alive]
       content-length: ['943']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 04 Mar 2015 15:54:58 GMT']
-      location: ['https://api.mendeley.com/documents/e0d7fb9d-9663-3976-9d1e-27f63d17d8a5']
-      x-mendeley-trace-id: [BslrNWOOX2o]
+      date: ['Mon, 09 Mar 2015 11:23:39 GMT']
+      location: ['https://api.mendeley.com/documents/0dc13fbe-9b26-3984-9956-b128be6d24e2']
+      x-mendeley-trace-id: [3K73A-wY0mQ]
     status: {code: 201, message: Created}
 - request:
     body: Some of the boys she knew from college were trying to dodge the draft by
@@ -45,26 +45,26 @@ interactions:
       accept: [application/vnd.mendeley-file.1+json]
       content-disposition: [attachment; filename=basket.txt]
       content-type: [text/plain]
-      link: [!!python/unicode '<https://api.mendeley.com/documents/e0d7fb9d-9663-3976-9d1e-27f63d17d8a5>;
+      link: [!!python/unicode '<https://api.mendeley.com/documents/0dc13fbe-9b26-3984-9956-b128be6d24e2>;
           rel="document"']
       user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
     method: POST
     uri: https://api.mendeley.com:443/files
   response:
-    body: {string: !!python/unicode '{"id":"43efe1c4-84cc-852d-0614-85d5e8df315b","document_id":"e0d7fb9d-9663-3976-9d1e-27f63d17d8a5","mime_type":"text/plain","file_name":"Underwater
+    body: {string: !!python/unicode '{"id":"43efe1c4-84cc-852d-38ef-f58f829de49b","document_id":"0dc13fbe-9b26-3984-9956-b128be6d24e2","mime_type":"text/plain","file_name":"Underwater
         basket weaving","size":178,"filehash":"92c7a71b371eb439579be559b5eac9c09a743c42"}'}
     headers:
       connection: [keep-alive]
       content-length: ['228']
       content-type: [application/vnd.mendeley-file.1+json]
-      date: ['Wed, 04 Mar 2015 15:54:58 GMT']
-      location: ['https://api.mendeley.com/files/43efe1c4-84cc-852d-0614-85d5e8df315b']
-      x-mendeley-trace-id: [8PyUQjRgjKc]
+      date: ['Mon, 09 Mar 2015 11:23:39 GMT']
+      location: ['https://api.mendeley.com/files/43efe1c4-84cc-852d-38ef-f58f829de49b']
+      x-mendeley-trace-id: [7wtnqttoTQI]
     status: {code: 201, message: Created}
 - request:
     body: '{"color": {"r": 255, "b": 240, "g": 125}, "positions": [{"page": 1, "bottom_right":
       {"y": 500, "x": 400}, "top_left": {"y": 200, "x": 100}}], "filehash": "92c7a71b371eb439579be559b5eac9c09a743c42",
-      "document_id": "e0d7fb9d-9663-3976-9d1e-27f63d17d8a5"}'
+      "document_id": "0dc13fbe-9b26-3984-9956-b128be6d24e2"}'
     headers:
       Accept: [application/vnd.mendeley-annotation.1+json]
       Accept-Encoding: ['gzip, deflate']
@@ -75,13 +75,13 @@ interactions:
     method: POST
     uri: https://api.mendeley.com:443/annotations/
   response:
-    body: {string: !!python/unicode '{"id":"3d27fceb-cfd5-4a53-a933-7d8860d767a2","type":"highlight","color":{"r":255,"g":125,"b":240},"profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","positions":[{"top_left":{"x":100.0,"y":200.0},"bottom_right":{"x":400.0,"y":500.0},"page":1}],"created":"2015-03-04T15:54:58.692Z","last_modified":"2015-03-04T15:54:58.692Z","privacy_level":"private","filehash":"92c7a71b371eb439579be559b5eac9c09a743c42","document_id":"e0d7fb9d-9663-3976-9d1e-27f63d17d8a5"}'}
+    body: {string: !!python/unicode '{"id":"3b0d0b82-a747-4a7d-8c70-6d0dd8460de1","type":"highlight","color":{"r":255,"g":125,"b":240},"profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","positions":[{"top_left":{"x":100.0,"y":200.0},"bottom_right":{"x":400.0,"y":500.0},"page":1}],"created":"2015-03-09T11:23:40.244Z","last_modified":"2015-03-09T11:23:40.244Z","privacy_level":"private","filehash":"92c7a71b371eb439579be559b5eac9c09a743c42","document_id":"0dc13fbe-9b26-3984-9956-b128be6d24e2"}'}
     headers:
       connection: [keep-alive]
       content-length: ['458']
       content-type: [application/vnd.mendeley-annotation.1+json]
-      date: ['Wed, 04 Mar 2015 15:54:58 GMT']
-      x-mendeley-trace-id: [Xzspcg9BT84]
+      date: ['Mon, 09 Mar 2015 11:23:40 GMT']
+      x-mendeley-trace-id: [tocSvJ4YcN0]
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -114,9 +114,9 @@ interactions:
       content-encoding: [gzip]
       content-length: ['742']
       content-type: [application/vnd.mendeley-profiles.1+json]
-      date: ['Wed, 04 Mar 2015 15:54:58 GMT']
+      date: ['Mon, 09 Mar 2015 11:23:40 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [kgPFAvCa0Gk]
+      x-mendeley-trace-id: [J0b0daQzTpg]
     status: {code: 200, message: OK}
 - request:
     body: null
@@ -126,23 +126,24 @@ interactions:
       Connection: [keep-alive]
       user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
     method: GET
-    uri: https://api.mendeley.com:443/documents/e0d7fb9d-9663-3976-9d1e-27f63d17d8a5
+    uri: https://api.mendeley.com:443/documents/0dc13fbe-9b26-3984-9956-b128be6d24e2
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAG1RPU/DMBD9K9bNMXKapE0ydkJMSMACQtUlPrcGx0a2Q6mq/nfsQlUGlhtO797X
-        HUFL6IGEXKmhk7xbLitedasl72RJfLFSy0qWK9liAwVEHQ0l+JOV5PcYybMBwztFtif81HabMYeP
-        DHlzs7do0gLnuHM+QP9yBKV9iBuLU4bca0rrAgxed+vZB20Mv0Vj4PRawIHQQ78QZV1ASJxjRt39
-        kDOn2MM8TOi1JbbGafDOuO0hcWpJNmp1VuiPIJ1OZ2mWiwpOBbzTYe+8zKZg+HsXLnSQtEdPKWPu
-        J+k3XFRc1I9l0zd137Q3QojndPHhndKGNucea1SjGIXibYsDr5Akx4VArhrRVbUa22ooL4knJ7PB
-        /+m7Cz0OIXocY0I97ojtXa4+5ORnd6lzRl8u6vH3E4Fpy9Cy+foisp/aOzulRuD0DVuKa4bxAQAA
+        H4sIAAAAAAAAAG1RTU/jMBD9K9acY+TEaZXkyGnFCQm4gFZoHI+LF8dGtkOpqv73tQsVHLjMYfTm
+        fc0RrIYJhJ5baRTxUXVbLseh5+O42XLVdoOire566qCBbLOjAn/wmuIeM0WmML1SZnvCd+t3FXN4
+        q5B/YY0eXVngml9CTDA9HcHYmPKzx6VCbi2VdQMOv3fXa0zWOf4HnYPT3wYOhBGmTrR9A6lwzhV1
+        80nOgmF3q1owWk/sGhcVgwu7Q+G0mny25qwwHUEHW87KbDsJpwZe6bAPUVdToH7epQsdFO05UslY
+        +yn6Gy4kF+N9206dnOR4JYR4LBdvMRjr6PncY49mFrMwfBhQcYmkOXYCudmIUfZmHqRqL4mXoKvB
+        X+l7caFHlXLEORfU/QuxfajVp5r87K50zugjZDt/fSIx6xl6tn6/iPy7jcEvpRE4/Qex+Lvg8QEA
+        AA==
     headers:
       connection: [keep-alive]
       content-encoding: [gzip]
-      content-length: ['342']
+      content-length: ['343']
       content-type: [application/vnd.mendeley-document.1+json]
-      date: ['Wed, 04 Mar 2015 15:54:59 GMT']
+      date: ['Mon, 09 Mar 2015 11:23:40 GMT']
       vary: [Accept-Encoding, Accept-Encoding]
-      x-mendeley-trace-id: [xEN8cRnOqYM]
+      x-mendeley-trace-id: [7bFyeQqPSF4]
     status: {code: 200, message: OK}
 version: 1
