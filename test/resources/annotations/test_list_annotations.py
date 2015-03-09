@@ -1,5 +1,5 @@
 from test import get_user_session, cassette, sleep
-from test.resources.documents import create_document, assert_core_document, delete_all_documents, assert_bib_document
+from test.resources.documents import create_document, delete_all_documents
 
 
 def test_should_list_annotations():
@@ -86,7 +86,6 @@ def test_should_list_annotations_deleted_since():
         annotation1 = file.add_sticky_note("annotation 1", 100, 200, 1)
         annotation2 = file.add_sticky_note("annotation 2", 100, 200, 1)
         annotation3 = file.add_sticky_note("annotation 3", 100, 200, 1)
-
 
         annotation1.delete()
         sleep(2)
