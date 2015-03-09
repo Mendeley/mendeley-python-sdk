@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: '{"series": "World Series", "abstract": "The wonders of creating exotic
+      baskets in an underwater environment", "month": 11, "edition": "First", "year":
+      2014, "keywords": ["bambrology", "submarine"], "city": "Scunthorpe", "confirmed":
+      true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
+      "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
+      "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
+      "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
+      "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
+      "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
+      true, "group_id": null}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['850']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"93f5ab58-ed82-3f08-9575-318afe2d0460","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2015-03-09T11:46:01.000Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","last_modified":"2015-03-09T11:46:01.000Z","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+        wonders of creating exotic baskets in an underwater environment"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['943']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Mon, 09 Mar 2015 11:46:01 GMT']
+      location: ['https://api.mendeley.com/documents/93f5ab58-ed82-3f08-9575-318afe2d0460']
+      x-mendeley-trace-id: [bK3PTCzFVIA]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"text": "Initial annotation", "document_id": "93f5ab58-ed82-3f08-9575-318afe2d0460"}'
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['85']
+      Content-Type: [application/vnd.mendeley-annotation.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/annotations/
+  response:
+    body: {string: !!python/unicode '{"id":"93f5ab58-ed82-3f08-9575-318afe2d0460","document_id":"93f5ab58-ed82-3f08-9575-318afe2d0460","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","text":"Initial
+        annotation","privacy_level":"private","last_modified":"2015-03-09T11:46:01.000Z","type":"note"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['261']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 11:46:01 GMT']
+      x-mendeley-trace-id: [z9oV_t1xBYw]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"text": "New text"}'
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['20']
+      Content-Type: [application/vnd.mendeley-annotation.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: PATCH
+    uri: https://api.mendeley.com:443/annotations/93f5ab58-ed82-3f08-9575-318afe2d0460
+  response:
+    body: {string: !!python/unicode '{"id":"93f5ab58-ed82-3f08-9575-318afe2d0460","document_id":"93f5ab58-ed82-3f08-9575-318afe2d0460","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","text":"New
+        text","privacy_level":"private","last_modified":"2015-03-09T11:46:02.000Z","type":"note"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['251']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 11:46:01 GMT']
+      x-mendeley-trace-id: [3MS-Tsz87Sk]
+    status: {code: 200, message: OK}
+version: 1
