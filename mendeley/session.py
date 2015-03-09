@@ -49,6 +49,7 @@ class MendeleySession(OAuth2Session):
         self.host = mendeley.host
         self.refresher = refresher
 
+        self.annotations = Annotations(self)
         self.catalog = Catalog(self)
         self.documents = Documents(self, None)
         self.files = Files(self)

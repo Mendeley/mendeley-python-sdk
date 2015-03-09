@@ -1,3 +1,4 @@
+from .annotations import Annotations
 from .catalog import Catalog
 from .documents import Documents
 from .files import Files
