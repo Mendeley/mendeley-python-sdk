@@ -1,0 +1,211 @@
+interactions:
+- request:
+    body: '{"series": "World Series", "abstract": "The wonders of creating exotic
+      baskets in an underwater environment", "month": 11, "edition": "First", "year":
+      2014, "keywords": ["bambrology", "submarine"], "city": "Scunthorpe", "confirmed":
+      true, "title": "Underwater basket weaving", "editors": [{"first_name": "John",
+      "last_name": "Smith"}], "pages": "1-6", "source": "Journal of Submarine Bambrology",
+      "issue": "73", "day": 14, "revision": "2", "tags": ["baskety", "wet"], "read":
+      false, "volume": "loud", "authors": [{"first_name": "Piers", "last_name": "Bursill-Hall"}],
+      "institution": "University of Cambridge", "chapter": "99", "publisher": "Elsevier",
+      "type": "journal", "identifiers": {"doi": "doi123"}, "websites": ["http://example.com/foo",
+      "http://example.com/bar"], "authored": false, "accessed": "2014-09-03", "starred":
+      true, "group_id": null}'
+    headers:
+      Accept: [application/vnd.mendeley-document.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['850']
+      Content-Type: [application/vnd.mendeley-document.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/documents
+  response:
+    body: {string: !!python/unicode '{"id":"22c3fe1e-038a-3dd1-b0ab-6a03a63a641c","title":"Underwater
+        basket weaving","type":"journal","authors":[{"first_name":"Piers","last_name":"Bursill-Hall"}],"year":2014,"source":"Journal
+        of Submarine Bambrology","identifiers":{"doi":"doi123"},"keywords":["bambrology","submarine"],"created":"2015-03-09T12:43:23.000Z","pages":"1-6","volume":"loud","issue":"73","websites":["http://example.com/foo","http://example.com/bar"],"month":11,"publisher":"Elsevier","day":14,"city":"Scunthorpe","edition":"First","institution":"University
+        of Cambridge","series":"World Series","chapter":"99","revision":"2","editors":[{"first_name":"John","last_name":"Smith"}],"accessed":"2014-09-03","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","last_modified":"2015-03-09T12:43:24.000Z","tags":["baskety","wet"],"read":false,"starred":true,"authored":false,"confirmed":true,"abstract":"The
+        wonders of creating exotic baskets in an underwater environment"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['943']
+      content-type: [application/vnd.mendeley-document.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:23 GMT']
+      location: ['https://api.mendeley.com/documents/22c3fe1e-038a-3dd1-b0ab-6a03a63a641c']
+      x-mendeley-trace-id: [8WNX6I84h0c]
+    status: {code: 201, message: Created}
+- request:
+    body: Some of the boys she knew from college were trying to dodge the draft by
+      taking graduate courses, "underwater basketweaving and things like that," as
+      Vonda contemptuously put it.
+    headers:
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['178']
+      accept: [application/vnd.mendeley-file.1+json]
+      content-disposition: [attachment; filename=basket.txt]
+      content-type: [text/plain]
+      link: [!!python/unicode '<https://api.mendeley.com/documents/22c3fe1e-038a-3dd1-b0ab-6a03a63a641c>;
+          rel="document"']
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/files
+  response:
+    body: {string: !!python/unicode '{"id":"43efe1c4-84cc-852d-0a7a-da10d5b7f9c7","document_id":"22c3fe1e-038a-3dd1-b0ab-6a03a63a641c","mime_type":"text/plain","file_name":"Underwater
+        basket weaving","size":178,"filehash":"92c7a71b371eb439579be559b5eac9c09a743c42"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['228']
+      content-type: [application/vnd.mendeley-file.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:24 GMT']
+      location: ['https://api.mendeley.com/files/43efe1c4-84cc-852d-0a7a-da10d5b7f9c7']
+      x-mendeley-trace-id: [Y446Sg9l0Bc]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"text": "annotation 1", "filehash": "92c7a71b371eb439579be559b5eac9c09a743c42",
+      "document_id": "22c3fe1e-038a-3dd1-b0ab-6a03a63a641c", "positions": [{"page":
+      1, "bottom_right": {"y": 200, "x": 100}, "top_left": {"y": 200, "x": 100}}]}'
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['235']
+      Content-Type: [application/vnd.mendeley-annotation.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/annotations/
+  response:
+    body: {string: !!python/unicode '{"id":"57f00f2f-f35a-4f4f-a8b7-7f2e9bb0d1b0","type":"sticky_note","text":"annotation
+        1","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","positions":[{"top_left":{"x":100.0,"y":200.0},"bottom_right":{"x":100.0,"y":200.0},"page":1}],"created":"2015-03-09T12:43:24.406Z","last_modified":"2015-03-09T12:43:24.406Z","privacy_level":"private","filehash":"92c7a71b371eb439579be559b5eac9c09a743c42","document_id":"22c3fe1e-038a-3dd1-b0ab-6a03a63a641c"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['448']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:24 GMT']
+      x-mendeley-trace-id: [IlshKzrfkzE]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"text": "annotation 2", "document_id": "22c3fe1e-038a-3dd1-b0ab-6a03a63a641c"}'
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['79']
+      Content-Type: [application/vnd.mendeley-annotation.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/annotations/
+  response:
+    body: {string: !!python/unicode '{"id":"22c3fe1e-038a-3dd1-b0ab-6a03a63a641c","document_id":"22c3fe1e-038a-3dd1-b0ab-6a03a63a641c","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","text":"annotation
+        2","privacy_level":"private","last_modified":"2015-03-09T12:43:24.000Z","type":"note"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['255']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:24 GMT']
+      x-mendeley-trace-id: [MNFn8wOjIao]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"text": "annotation 3", "filehash": "92c7a71b371eb439579be559b5eac9c09a743c42",
+      "document_id": "22c3fe1e-038a-3dd1-b0ab-6a03a63a641c", "positions": [{"page":
+      1, "bottom_right": {"y": 200, "x": 100}, "top_left": {"y": 200, "x": 100}}]}'
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['235']
+      Content-Type: [application/vnd.mendeley-annotation.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/annotations/
+  response:
+    body: {string: !!python/unicode '{"id":"55ce93d0-2e43-4166-b28a-0632864b8ca4","type":"sticky_note","text":"annotation
+        3","profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","positions":[{"top_left":{"x":100.0,"y":200.0},"bottom_right":{"x":100.0,"y":200.0},"page":1}],"created":"2015-03-09T12:43:24.544Z","last_modified":"2015-03-09T12:43:24.544Z","privacy_level":"private","filehash":"92c7a71b371eb439579be559b5eac9c09a743c42","document_id":"22c3fe1e-038a-3dd1-b0ab-6a03a63a641c"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['448']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:24 GMT']
+      x-mendeley-trace-id: [FLUWkJStWGk]
+    status: {code: 201, message: Created}
+- request:
+    body: '{"color": {"r": 255, "b": 240, "g": 125}, "positions": [{"page": 1, "bottom_right":
+      {"y": 500, "x": 400}, "top_left": {"y": 200, "x": 100}}], "filehash": "92c7a71b371eb439579be559b5eac9c09a743c42",
+      "document_id": "22c3fe1e-038a-3dd1-b0ab-6a03a63a641c"}'
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['252']
+      Content-Type: [application/vnd.mendeley-annotation.1+json]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: POST
+    uri: https://api.mendeley.com:443/annotations/
+  response:
+    body: {string: !!python/unicode '{"id":"1928321d-5efd-4d97-ab3b-1b32597b180c","type":"highlight","color":{"r":255,"g":125,"b":240},"profile_id":"4afc0c0f-88ab-3aed-a20a-f50934fc83b1","positions":[{"top_left":{"x":100.0,"y":200.0},"bottom_right":{"x":400.0,"y":500.0},"page":1}],"created":"2015-03-09T12:43:24.776Z","last_modified":"2015-03-09T12:43:24.776Z","privacy_level":"private","filehash":"92c7a71b371eb439579be559b5eac9c09a743c42","document_id":"22c3fe1e-038a-3dd1-b0ab-6a03a63a641c"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['458']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:24 GMT']
+      x-mendeley-trace-id: [25wbryYazv8]
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept: [application/vnd.mendeley-annotation.1+json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: GET
+    uri: https://api.mendeley.com:443/annotations?limit=2
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAM2R3Y7bIBCFX6Xi2qz4NcbPsVddrawBhgTVCZZNVxtFefeOs1FbqRfbu1bC2MAZ
+        zuc5L1dWEhuZ9GrQSiZuMSduknccgg5cBq2sd0EOIrKOtcuCpD6Ww3Gmp9FWrHNd2XhlNClrO3Zg
+        o1T0DrQ24taxZa25zDjdjQzkKKLIfBggcA2YOCgBPFvhtclx0EHSrUvdSiv1vLHx5cpaXaYZc9tt
+        3ul6IZ5Exy5ksH+RRait1dO03pk+ROanyD5ECxwIXt5eCXpFaLjzKCEtF5oL/yzVaDQxPznXfyWG
+        GbY2nWoquXwmXdbyBvFCkG84k/S+bkgn+58fYTvSplfRgaOOOonBaG+dD2itDxYh+ig8OKOjUVSV
+        avx+wnP76JlSUWeUSOYDcJ2S5EFQ93oQGnoaRkZ26x5RWhvR6yS4QqO5kX3Pg6I60Ws19CYMEcyv
+        KLdW4rfLdK532n8T1Z+i36Jq+E46BmdChN3ni2afBWiN+dsAH9L/IcDXH9PzwmiNAwAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['393']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:24 GMT']
+      link: ['<https://api.mendeley.com/annotations?limit=2&reverse=false&order=asc&marker=55ce93d0-2e43-4166-b28a-0632864b8ca4>;
+          rel="next"']
+      mendeley-count: ['4']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [7bAZgxPED8M]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: [mendeley/0.3.1 CPython/2.7.6 Darwin/14.1.0]
+    method: GET
+    uri: https://api.mendeley.com:443/annotations?limit=2&reverse=false&order=asc&marker=55ce93d0-2e43-4166-b28a-0632864b8ca4
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAKWRy27DIBBFf6VibaLhFYy/o6tGkTVgSFAdY9k0ihXl34vTqpuqD7USCxgdmMuZ
+        3ZXEjjRE6QAQeKBBKKQyyECxtprqwL2xFjpmgVQkL6Mv9Jyje17aIWVfiuOUQux9e39IYnDgINC6
+        RksF+o4iB6RBgREyuFpYtt5Jc8wxDTNpdleS09j2PmTSXMmFNAxgAxVZSMPX3a0iNuWcTu0UD8ev
+        oREPJRy77UtOfykcwaFExLXPw9rUTR6zX1NyYIqCoGAeGW+kaLjcSNg+FajHOben1MUQf0LHKZ7R
+        LSX62fcFvZ/vSlYfR5yPpWi406iZFZp5K4VR2livlLHKozMODGopnOTlVpfcy8kP+c0k504Ez3xp
+        XiMVXceoheJ0iyBwW5Zkjtyq9wH+iv4Y4D8m91kt/6U1APje2l/+v38FBaGjBcICAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['335']
+      content-type: [application/vnd.mendeley-annotation.1+json]
+      date: ['Mon, 09 Mar 2015 12:43:24 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [zZTDL5W0z7Q]
+    status: {code: 200, message: OK}
+version: 1
