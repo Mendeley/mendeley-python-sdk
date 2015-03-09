@@ -24,6 +24,12 @@ class Annotation (SessionResponseObject):
 
         return Annotation(self.session, rsp.json())
 
+    def delete(self):
+        """
+        Permanently deletes this annotation.
+        """
+        self.session.delete('/annotations/%s' % self.id)
+
     @property
     def created(self):
         """
