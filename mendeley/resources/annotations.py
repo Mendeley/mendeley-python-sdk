@@ -22,11 +22,11 @@ class Annotations(GetByIdResource, ListResource):
 
     def list(self, page_size=None, modified_since=None, deleted_since=None):
         """
-        Retrieves annotations that the logged-in user is a member of, as a paginated collection.
+        Retrieves annotations as a paginated collection.
 
         :param page_size: the number of annotations to return on each page.  Defaults to 20.
-        :param modified_since: if specified, only returns files modified after this timestamp.
-        :param deleted_since: if specified, only returns the IDs of documents deleted after this timestamp.
+        :param modified_since: if specified, only returns annotations modified after this timestamp.
+        :param deleted_since: if specified, only returns annotations deleted after this timestamp.
         :return: a :class:`Page <mendeley.pagination.Page>` of
         :class:`Annotations <mendeley.models.annotations.Annotation>`.
         """
@@ -37,8 +37,8 @@ class Annotations(GetByIdResource, ListResource):
         Retrieves annotations that the logged-in user is a member of, as an iterator.
 
         :param page_size: the number of annotations to retrieve at a time.  Defaults to 20.
-        :param modified_since: if specified, only returns files modified after this timestamp.
-        :param deleted_since: if specified, only returns the IDs of documents deleted after this timestamp.
+        :param modified_since: if specified, only returns annotations modified after this timestamp.
+        :param deleted_since: if specified, only returns the annotations deleted after this timestamp.
         :return: an iterator of :class:`Annotations <mendeley.models.annotations.Annotation>`.
         """
         return super(Annotations, self).iter(page_size, modified_since=modified_since, deleted_since=deleted_since)

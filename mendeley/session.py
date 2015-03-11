@@ -13,6 +13,11 @@ class MendeleySession(OAuth2Session):
     """
     Entry point for accessing Mendeley resources.
 
+    .. attribute:: annotations
+
+        A :class: `Annotations <mendeley.resources.annotations.Annotations>` resource for accessing annotations in the
+        logged-in user's library.
+
     .. attribute:: catalog
 
        A :class:`Catalog <mendeley.resources.catalog.Catalog>` resource for accessing the Mendeley catalog.

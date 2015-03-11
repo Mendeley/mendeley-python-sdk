@@ -5,7 +5,14 @@ from mendeley.response import SessionResponseObject
 
 
 class Annotation (SessionResponseObject):
+    """
+    An annotation attached to a document or a file.
 
+    .. attribute:: id
+    .. attribute:: type
+    .. attribute:: text
+    .. attribute:: privacy_level
+    """
     content_type = 'application/vnd.mendeley-annotation.1+json'
 
     def __init__(self, session, json):
@@ -92,7 +99,7 @@ class Annotation (SessionResponseObject):
 
     @classmethod
     def fields(cls):
-        return ['id', 'text', 'privacy_level', 'note', 'type']
+        return ['id', 'text', 'privacy_level', 'type']
 
 
 def format_args(kwargs):

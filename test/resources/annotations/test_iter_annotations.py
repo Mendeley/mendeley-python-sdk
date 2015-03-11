@@ -1,11 +1,10 @@
-from itertools import islice
 from mendeley.models.common import Position, BoundingBox, Color
 
 from test import get_user_session, cassette
 from test.resources.documents import delete_all_documents, create_document
 
 
-def test_should_iterate_through_documents():
+def test_should_iterate_through_annotations():
     session = get_user_session()
     delete_all_documents()
 
