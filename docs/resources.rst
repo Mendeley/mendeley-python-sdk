@@ -44,3 +44,9 @@ Profiles
 
 .. autoclass:: mendeley.resources.profiles.Profiles()
     :members:
+
+Annotations
+--------
+
+.. autoclass:: mendeley.resources.annotations.Annotations()
+    :members:
