@@ -85,11 +85,10 @@ Files
     :members:
 
 Annotations
------
+-----------
 
 .. autoclass:: mendeley.models.annotations.Annotation()
     :members:
-
 
 
 Common objects

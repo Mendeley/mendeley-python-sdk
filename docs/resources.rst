@@ -46,7 +46,7 @@ Profiles
     :members:
 
 Annotations
---------
+-----------
 
 .. autoclass:: mendeley.resources.annotations.Annotations()
     :members:
