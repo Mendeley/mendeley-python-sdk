@@ -1,13 +1,13 @@
 Mendeley Python SDK
 ===================
 
-.. image:: https://pypip.in/d/mendeley/badge.png
+.. image:: https://img.shields.io/pypi/dm/mendeley.svg
   :target: https://pypi.python.org/pypi/mendeley/
-.. image:: https://pypip.in/v/mendeley/badge.png
+.. image:: https://img.shields.io/pypi/v/mendeley.svg
   :target: https://pypi.python.org/pypi/mendeley/
-.. image:: https://pypip.in/format/mendeley/badge.png
+.. image:: https://img.shields.io/pypi/format/mendeley.svg
   :target: https://pypi.python.org/pypi/mendeley/
-.. image:: https://pypip.in/license/mendeley/badge.png
+.. image:: https://img.shields.io/pypi/l/mendeley.svg
   :target: https://pypi.python.org/pypi/mendeley/
 .. image:: https://readthedocs.org/projects/mendeley-python/badge/?version=latest
   :target: https://readthedocs.org/projects/mendeley-python/?badge=latest
