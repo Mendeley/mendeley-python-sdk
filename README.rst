@@ -11,6 +11,8 @@ Mendeley Python SDK
   :target: https://pypi.python.org/pypi/mendeley/
 .. image:: https://readthedocs.org/projects/mendeley-python/badge/?version=latest
   :target: https://readthedocs.org/projects/mendeley-python/?badge=latest
+.. image:: https://travis-ci.org/Mendeley/mendeley-python-sdk.svg?branch=master
+  :target: https://travis-ci.org/Mendeley/mendeley-python-sdk
 
 The Mendeley Python SDK provides access to the `Mendeley <http://www.mendeley.com>`_ API.  For more information on the
 API and its capabilities, see the `developer portal <http://dev.mendeley.com>`_.
