@@ -2,4 +2,4 @@ clientId: id
 clientSecret: secret
 redirectUri: https://example.com
 accessToken: token
-recordMode: none
+recordMode: all
