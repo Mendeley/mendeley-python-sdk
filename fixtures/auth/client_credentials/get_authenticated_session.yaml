@@ -19,4 +19,551 @@ interactions:
       date: ['Wed, 19 Nov 2014 12:12:05 GMT']
       x-mendeley-trace-id: [6KQZgySfLIo]
     status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body: {string: !!python/unicode '{"message":"Credentials are required to access
+        this resource."}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['63']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 14:39:20 GMT']
+      www-authenticate: [Basic realm="oauth"]
+      x-mendeley-trace-id: [rZB4PiwgHdE]
+    status: {code: 401, message: Unauthorized}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOvQ6CMBRG36UzQ8Xg4MqPMdIaI4KyEGiuQiwt4WIKGN/dhoTtyxnO+b6kFAIQ
+        i0G/QZE9YVcz8uBhWHCZefKiPDma2DcTT0IvPkRY+QbPIbrsnus8807CHVTapi5XjFabmuU3Ooss
+        iohDFmUxTB1YbwVlD72lMHZND1g0trbdUeqQHp4W1OsF9ZHSIS2iXjcKvThKKcnvDw3tvL2yAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 14:39:44 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [OjmKULGReTo]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOSwuCQBRG/8tduxBFoba+SnTASqk2onYjdXww1xgt+u8NgruPszjn+0JRVUiU
+        T0OLPewhPsuZuTcZu8mHNYnJmqMROXJhF8+KAp9KRxLzZll2WRunO/vkjyIzQmKBdUiv97DKmPMI
+        SAcNVmU+LSMqb4mFQKEozmMtkPJa1Uxb1zUQ+FTgtV3o35xr0BEN26ZqWB0F5/D7A6u1MoyyAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 14:40:47 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [_avJnlclasg]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOzQqCQBRG32XWLkbEoLaaBTli5Q+2ER1vJU2OzDVGjd69QXD3cRbnfF9ScQ6I
+        5SBf0JEdYVc9Rn6hmX+mzE8dNj/c0NNTlOzd8BBg7Wmss4ZxejtldlDl+Rjz4yUt8l6mcxMk9jZO
+        nIISiyzKcph6MN4aKgXKUBj7VgGWrak5G0otouBuwHO90H2EsMgbUa4buVwclRDk9wcJCXy+sgAA
+        AA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['172']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 14:47:37 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [Ip9gJed-Bgw]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOvQ6CMBhF3+WbGSBFBzdDBWMoBgUJLqTUKoTykxZSwPjuEhK2mzOcc79AGeNK
+        ZX1b8QYOQO56DHCqCQ5NMlc2wR/kO3oKotPO91yVO1qx+SLjqsAU33A0H60UFUPiWUlQu3YYv66P
+        8xOBAasy66eOL96cU8nlQvnYlZKrrFxqaG+aBkj+XkCxXWgGIQyolWq3rVi7OqgQ8PsD+KQYhbIA
+        AAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['173']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 14:53:18 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [MyFCReXZ6TA]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOsQ6CMBRF/6UzQyPq4GZAQAM1SkPAhUB5KlILaTEtGv/dxoTt5gzn3A+qGAOl
+        yrHvQKANSlJtiF/oxD/ho7835LF9x56eCN2t4jBQtacVjQqTisylC941WYNZdJCMBnHunjsiLmGW
+        35bIQX9lOU4DWG8NlQRpKZihlaDK1tbcNcYOknC14D5fEC/OHfRUqp+3Yv3fUXGOvj9D5rkosgAA
+        AA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['172']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:00:21 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [026wmFyfDNY]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOQQuCMBiG/8vOHpZhh26iJoRbVIPoJHN9ojh1bMqc0X9vCN5ensPzvF/EhQBj
+        ymnsYEBnRJ52oenbkvSObyzGdI1dkVhHWRYV+cVUiTXiFSnWN+EnVB0ZrjXLmpmsYuE5dY+DzEX6
+        WVGANmU5OQXeWwHXoD2FRbUaTNn62vGEcYA01B40+4VhljJAvTHjvo0YNweXEv3+kQuj+LIAAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['170']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:01:44 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [SLy80bigFcE]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOvQqDMBRG3yWzQ1Ds0NUYadGUooPtIpreojX+kKtELX33BsHt4wznfF9SSgmI
+        xTS00JMzSVKzCPYwCbvTW3ahgsktDswqstCPI45VYLCKwjV1+ZZ79SzDKxeRWkT+9JP2yl4duuVH
+        cOKQXVlM6wjWW0GpQVsKy9howKKxNe9EqUM0vC2ojwv9rJRDOsTh2CiH3VEqRX5/hfeEILIAAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['170']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:02:04 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [WsSTLL_cEco]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOuw6CMBhG3+WfGapGB1duCUKNtYYwES41xdaCLaag8d1tSNi+nOGc7wtV0zBj
+        yrEXTMERsqudcFDYLLigMy32+FGg1LczpuE+jSNT+9aQnCdEJSkV0+kWE04/7auNcEZCsc0F5nQz
+        KPBgUZbjPDDnrVmlmXaUTUOnmSk7V9sdEPJAs7sDfL2g3lJ68DSmX7dp+sVRSQm/P5+EsGCyAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:02:49 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [uxK50m05Qc4]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOsQ6CMBRF/+XNDCQEB1cKLlAjgkYWAuUZkVJIH1rQ+O82JGw3ZzjnfqESAonK
+        aehQwR6Ss5k5u5mEndxj1vmc5SYOzMKz0I8PEdWBofw6euknNGnHkyL3F8HSrOldU6jmfVEyqp8R
+        BwdWZTktI1pvjZVGbSnOY6uRytbWvJ3rOqDxbsFju6BeUjrQEw3bJjGsjkpK+P0BbUDBfbIAAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['170']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:03:19 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [rglQAH3rxEY]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOSwuCQBRG/8tdu8jCFi3ziTgDk1LYRnS6kTQ+mGuNFv33RHD3cRbnfF8opUSi
+        Yuie2MIBWGpG7uWGecJmnm/zjzCJayae+U4SBlS5hlig3qK5TeJydU5RbNItP0o7yLNwiLPozNOm
+        b8GCRVkMU4+zt8JSo54pjn2tkYp6ru32m40FGu8zeKwX2pdSFjRE3bpJdoujVAp+f8mjkjiyAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:03:35 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [QoJqS9GUmSw]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOzQqCQBRG3+WuXViSi7ZqgTgDkUG1ER2uv5PK3IlxjN49E9x9nMU53wdyIZAo
+        00OHPRyBXc3Ew4dh4WXHQmbZXJkkMJan0SE5n6gIDBWR9oSsfe7VbdrHk+jY/naPbdo+JY90yedY
+        gQOrMtN2xMVbYK7wT3EaG4WUNUvN813XAYXlAurtQv+W0oEX0bBtEsPqyKWE7w+0WrE7sgAAAA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['169']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:03:52 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [75y2XzX1PJA]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOzQqCQBRG3+WuXRRRi3ahZogzUCo0bWS0W5l/w1xj1OjdGwR3h7M43/cFWRRI
+        lPVdhS3sgcVm4J4wzDuvWeJvmfecIteM3HIUHCl3DcnU9OJ9GHmq/LgJr/ckPOUBj0Uz3JLpokTF
+        OTgwJ7N+VGi7OUqN2locVKmRstKubXarlQMaH1a8lgvtp64daIi6hano5oasa/j9ASi0aIOyAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:05:19 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [QLrZYtCZoBA]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOvQ6CMBRG3+XODCDBwU2o1YFi+IlGFlLINRBrIS2mJcZ3tyFh+3KGc74v8K5D
+        rZt5fKGEA7DS2Iw8DCN5wKo8ysgxSBOzZNUpSs9Ut4nR91t84SEtmIhtSWLZUsqLna2utGdI6xlJ
+        LcGDVdnMy4TO2yJXqBxFOw0KdTO4Wrj3fQ8UPh3otwvyI4QHb63HbetuXB1cCPj9AXqPy9OyAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:05:49 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [KEUrfiq0skM]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOvQ6CMBRG3+XODBjFiKOgONAmIA3qQkpzDT8VSIspxPjuNiRsX85wzvcFLgRq
+        XYx9ix0cgdzMRMOHIWGyIZkwtGFuHJiZZmcvji66DIzm0cHDa8ry1k+I9OndrRhhuymTZH7m6SnN
+        ZQMOLMpinAe03hK5QmUpTkOtUBe1rW33ruuAwpcF1Xqh+0jpwFvrft1a9IuDSwm/P68U8tyyAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:06:10 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [iQSa4jMDOpg]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOzQqCQBhF3+Vbu/AnA9uFpi4cwTLDNjKOXySNP8wYo0Xv3iC4u5zFOfcLlDGU
+        spqGF/ZwAHJRcxqUigSZRT5Hm+SZm/hqSfOTm0ShrH0lS+5ZGBf+/cps2jU5RmHcBGlXOzzDm7fD
+        gp/BgFVZTcuI2lsjFSg0xXlsBcqq1TVnb5oGCHxo8Nwu9G/ODeikHLYt2bA6KOfw+wMAHg4wsgAA
+        AA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['172']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:08:26 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [ZHgYDsmttiQ]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOyw6CMBQF/+WuWViMLtzyMBpaoiAJbgiPa0ArbVpMAeO/25CwO5nFzPlCWdeo
+        dTGIF/ZwAJqYkfm5of6F0Pk0spmSyDMTS4NddAx15RldhY0bpYGbua2MMxmwZyNyzu4JOcfN3Jbp
+        jVzBgUVZDJNE662wVKgsxVF2CnXR2dp2v9k4oPBhQbte6D+cO/DWWqxb12JxlJzD7w/EHTcDsgAA
+        AA==
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['172']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:08:41 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [DsQo25MDJwY]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOyw6CMBQF/6VrFiDRhVseJoRipAaCG1LINYDlkV60BeO/25CwO5nFzPkSXteA
+        WM7jCwZyJpQpnfiFov7NoWuhaRfYsaeW5B4c40uIlacQupTlrcMea+QypwmKPuPXPJp51vD0oD9s
+        mEJikU1ZzssExlsBlyANBT21ErBsTc092bZFJDwNaPYLw1sIi/SI476xHjcHF4L8/nxs9O2yAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:09:21 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [6FNBmaFpZ0k]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOvQ6CMBRG36UzQw3q4ErBaFoSBYJ0IYDXQCg/6cUUNL67DQnblzOc831JUVWA
+        mE9DCz05ERGZOWSZEey2E5/2IFjrcs8sYewf+DnA0jNYqsxIJqO7X3cyuexF+pxFGnD+uCaSKhon
+        SIlDVmU+LSNYbwmFBm0pzGOjAfPG1twjpQ7R8LKg3i70b6Uc0iEO28ZqWB2FUuT3ByROTtayAAAA
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['171']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:09:59 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [8MJrQz29F7E]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOzQqCQBRG3+WuXThIgW21KUgntB/SjYzDjaxJZa4xavTuieDu4yzO+b4glUKi
+        omteWMMG4pPtRZjZOEyYCBMvHi82CuwgzttVtONUBpak9msxcg/3wl55flC3rBNMs4T5LH2m2ZHn
+        KTgwK4tuaHHyligNmoli31YGqaimmrd2XQcM3ifwWC7UH60deBM1yybVzA6pNfz+R+c5vrIAAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['170']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:10:47 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [44xaTkVdJHc]
+    status: {code: 200, message: OK}
+- request:
+    body: scope=all&grant_type=client_credentials
+    headers:
+      Accept: [!!python/unicode application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['39']
+      Content-Type: [!!python/unicode application/x-www-form-urlencoded;charset=UTF-8]
+      User-Agent: [python-requests/2.5.1 CPython/2.7.6 Linux/3.13.0-77-generic]
+    method: POST
+    uri: https://api.mendeley.com:443/oauth/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAADWOuw6CQBRE/+XWFDyihS0PG3eTRRLBhixwVXSBzV4MoPHf3ZBQzeQUZ+YLsq6R
+        qByHF/ZwAHaeZh4VE4uExzNh8+6dwmnhWbw7HROqwolkrAqepBfpJ7zp5uKqdC6eqcuitBW+ZnnQ
+        fMCBVVmOi0brrVAaNJbirFuDVLZ2Ldi7rgMGbxY8tgv9WykHOqJh61QPq0MqBb8/9zPe0bIAAAA=
+    headers:
+      connection: [keep-alive]
+      content-encoding: [gzip]
+      content-length: ['170']
+      content-type: [application/json]
+      date: ['Thu, 07 Apr 2016 15:12:20 GMT']
+      vary: [Accept-Encoding, Accept-Encoding]
+      x-mendeley-trace-id: [I2Y_rOcrWEc]
+    status: {code: 200, message: OK}
 version: 1

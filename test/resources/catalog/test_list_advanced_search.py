@@ -9,18 +9,18 @@ def test_should_page_through_search_results():
         first_page = search.list(page_size=2)
 
         assert len(first_page.items) == 2
-        assert first_page.count == 173631
+        assert first_page.count > 0
 
-        assert first_page.items[0].title == 'Experiences with MapReduce, an abstraction for large-scale computation'
-        assert first_page.items[1].title == 'MapReduce'
+        assert 'mapreduce' in first_page.items[0].title.lower()
+        assert 'mapreduce' in first_page.items[1].title.lower()
 
         second_page = first_page.next_page
 
         assert len(second_page.items) == 2
-        assert second_page.count == 173631
+        assert second_page.count > 0
 
-        assert second_page.items[0].title == 'MapReduce map & reduce function for large datasets'
-        assert second_page.items[1].title == 'MapReduce: SimplifiedDataProcessing onLargeClusters'
+        assert 'mapreduce' in second_page.items[0].title.lower()
+        assert 'mapreduce' in second_page.items[1].title.lower()
 
 
 def test_should_list_search_results_all_view():
@@ -31,7 +31,7 @@ def test_should_list_search_results_all_view():
             .list(page_size=2)
 
         assert len(first_page.items) == 2
-        assert first_page.count == 173631
+        assert first_page.count > 0
 
-        assert first_page.items[0].title == 'Experiences with MapReduce, an abstraction for large-scale computation'
-        assert first_page.items[0].reader_count == 55
+        assert 'mapreduce' in first_page.items[0].title.lower()
+        assert first_page.items[0].reader_count > 0
