@@ -45,16 +45,6 @@ def test_should_lookup_by_doi():
         assert_core_view(doc)
 
 
-def test_should_lookup_by_filehash():
-    session = get_client_credentials_session()
-
-    with cassette('fixtures/resources/catalog/lookup/lookup_by_filehash.yaml'):
-        doc = session.catalog.lookup(filehash='f9d3777596893362bbf49618e758d6b8a5271d04')
-
-        assert doc.score == 100
-        assert_core_view(doc)
-
-
 def test_should_raise_on_not_found():
     session = get_client_credentials_session()
 
