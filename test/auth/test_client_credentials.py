@@ -1,4 +1,4 @@
-from oauthlib.oauth2 import InvalidClientError
+from oauthlib.oauth2 import InvalidClientError, MissingTokenError
 import pytest
 
 from test import configure_mendeley, cassette
@@ -21,6 +21,6 @@ def test_should_throw_exception_on_incorrect_credentials():
     auth = mendeley.start_client_credentials_flow()
     
     # We should never get an access token back
-    # and the OAuth library should be unhappy about that
+    # and the OAuth library should be unhappy about that
     with cassette('fixtures/auth/client_credentials/incorrect_credentials.yaml'), pytest.raises(MissingTokenError):
         auth.authenticate()
