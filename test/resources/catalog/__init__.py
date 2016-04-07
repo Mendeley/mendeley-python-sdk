@@ -20,19 +20,14 @@ def assert_bib_view(doc):
     assert not doc.editors
 
 
-def assert_client_view(doc):
-    assert doc.file_attached
-
-
 def assert_stats_view(doc):
-    assert doc.reader_count == 197
-    assert doc.reader_count_by_academic_status['Professor'] == 17
-    assert doc.reader_count_by_subdiscipline['Biological Sciences']['Genetics'] == 4
-    assert doc.reader_count_by_country['United States'] == 6
+    assert doc.reader_count > 0
+    assert doc.reader_count_by_academic_status['Professor'] > 0
+    assert doc.reader_count_by_subdiscipline['Biological Sciences']['Genetics'] > 0
+    assert doc.reader_count_by_country['United States'] > 0
 
 
 def assert_all_view(doc):
     assert_core_view(doc)
     assert_bib_view(doc)
-    assert_client_view(doc)
     assert_stats_view(doc)

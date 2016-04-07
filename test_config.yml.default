@@ -1,5 +1,14 @@
+###
+# Security note:
+# If you can insert your API client secrets 
+# through environment variables, please do that instead.
+# Only put sensitive credentials in config files if you
+# have no choice, and you don't mind accidentally
+# committing them to a public Git repo one day (wahey!)
+###
+
 clientId: id
 clientSecret: secret
-redirectUri: https://example.com
+redirectUri: http://localhost
 accessToken: token
-recordMode: none
+recordMode: all
