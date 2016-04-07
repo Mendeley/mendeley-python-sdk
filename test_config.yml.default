@@ -1,8 +1,7 @@
 ###
 # Security note:
-# If you can insert your client id and secret
-# through the MENDELEY_CLIENT_ID and MENDELEY_CLIENT_SECRET
-# environment variables, please do that instead.
+# If you can insert your API client secrets 
+# through environment variables, please do that instead.
 # Only put sensitive credentials in config files if you
 # have no choice, and you don't mind accidentally
 # committing them to a public Git repo one day (wahey!)

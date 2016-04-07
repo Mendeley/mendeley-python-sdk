@@ -25,6 +25,9 @@ def load_config_from_file(filename):
         if 'MENDELEY_CLIENT_SECRET' in os.environ:
             config['clientSecret'] = os.environ.get('MENDELEY_CLIENT_SECRET')
         
+        if 'MENDELEY_ACCESS_TOKEN' in os.environ:
+            config['accessToken'] = os.environ.get('MENDELEY_ACCESS_TOKEN')
+        
         return config
 
 
