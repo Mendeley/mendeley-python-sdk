@@ -35,7 +35,18 @@ Full documentation, including examples, can be found on `ReadTheDocs <http://men
 Compatibility
 -------------
 
-The SDK has been tested with Python 2.7 and 3.4.
+Inspect the .travis.yml file to find out which Python versions have been tested with this project.
+
+Development
+-----------
+
+To obtain dependencies for this project, follow the steps in the .travis.yml file.
+
+Important note about testing: in the CI environment, it is not (yet) possible to test interactions
+with API endpoints that require user access tokens. Any tests which are precluded from working
+in the CI environment should be located in the `test/manual` folder. However, it should be possible
+to run all tests *locally* on your dev workstation, if you have registered a platform app, and you
+have obtained a user account that you don't mind testing against (and making a mess inside).
 
 Sample applications
 -------------------

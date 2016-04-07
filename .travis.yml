@@ -4,4 +4,6 @@ python:
   - "2.7"
   - "3.4"
 
-script: py.test
+# Ignore tests we cannot run in the CI environment
+# such as those needing user access tokens.
+script: py.test --ignore=test/manual/
