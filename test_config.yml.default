@@ -1,5 +1,5 @@
 clientId: id
 clientSecret: secret
-redirectUri: https://example.com
+redirectUri: http://localhost
 accessToken: token
 recordMode: all
