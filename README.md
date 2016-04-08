@@ -7,7 +7,7 @@
 ![Docs](https://readthedocs.org/projects/mendeley-python/badge/?version=latest)
 ![Build status](https://travis-ci.org/Mendeley/mendeley-python-sdk.svg?branch=master)
 
-The Mendeley Python SDK provides access to the [Mendeley API](https://www.mendeley.com).  For more information on the API and its capabilities, see the [Mendeley developer portal](http://dev.mendeley.com).
+The Mendeley Python SDK provides access to the [Mendeley API](https://www.mendeley.com). For more information on the API and its capabilities, see the [Mendeley developer portal](http://dev.mendeley.com).
 
 ## Installation
 
@@ -48,6 +48,8 @@ See the [Travis CI build](https://travis-ci.org/Mendeley/mendeley-python-sdk) to
 2. Run `pip install -r requirements.txt`
 
 ### Testing your changes
+
+Run the test suite to see if your changes worked. If you are using a virtualenv, consider using `tox`. If not, the good old `py.test` command also works.
 
 #### Prerequisites
 
