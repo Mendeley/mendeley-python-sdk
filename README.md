@@ -53,6 +53,7 @@ See the [Travis CI build](https://travis-ci.org/Mendeley/mendeley-python-sdk) to
 
 1. Register a Mendeley platform app.
 2. Set the Mendeley API client ID and secret as environment variables in your shell:
+
         export MENDELEY_CLIENT_ID=[your app client ID]
         export MENDELEY_CLIENT_SECRET=[your app client secret]
 
@@ -60,10 +61,13 @@ See the [Travis CI build](https://travis-ci.org/Mendeley/mendeley-python-sdk) to
 
 1. Create a **test user account** that you can safely make a mess inside. **WARNING:** Our user flow test suite exercises the API as a particular Mendeley user. The suite contains tests that will delete all documents associated with that account. **Do not** use your personal Mendeley account!
 2. Set the necessary extra credentials:
+
         export MENDELEY_ACCESS_TOKEN=[user's access token]
         export MENDELEY_REDIRECT_URI=[redirect URI of your app]
+
 3. Turn on the VCR cache (if you like) by setting `recordMode: once` in the test config YAML file.
 4. Run all tests in the test suite:
+
         py.test
 
 #### To replicate CI testing
@@ -72,6 +76,7 @@ In the CI environment, it is not (yet) possible to test interactions with API en
 
 1. Turn off the VCR cache (CI only makes sense when running against the real API) by setting `recordMode: all` the test config YAML file.
 2. Run the test suite ignoring 'user mode' tests that require user access tokens:
+
         py.test --ignore=test/manual/
 
 ### Writing documentation
