@@ -11,8 +11,12 @@ python:
 script: py.test --ignore=test/manual/
 
 deploy:
-  provider: pypi
-  user: $PYPI_USERNAME
-  password: $PYPI_PASSWORD
-  on:
-    tags: true
+  - provider: pypi
+    user: $PYPI_USERNAME
+    password: $PYPI_PASSWORD
+    on:
+      tags: true
+  - provider: script
+    script: curl -X POST https://readthedocs.org/build/mendeley-python
+    on:
+      tags: true

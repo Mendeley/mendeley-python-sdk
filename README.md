@@ -30,7 +30,7 @@ See the [Travis CI build](https://travis-ci.org/Mendeley/mendeley-python-sdk) to
 
 ## Releases
 
-Travis CI pushes new releases to Pypi automatically, on the following conditions:
+Travis CI automatically pushes new releases to Pypi, and triggers ReadTheDocs rebuilds, if the following conditions are true:
 
 - The commit is on the master branch
 - The commit has been tagged (this can be achieved with a flow like `git tag v1.2.3` and then `git push --tags`)
