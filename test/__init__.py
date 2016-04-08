@@ -27,7 +27,10 @@ def load_config_from_file(filename):
         
         if 'MENDELEY_ACCESS_TOKEN' in os.environ:
             config['accessToken'] = os.environ.get('MENDELEY_ACCESS_TOKEN')
-        
+
+        if 'MENDELEY_REDIRECT_URI' in os.environ:
+            config['redirectUri'] = os.environ.get('MENDELEY_REDIRECT_URI')
+
         return config
 
 
