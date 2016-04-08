@@ -45,7 +45,6 @@ See the [Travis CI build](https://travis-ci.org/Mendeley/mendeley-python-sdk) to
 ### Dependency setup
 
 1. Set up a virtualenv if you like.
-
 2. Run `pip install -r requirements.txt`
 
 ### Testing your changes
@@ -53,37 +52,27 @@ See the [Travis CI build](https://travis-ci.org/Mendeley/mendeley-python-sdk) to
 #### Prerequisites
 
 1. Register a Mendeley platform app.
-
 2. Set the Mendeley API client ID and secret as environment variables in your shell:
-       
-       export MENDELEY_CLIENT_ID=[your app client ID]
-       export MENDELEY_CLIENT_SECRET=[your app client secret]
+        export MENDELEY_CLIENT_ID=[your app client ID]
+        export MENDELEY_CLIENT_SECRET=[your app client secret]
 
 #### To run tests the normal way
 
 1. Create a **test user account** that you can safely make a mess inside. **WARNING:** Our user flow test suite exercises the API as a particular Mendeley user. The suite contains tests that will delete all documents associated with that account. **Do not** use your personal Mendeley account!
-
 2. Set the necessary extra credentials:
-
-       export MENDELEY_ACCESS_TOKEN=[user's access token]
-       export MENDELEY_REDIRECT_URI=[redirect URI of your app]
-
+        export MENDELEY_ACCESS_TOKEN=[user's access token]
+        export MENDELEY_REDIRECT_URI=[redirect URI of your app]
 3. Turn on the VCR cache (if you like) by setting `recordMode: once` in the test config YAML file.
-
 4. Run all tests in the test suite:
-
-       py.test
+        py.test
 
 #### To replicate CI testing
 
 In the CI environment, it is not (yet) possible to test interactions with API endpoints that require user access tokens. We can only exercise tests that use the client credentials flow. You must put any tests which CI cannot run in the test/manual folder, so that the CI test run command can ignore them.
 
 1. Turn off the VCR cache (CI only makes sense when running against the real API) by setting `recordMode: all` the test config YAML file.
-
-2. Run the test suite ignoring 'user mode' tests that require user access tokens.
-       
-       py.test --ignore=test/manual/
-
+2. Run the test suite ignoring 'user mode' tests that require user access tokens:
+        py.test --ignore=test/manual/
 
 ### Writing documentation
 
