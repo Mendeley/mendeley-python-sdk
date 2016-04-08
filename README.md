@@ -28,6 +28,16 @@ See the [Travis CI build](https://travis-ci.org/Mendeley/mendeley-python-sdk) to
 - The current build status
 - Logs from the SDK being exercised against the live API (this may be helpful if you are stuck when building your own application)
 
+## Releases
+
+Travis CI pushes new releases to Pypi automatically, on the following conditions:
+
+- The commit is on the master branch
+- The commit has been tagged (this can be achieved with a flow like `git tag v1.2.3` and then `git push --tags`)
+- The build passes for that commit
+
+See the .travis.yml 'deploy' section for more specific information.
+
 ## Compatibility
 
 - Our SDK is tested on CI against both Python 2 and 3. Inspect the .travis.yml file to find out which specific Python versions have been tested with this project.
