@@ -20,7 +20,9 @@ API and its capabilities, see the `developer portal <http://dev.mendeley.com>`_.
 Installation
 ------------
 
-Install from `PyPI <https://pypi.python.org/pypi>`_ using `pip <http://www.pip-installer.org/en/latest/>`_, a
+First, set up a virtualenv for the project (if you like). See this [virtualenv tutorial](http://simononsoftware.com/virtualenv-tutorial-part-2/) for instructions. IDEs like IntelliJ with the Python plugin or PyCharm can also help you manage a virtualenv.
+
+Install dependencies from `PyPI <https://pypi.python.org/pypi>`_ using `pip <http://www.pip-installer.org/en/latest/>`_, a
 package manager for Python.
 
 .. code-block:: bash
@@ -35,7 +37,8 @@ Full documentation, including examples, can be found on `ReadTheDocs <http://men
 Compatibility
 -------------
 
-Inspect the .travis.yml file to find out which Python versions have been tested with this project.
+- General notes: Our SDK is tested on CI against both Python 2 and 3. Both builds in the build matrix must pass in order for the overall build for a commit to pass. If you are working on the code, the 'future' library and the `compatible idioms guide <http://python-future.org/compatible_idioms.html>` can help you to support both versions. 
+- Specific versions: Inspect the .travis.yml file to find out which Python versions have been tested with this project.
 
 Development
 -----------
@@ -45,11 +48,8 @@ To obtain dependencies for this project, follow the steps in the .travis.yml fil
 Important notes about testing:
 
 - You will require at least a Mendeley API client ID and secret to run the tests.
-- In the CI environment, it is not (yet) possible to test interactions
-with API endpoints that require user access tokens. Any tests which are precluded from working
-in the CI environment should be located in the `test/manual` folder. However, it should be possible
-to run all tests *locally* on your dev workstation, if you have registered a platform app, and you
-have obtained a user account that you don't mind testing against (and making a mess inside).
+- In the CI environment, it is not (yet) possible to test interactions with API endpoints that require user access tokens. Any tests which are precluded from working in the CI environment should be located in the test/manual folder, so that the test run command can ignore them.
+- However, it is possible to run all tests *locally* on your dev workstation, if you have registered a platform app, and you have obtained a user account that you don't mind testing against (and making a mess inside).
 
 Sample applications
 -------------------
