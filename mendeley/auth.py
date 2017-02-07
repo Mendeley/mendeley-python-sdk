@@ -107,4 +107,4 @@ class MendeleyAuthorizationCodeTokenRefresher():
         oauth = OAuth2Session(client=self.client, redirect_uri=self.redirect_uri, scope=['all'])
         oauth.compliance_hook['access_token_response'] = [handle_text_response]
 
-        session.token = oauth.refresh_token(self.token_url, auth=self.auth)
+        session.token = oauth.refresh_token(self.token_url, auth=self.auth, refresh_token=session.token.get('refresh_token', None))
