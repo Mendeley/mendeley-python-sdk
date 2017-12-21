@@ -99,6 +99,25 @@ class Documents(DocumentsBase):
 
         return UserAllDocument(self.session, rsp.json())
 
+    def create_pdf_from_requests(self, f, filename,):
+        """
+        Creates a new document from a pdf get requests response.
+
+        :f: requests.content from get request of a pdf
+        :filename: name of the file.
+        :return: a :class:`UserDocument <mendeley.models.documents.UserDocument>`.
+        """
+        headers = {
+            'content-disposition': 'attachment; filename=%s' % filename,
+            'content-type': 'application/pdf',
+            'accept': UserDocument.content_type
+        }
+
+        # with open(path, 'rb') as f:
+        rsp = self.session.post('/documents', data=f, headers=headers)
+
+        return UserAllDocument(self.session, rsp.json())
+
     def search(self, query, view=None):
         """
         Searches the logged-in user's library for documents.
