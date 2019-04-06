@@ -56,6 +56,10 @@ class Group(SessionResponseObject):
         return self.session.group_members(self.id)
 
     @property
+    def folders(self):
+        return self.session.group_folders(self.id)
+
+    @property
     def documents(self):
         """
         a :class:`Documents <mendeley.resources.documents.Documents>` resource, from which

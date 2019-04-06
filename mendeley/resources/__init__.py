@@ -5,3 +5,4 @@ from .files import Files
 from .groups import Groups, GroupMembers
 from .profiles import Profiles
 from .trash import Trash
+from .folders import Folders, FolderDocuments

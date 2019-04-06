@@ -61,6 +61,7 @@ class MendeleySession(OAuth2Session):
         self.groups = Groups(self)
         self.profiles = Profiles(self)
         self.trash = Trash(self, None)
+        self.folders = Folders(self)
 
     def group_members(self, group_id):
         return GroupMembers(self, group_id)
@@ -71,6 +72,9 @@ class MendeleySession(OAuth2Session):
     def group_trash(self, group_id):
         return Trash(self, group_id)
 
+    def group_folders(self, group_id):
+        return Folders(self, group_id)
+
     def group_files(self, group_id):
         return Files(self, group_id=group_id)
 
@@ -79,6 +83,9 @@ class MendeleySession(OAuth2Session):
 
     def catalog_files(self, catalog_id):
         return Files(self, catalog_id=catalog_id)
+
+    def folder_documents(self, folder_id, group_id):
+        return FolderDocuments(self, folder_id, group_id)
 
     def request(self, method, url, data=None, headers=None, **kwargs):
         full_url = urljoin(self.host, url)
