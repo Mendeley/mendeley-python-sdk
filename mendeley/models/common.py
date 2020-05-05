@@ -121,23 +121,25 @@ class Person(ResponseObject):
 
     .. attribute:: first_name
     .. attribute:: last_name
+    .. attribute:: scopus_author_id
     """
 
     @classmethod
     def fields(cls):
-        return ['first_name', 'last_name']
+        return ['first_name', 'last_name', 'scopus_author_id']
 
     @staticmethod
-    def create(first_name, last_name):
+    def create(first_name, last_name, scopus_author_id):
         """
         Creates a person object, to be used when creating or updating a
         :class:`Document <mendeley.models.base_documents.BaseDocument>`.
 
         :param first_name:
         :param last_name:
+        :param scopus_author_id:
         :return: a :class:`Person <mendeley.models.common.Person>`.
         """
-        return Person({'first_name': first_name, 'last_name': last_name})
+        return Person({'first_name': first_name, 'last_name': last_name, 'scopus_author_id': scopus_author_id})
 
 
 class Position(ResponseObject):
